@@ -3458,6 +3458,50 @@ __metadata:
   languageName: node
   linkType: hard
 
+"Seeable Tarlac@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "Seeable Tarlac@workspace:."
+  dependencies:
+    "@commitlint/cli": ^16.3.0
+    "@commitlint/config-conventional": ^16.2.4
+    "@headlessui/react": ^1.6.6
+    "@svgr/webpack": ^6.3.1
+    "@tailwindcss/forms": ^0.5.2
+    "@testing-library/jest-dom": ^5.16.5
+    "@testing-library/react": ^13.3.0
+    "@types/react": ^18.0.17
+    "@typescript-eslint/eslint-plugin": ^5.33.0
+    "@typescript-eslint/parser": ^5.33.0
+    autoprefixer: ^10.4.8
+    axios: ^0.27.2
+    clsx: ^1.2.1
+    eslint: ^8.21.0
+    eslint-config-next: ^12.2.5
+    eslint-config-prettier: ^8.5.0
+    eslint-plugin-simple-import-sort: ^7.0.0
+    eslint-plugin-unused-imports: ^2.0.0
+    husky: ^7.0.4
+    jest: ^27.5.1
+    lint-staged: ^12.5.0
+    next: ^12.2.5
+    next-sitemap: ^2.5.28
+    next-themes: ^0.2.0
+    nprogress: ^0.2.0
+    postcss: ^8.4.16
+    prettier: ^2.7.1
+    prettier-plugin-tailwindcss: ^0.1.13
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-icons: ^4.4.0
+    react-tippy: ^1.4.0
+    sass: ^1.54.4
+    swr: ^1.3.0
+    tailwind-merge: ^1.5.1
+    tailwindcss: ^3.1.8
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "abab@npm:^2.0.3, abab@npm:^2.0.5":
   version: 2.0.5
   resolution: "abab@npm:2.0.5"
@@ -4261,7 +4305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.5.3":
+"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.5.3":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
   dependencies:
@@ -6214,6 +6258,13 @@ __metadata:
   version: 5.2.0
   resolution: "ignore@npm:5.2.0"
   checksum: 6b1f926792d614f64c6c83da3a1f9c83f6196c2839aa41e1e32dd7b8d174cef2e329d75caabb62cb61ce9dc432f75e67d07d122a037312db7caa73166a1bdb77
+  languageName: node
+  linkType: hard
+
+"immutable@npm:^4.0.0":
+  version: 4.1.0
+  resolution: "immutable@npm:4.1.0"
+  checksum: b9bc1f14fb18eb382d48339c064b24a1f97ae4cf43102e0906c0a6e186a27afcd18b55ca4a0b63c98eefb58143e2b5ebc7755a5fb4da4a7ad84b7a6096ac5b13
   languageName: node
   linkType: hard
 
@@ -9172,6 +9223,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sass@npm:^1.54.4":
+  version: 1.54.4
+  resolution: "sass@npm:1.54.4"
+  dependencies:
+    chokidar: ">=3.0.0 <4.0.0"
+    immutable: ^4.0.0
+    source-map-js: ">=0.6.2 <2.0.0"
+  bin:
+    sass: sass.js
+  checksum: bb6aead09764de450a02b9a66e4ee538f0ba6bc8f2fc3905c71b2c302b5f47e089b510b86cfa7ef2d4139c210c8abf99fe157e7a5bd356c057f10d29e6c4b44c
+  languageName: node
+  linkType: hard
+
 "saxes@npm:^5.0.1":
   version: 5.0.1
   resolution: "saxes@npm:5.0.1"
@@ -9361,7 +9425,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.0.2":
+"source-map-js@npm:>=0.6.2 <2.0.0, source-map-js@npm:^1.0.2":
   version: 1.0.2
   resolution: "source-map-js@npm:1.0.2"
   checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
@@ -9901,49 +9965,6 @@ __metadata:
   checksum: ad99b771e7e6fc785cfdd60f3eeb794a6f2f230dd291987107974abd0c95a051d7cf3b6d45b542a59bfe67eb680c5b259ec19741e6fdfdbee0ab783ab8861585
   languageName: node
   linkType: hard
-
-"ts-nextjs-tailwind-starter@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "ts-nextjs-tailwind-starter@workspace:."
-  dependencies:
-    "@commitlint/cli": ^16.3.0
-    "@commitlint/config-conventional": ^16.2.4
-    "@headlessui/react": ^1.6.6
-    "@svgr/webpack": ^6.3.1
-    "@tailwindcss/forms": ^0.5.2
-    "@testing-library/jest-dom": ^5.16.5
-    "@testing-library/react": ^13.3.0
-    "@types/react": ^18.0.17
-    "@typescript-eslint/eslint-plugin": ^5.33.0
-    "@typescript-eslint/parser": ^5.33.0
-    autoprefixer: ^10.4.8
-    axios: ^0.27.2
-    clsx: ^1.2.1
-    eslint: ^8.21.0
-    eslint-config-next: ^12.2.5
-    eslint-config-prettier: ^8.5.0
-    eslint-plugin-simple-import-sort: ^7.0.0
-    eslint-plugin-unused-imports: ^2.0.0
-    husky: ^7.0.4
-    jest: ^27.5.1
-    lint-staged: ^12.5.0
-    next: ^12.2.5
-    next-sitemap: ^2.5.28
-    next-themes: ^0.2.0
-    nprogress: ^0.2.0
-    postcss: ^8.4.16
-    prettier: ^2.7.1
-    prettier-plugin-tailwindcss: ^0.1.13
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-icons: ^4.4.0
-    react-tippy: ^1.4.0
-    swr: ^1.3.0
-    tailwind-merge: ^1.5.1
-    tailwindcss: ^3.1.8
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
 
 "ts-node@npm:^10.7.0":
   version: 10.7.0

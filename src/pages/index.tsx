@@ -13,7 +13,10 @@ export default function HomePage() {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
-      <Seo />
+      <Seo
+        templateTitle='Seeable Home Page'
+        description='A web base compilation of tourist destinations in Tarlac, Province'
+      />
 
       <main>
       <section

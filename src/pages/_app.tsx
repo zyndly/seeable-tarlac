@@ -6,7 +6,7 @@ import * as React from 'react';
 import { SWRConfig } from 'swr';
 
 import 'react-tippy/dist/tippy.css';
-import '@/styles/globals.css';
+import '@/styles/globals.scss';
 import '@/styles/nprogress.css';
 
 import { getFromLocalStorage } from '@/lib/helper';

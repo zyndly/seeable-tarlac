@@ -26,7 +26,10 @@ export default function AboutPage() {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
-      <Seo />
+      <Seo
+        templateTitle='About Seeable'
+        description=''
+      />
 
       <main>
       <section
