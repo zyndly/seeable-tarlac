@@ -1,10 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Link from 'next/link';
-import { off } from 'process';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import * as React from 'react';
 import { BsCloudMoonFill } from "react-icons/bs";
-import { StateContext } from '../pages/_app';
-import { searchPosts } from '../services';
-import { truncate } from '../utils/utils';
+
+import { StateContext } from '@/pages/_app';
+import { searchPosts } from '@/services';
+import { truncate } from '@/utils/utils';
 
 interface LandingHeroInterface {
     featuredPosts: []
@@ -12,18 +15,18 @@ interface LandingHeroInterface {
 
 const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
 
-    const [posts, setPosts] = useState([]);
-    const [initialPosts, setInitialPosts] = useState([]);
-    const [debounce, setDebounce] = useState(false);
-    const [morePosts, setMorePosts] = useState(false);
-    const [moreInitialPosts, setMoreInitialPosts] = useState(false);
-    const [lastQuery, setLastQuery] = useState('');
-    const [userSearched, setUserSearched] = useState(false);
-    const {menu} = useContext(StateContext);
+    const [posts, setPosts] = React.useState([]);
+    const [initialPosts, setInitialPosts] = React.useState([]);
+    const [debounce, setDebounce] = React.useState(false);
+    const [morePosts, setMorePosts] = React.useState(false);
+    const [moreInitialPosts, setMoreInitialPosts] = React.useState(false);
+    const [lastQuery, setLastQuery] = React.useState('');
+    const [userSearched, setUserSearched] = React.useState(false);
+    const {menu} = React.useContext(StateContext);
 
-    const searchEl = useRef<HTMLInputElement>(null);
+    const searchEl = React.useRef<HTMLInputElement>(null);
 
-    const submitSearch = (force:boolean = false) => {
+    const submitSearch = (force = false) => {
 
         //flag that user has now searched
         if(!userSearched){
@@ -43,7 +46,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
         setTimeout(()=>{
             setDebounce(false);
 
-            let updatedQuery:string = searchEl!.current!.value;
+            const updatedQuery:string = searchEl!.current!.value;
             //search for debounced value -- searchEl gives up to date value
             if(updatedQuery !== searchQuery){
                 updatePosts(updatedQuery);
@@ -79,7 +82,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
         });
     }
 
-    useEffect(()=>{
+    React.useEffect(()=>{
         //initial search on component load
          
 
@@ -93,7 +96,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
 
         setInitialPosts(featuredPosts.filter((post:any, index:number)=>index < 3));
         
-    }, []);
+    }, [featuredPosts]);
 
     return (
 
