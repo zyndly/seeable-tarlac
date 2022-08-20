@@ -11,9 +11,27 @@ import '@/styles/nprogress.css';
 
 import { getFromLocalStorage } from '@/lib/helper';
 
+import {getCategories } from '@/services';
+
 Router.events.on('routeChangeStart', nProgress.start);
 Router.events.on('routeChangeError', nProgress.done);
 Router.events.on('routeChangeComplete', nProgress.done);
+
+interface AppState {
+  categories: [] | never[]
+  menu: boolean
+  [key:string]: unknown
+}
+
+
+const initialState: AppState = {
+  categories: [],
+  menu: false,
+}; 
+
+export const StateContext = React.createContext(initialState);
+
+  
 
 function MyApp({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
@@ -26,6 +44,25 @@ function MyApp({ Component, pageProps }: AppProps) {
       }
     }
   }, []);
+
+  const [appState, setAppState ] = React.useState<AppState>(initialState);
+
+  React.useEffect(()=>{
+    getCategories().then((result) => {
+      
+      setAppState({
+          ...appState, 
+          categories: result,
+          setAppState: setAppState
+        }
+      );
+
+      // eslint-disable-next-line no-console
+      console.log("appSate: ", appState);
+    
+    });
+
+  }, [appState]);
 
   return (
       <SWRConfig
