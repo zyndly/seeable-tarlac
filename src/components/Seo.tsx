@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-// !STARTERCONF Change these default meta
+// !STARTERCONF Change default meta
 const defaultMeta = {
   title: 'Seeable Tarlac',
   siteName: 'Seeable Tarlac',
