@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import moment from 'moment';
+import Image from 'next/image';
+import Link from 'next/link';
+import * as React from 'react';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi'; 
 import Carousel from 'react-multi-carousel';
+
 import 'react-multi-carousel/lib/styles.css';
-import Image from 'next/image';
-import moment from 'moment';
-import Link from 'next/link';
 
 interface FeaturedPostsProps {
     posts: []
@@ -30,6 +33,7 @@ const responsive = {
 };
 
 const ArrowWrap = (arrowProps:any) => { 
+    // eslint-disable-next-line unused-imports/no-unused-vars
     const {carouselState, children, ...restArrowProps} = arrowProps; 
     return ( 
         <span {...restArrowProps}> {children} </span> 
@@ -39,15 +43,15 @@ const ArrowWrap = (arrowProps:any) => {
 
 const FeaturedPosts = ({posts}: FeaturedPostsProps):JSX.Element => {
 
-    const [featuredPosts, setFeaturedPosts] = useState<[] | never[] >([]);
+    const [featuredPosts, setFeaturedPosts] = React.useState<[] | never[] >([]);
 
-    useEffect(()=>{
+    React.useEffect(()=>{
 
         //call featured posts here
-        let filteredPosts = posts.filter((post:any)=> post.featuredPost);
+        const filteredPosts = posts.filter((post:any)=> post.featuredPost);
         setFeaturedPosts(filteredPosts);
 
-    }, []);
+    }, [posts]);
 
     const arrowLeft = (
         <ArrowWrap>

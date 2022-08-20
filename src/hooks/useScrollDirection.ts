@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import * as React from "react";
 
 const useScrollDirection = () => {
     
-    const [scrollDirection, setScrollDirection] = useState("");
+    const [scrollDirection, setScrollDirection] = React.useState("");
   
-    useEffect(() => {
+    React.useEffect(() => {
       let lastScrollY = window.pageYOffset;
   
       const updateScrollDirection = () => {

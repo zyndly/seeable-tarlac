@@ -15,6 +15,7 @@ const entityMap: entityType = {
   
 export const escapeHtml = (str: string): string => {
     return String(str).replace(
+        // eslint-disable-next-line no-useless-escape
         /[&<>"'`=\/]/g, 
         (s: string) => {
                 return entityMap[s];

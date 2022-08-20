@@ -1,22 +1,24 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import useEffectUpdate from '../hooks/useEffectUpdate';
-import FeaturedPosts from './FeaturedPosts';
+/* eslint-disable no-console */
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 const TestFeatured = () : JSX.Element => {
 
-    const [collections, setCollections] = useState<[] | any>([]);
-    const [shadowCollections, setShadowCollections] = useState<[] | any>([]);
-    const [shadowPosition, setShadowPosition ] = useState({top: 0, left: 0});
-    const [parentBackgroundImage, setParentBackgroundImage] = useState('');
-    const [targetIndexState , setTargetIndex] = useState(0);
-    const backgroundRef = useRef(null); 
-    const firstCollectionsPopulate = useRef(true);
-    const isFirstRender = useRef(true);
-    const [compLayout, setCompLayout ] = useState<[] | any>([]);
+    const [collections, setCollections] = React.useState<[] | any>([]);
+    const [shadowCollections, setShadowCollections] = React.useState<[] | any>([]);
+    const [shadowPosition, setShadowPosition ] = React.useState({top: 0, left: 0});
+    const [parentBackgroundImage, setParentBackgroundImage] = React.useState('');
+    const [targetIndexState , setTargetIndex] = React.useState(0);
+    const backgroundRef = React.useRef(null); 
+    const firstCollectionsPopulate = React.useRef(true);
+    const isFirstRender = React.useRef(true);
+    const [compLayout, setCompLayout ] = React.useState<[] | any>([]);
 
 
-    let dummyCollections = [
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const dummyCollections = [
 
         {
             backgroundImage: 'https://media.graphassets.com/PE2C3O7SLAs15PHcLvpA',
@@ -52,7 +54,7 @@ const TestFeatured = () : JSX.Element => {
         }
     ];
 
-    useEffect(()=>{
+    React.useEffect(()=>{
 
         setCollections(dummyCollections.map((collection: any, index:number)=>{
 
@@ -70,7 +72,7 @@ const TestFeatured = () : JSX.Element => {
 
         setTargetIndex(0);
         
-    }, []);
+    }, [dummyCollections]);
 
 
     const focusCollection = async (targetIndex:number, ref: React.RefObject<HTMLDivElement>) => {
@@ -184,6 +186,7 @@ const TestFeatured = () : JSX.Element => {
                                     bottom: collection.focused ? '0px' : '10px'
                                 }}
                                 ref = {collection.ref}
+                                // eslint-disable-next-line @typescript-eslint/no-empty-function
                                 onClick={collection.focused ? ()=>{} : ()=>{
                                     focusCollection(index, collection.ref)
                                 }}   

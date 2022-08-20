@@ -7,7 +7,7 @@ import { BsCloudMoonFill } from "react-icons/bs";
 
 import { StateContext } from '@/pages/_app';
 import { searchPosts } from '@/services';
-import { truncate } from '@/utils/utils';
+import { truncate } from '@/utils';
 
 interface LandingHeroInterface {
     featuredPosts: []

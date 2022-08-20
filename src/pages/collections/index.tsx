@@ -1,13 +1,17 @@
-import React, { useContext, useRef } from 'react';
-import { useRouter } from 'next/router';
-
-import { getCategories, getCollections, getTagPosts } from '../../services';
-import { PostCard, Categories, Loader, MenuWidget, PostWidget, SlidingCollections } from '../../components';
-import { StateContext } from '../_app';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable unused-imports/no-unused-vars */
 import Link from 'next/link';
-import CollectionsWidget from '../../components/CollectionsWidget';
-import { useWindowScrollPositions } from '../../hooks/useWindowScrollPositions';
-import useScrollDirection from '../../hooks/useScrollDirection';
+import { useRouter } from 'next/router';
+import React, { useContext, useRef } from 'react';
+
+import useScrollDirection from '@/hooks/useScrollDirection';
+import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
+
+import { Loader, PostWidget, SlidingCollections } from '@/components/post';
+import CollectionsWidget from '@/components/post/CollectionsWidget';
+
+import { StateContext } from '@/pages/_app';
+import { getCollections } from '@/services';
 
 interface TagIndexProps {
     collections: []
@@ -76,7 +80,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
                                 >
 
                                     <div className='w-full h-full bg-gradient-to-b from-black/[0.6] to-black/[0.4] flex justify-center items-center '>
-                                        <span className={`relative cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-2xl  rounded-full text-md border-white`}>
+                                        <span className="relative cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-2xl  rounded-full text-md border-white">
                                             {`${collection.title}`}
                                         </span>
 

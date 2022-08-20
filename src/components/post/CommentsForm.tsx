@@ -1,5 +1,7 @@
-import React, {useState, useEffect, useRef} from 'react';
-import { submitComment } from '../services'; 
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+import * as React from 'react';
+
+import { submitComment } from '@/services'; 
 
 interface CommentsFormProps {
     slug: string
@@ -7,17 +9,20 @@ interface CommentsFormProps {
 
 const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
 
-    const [error, setError ] = useState(false);
-    const [localStorage, setLocalStorage] = useState(null);
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [error, setError ] = React.useState(false);
+    // eslint-disable-next-line unused-imports/no-unused-vars
+    const [localStorage, setLocalStorage] = React.useState(null);
+    const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
 
     //declaring refs so we can access them later instead of storing the values in state
-    const commentEl = useRef<HTMLTextAreaElement>(null);
-    const nameEl = useRef<HTMLInputElement | any>(null);
-    const emailEl = useRef<HTMLInputElement | any>(null);
-    const storageDataEl = useRef<HTMLInputElement>(null);
+    const commentEl = React.useRef<HTMLTextAreaElement>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const nameEl = React.useRef<HTMLInputElement | any>(null);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const emailEl = React.useRef<HTMLInputElement | any>(null);
+    const storageDataEl = React.useRef<HTMLInputElement>(null);
 
-    useEffect(()=>{
+    React.useEffect(()=>{
         nameEl!.current!.value = window.localStorage.getItem('name');
         emailEl!.current!.value = window.localStorage.getItem('email');
     }, []);
@@ -47,6 +52,7 @@ const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
             window.localStorage.removeItem('email');
         }
 
+        // eslint-disable-next-line unused-imports/no-unused-vars
         submitComment(commentObj).then((res) => {
             setShowSuccessMessage(true);
 

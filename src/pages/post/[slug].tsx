@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
-import { getPosts, getPostDetails } from '../../services'; 
-import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader, MenuWidget, CollectionsWidget } from '../../components'; 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-types */
 import { useRouter } from 'next/router';
-import { StateContext } from '../_app';
-import { useWindowScrollPositions } from '../../hooks/useWindowScrollPositions';
-import useScrollDirection from '../../hooks/useScrollDirection';
+import React, { useContext } from 'react';
+
+import useScrollDirection from '@/hooks/useScrollDirection';
+import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
+
+import { Author, Categories, CollectionsWidget,Comments, CommentsForm, Loader, PostDetail, PostWidget } from '@/components/post'; 
+
+import { StateContext } from '@/pages/_app';
+import { getPostDetails,getPosts } from '@/services'; 
 
 export interface PostDetailsProps {
     post: {} | any

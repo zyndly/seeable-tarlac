@@ -1,7 +1,8 @@
-import React from 'react';
-import Image from 'next/image'; //image component that supports static site generation
+import Image from 'next/image';
+import * as React from 'react';
 
 interface AuthorProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     author: any
 }
 

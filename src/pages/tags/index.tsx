@@ -1,13 +1,17 @@
-import React, { useContext } from 'react';
-import { useRouter } from 'next/router';
-
-import { getCategories, getTagPosts } from '../../services';
-import { PostCard, Categories, Loader, MenuWidget, PostWidget } from '../../components';
-import { StateContext } from '../_app';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/jsx-curly-brace-presence */
+/* eslint-disable unused-imports/no-unused-vars */
 import Link from 'next/link';
-import CollectionsWidget from '../../components/CollectionsWidget';
-import useScrollDirection from '../../hooks/useScrollDirection';
-import { useWindowScrollPositions } from '../../hooks/useWindowScrollPositions';
+import { useRouter } from 'next/router';
+import React, { useContext } from 'react';
+
+import useScrollDirection from '@/hooks/useScrollDirection';
+import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
+
+import { CollectionsWidget,Loader, PostWidget } from '@/components/post';
+
+import { StateContext } from '@/pages/_app';
+import { getCategories } from '@/services';
 
 interface TagIndexProps {
     tags: []

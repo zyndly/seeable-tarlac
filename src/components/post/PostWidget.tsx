@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import moment from 'moment';
 import Link from 'next/link';
-import { getRecentPosts, getSimilarPosts } from '../services';
+import * as React from 'react';
+
+import { getRecentPosts, getSimilarPosts } from '@/services';
 
 export type Post = {
   title?: string,
@@ -14,9 +17,9 @@ interface PostWidgetProps {
 
 const PostWidget = ({categories, slug}: PostWidgetProps): JSX.Element=> {
 
-  const [ relatedPosts, setRelatedPosts ] = useState<[]>([]);
+  const [ relatedPosts, setRelatedPosts ] = React.useState<[]>([]);
 
-  useEffect(()=>{
+  React.useEffect(()=>{
 
     if(slug){
       //means we are looking at a specific post
@@ -29,7 +32,7 @@ const PostWidget = ({categories, slug}: PostWidgetProps): JSX.Element=> {
 
 
     
-  }, [slug]);
+  }, [categories, slug]);
 
   return (
     <div className='rounded-lg p-8 mb-8'>

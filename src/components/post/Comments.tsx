@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from 'react';
-import moment from 'moment';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import parse from 'html-react-parser'; 
-import { getComments } from '../services';
+import moment from 'moment';
+import * as React from 'react';
+
+import { getComments } from '@/services';
 
 interface CommentsProps {
     slug: string
@@ -9,13 +11,14 @@ interface CommentsProps {
 
 const Comments = ( {slug}: CommentsProps) : JSX.Element => {
 
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = React.useState([]);
 
-    useEffect(()=>{
+    React.useEffect(()=>{
 
-        getComments(slug).then((result)=>{
+        getComments(slug).then((result: any)=>{
             setComments(result);
 
+            // eslint-disable-next-line no-console
             console.log("comments: ", result);
         });
 

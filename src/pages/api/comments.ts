@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { gql,GraphQLClient} from 'graphql-request';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { GraphQLClient, gql} from 'graphql-request';
-import { graphql } from 'graphql';
 
 type Data = {
   name: string
@@ -60,6 +59,7 @@ const comments = async (
             name: 'error'
         }
 
+        // eslint-disable-next-line no-console
         console.log("error: ", error);
     }
 

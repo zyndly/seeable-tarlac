@@ -1,12 +1,17 @@
-import React, { useState, useEffect, useRef, useContext } from 'react';
-import { useRouter } from 'next/router';
-
-import { getCategories, getTagPosts, searchPosts } from '../services';
-import { PostCard, Categories, Loader, MenuWidget, CollectionsWidget } from '../components';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
+/* eslint-disable unused-imports/no-unused-vars */
 import Link from 'next/link';
-import { truncate } from '../utils/utils';
-import { StateContext } from './_app';
+import { useRouter } from 'next/router';
+import React, { useContext,useEffect, useRef, useState } from 'react';
 import { BsCloudMoonFill } from "react-icons/bs";
+
+import { Loader } from '@/components/post';
+
+import { StateContext } from './_app';
+import { searchPosts } from '../services';
+import { truncate } from '../utils';
 
 interface SearchPostProps {
     posts: [],
@@ -39,11 +44,11 @@ const SearchPosts = () : JSX.Element => {
             });
         }
             
-    }, []);
+    }, [router.query.searchQuery, searchQuery]);
 
     
 
-    const submitSearch = (force:boolean = false) => {
+    const submitSearch = (force = false) => {
 
         const searchQuery:string = searchEl!.current!.value; 
 
@@ -58,7 +63,7 @@ const SearchPosts = () : JSX.Element => {
         setTimeout(()=>{
             setDebounce(false);
 
-            let updatedQuery:string = searchEl!.current!.value;
+            const updatedQuery:string = searchEl!.current!.value;
             //search after debounce if query has changed -- searchEl gives up to date value
             if(updatedQuery !== searchQuery){
                 updatePosts(updatedQuery);

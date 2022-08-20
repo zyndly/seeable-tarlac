@@ -1,24 +1,31 @@
-import React, { useContext, useRef } from 'react';
-import { useRouter } from 'next/router';
-
-import { getCategories, getCollection, getCollections, getTagPosts } from '../../services';
-import { PostCard, Categories, Loader, MenuWidget } from '../../components';
-import { StateContext } from '../_app';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/jsx-curly-brace-presence */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable no-console */
+/* eslint-disable unused-imports/no-unused-vars */
 import Link from 'next/link';
-import { truncate } from '../../utils/utils';
-import { useWindowScrollPositions } from '../../hooks/useWindowScrollPositions';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
-import { FiArrowDownCircle } from 'react-icons/fi';
-import CollectionsWidget from '../../components/CollectionsWidget';
-import useScrollDirection from '../../hooks/useScrollDirection';
+import { useRouter } from 'next/router';
+import React, { useContext, useRef } from 'react';
+
+import useScrollDirection from '@/hooks/useScrollDirection';
+import useWindowDimensions from '@/hooks/useWindowDimensions';
+import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
+
+import { Categories, Loader,PostCard } from '@/components/post';
+import CollectionsWidget from '@/components/post/CollectionsWidget';
+
+import { StateContext } from '@/pages/_app';
+import { getCollection, getCollections } from '@/services/';
 
 interface TagPostProps {
     slug: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     collection: any
 }
 
 const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
   const router = useRouter();
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const {scrollX, scrollY} = useWindowScrollPositions(); 
   const scrollDirection = useScrollDirection(); 
   const {windowHeight, windowWidth } = useWindowDimensions(); 
@@ -253,6 +260,7 @@ export async function getStaticProps({ params }:any) {
 
 // Specify dynamic routes to pre-render pages based on data.
 // The HTML is generated at build time and will be reused on each request.
+// eslint-disable-next-line @typescript-eslint/ban-types
 export async function getStaticPaths(): Promise<{}>{
   const collections = await getCollections();
   return {

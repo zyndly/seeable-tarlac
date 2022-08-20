@@ -1,13 +1,18 @@
+/* eslint-disable react/jsx-curly-brace-presence */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from 'next/link';
-import React, {useState, useEffect, useRef, useContext} from 'react';
+import React, {useContext,useEffect, useRef, useState} from 'react';
 import * as ReactDOM from 'react-dom';
-import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
 import { FiArrowDownCircle } from "react-icons/fi";
-import { getCollections } from '../services';
-import { truncate } from '../utils/utils';
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import { useWindowScrollPositions } from '../hooks/useWindowScrollPositions';
-import { StateContext } from '../pages/_app';
+import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti";
+
+import useWindowDimensions from '@/hooks/useWindowDimensions';
+import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
+
+import { StateContext } from '@/pages/_app';
+import { truncate } from '@/utils';
 
 interface SlidingCollectionsInterface  {
     collectionsProp: [],
@@ -31,7 +36,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
     const {menu} = useContext(StateContext);
 
-    let dummyCollections = [
+    const dummyCollections = [
 
         {
             backgroundImage: 'https://media.graphassets.com/PE2C3O7SLAs15PHcLvpA',
@@ -68,6 +73,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
     ];
 
     useEffect(()=>{
+        // eslint-disable-next-line no-console
         console.log('collection results: ', collectionsProp);
 
             setCollections(collectionsProp.map((collection: any, index:number)=>{
@@ -76,7 +82,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                 return collection; 
             }));
         
-    }, []);
+    }, [collectionsProp]);
 
     useEffect(()=>{
 
@@ -85,29 +91,32 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
             isFirstRender.current = false; 
         }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [collections]);
 
     useEffect(()=>{
 
-        let top = widgetRef.current?.offsetTop;
-        let left = widgetRef.current?.offsetLeft; 
+        const top = widgetRef.current?.offsetTop;
+        const left = widgetRef.current?.offsetLeft; 
 
         setFeaturedCollectionsPosition({
             top: typeof top !== 'undefined' ? top : 0,
             left: typeof left !== 'undefined' ? left : 0
         });
 
-    }, [widgetRef.current])
+    }, [])
 
 
     const focusCollection = (targetIndex:number) => {
 
+        // eslint-disable-next-line no-console
         console.log('featuredRef: ', widgetRef);
 
         //grab the target background image
+        // eslint-disable-next-line no-var
         var backgroundImage = collections[targetIndex].image.url; 
-        let buriedCollections: []| any = [];
-        let updatedCollections = collections.map((collection:any, index:number)=>{
+        const buriedCollections: []| any = [];
+        const updatedCollections = collections.map((collection:any, index:number)=>{
 
             //flag old focused for cleanup
             if(collection.focused){
@@ -138,7 +147,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
 
         //move targetIndex to start of list
-        let newCollections = [
+        const newCollections = [
             ...collections.filter((c:any, index:number)=>index == targetIndex), 
 
             //add non buried collections
@@ -149,6 +158,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
         ]
 
+        // eslint-disable-next-line no-console
         console.log('new collections: ', newCollections);
 
         setTimeout(()=>{
@@ -198,9 +208,9 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
         return collections.map((collection:any, index:number)=>{
 
-            let marginBottom = params.marginBottom; //150; 
-            let marginLeft = params.marginLeft; //10; 
-            let offset = params.offset;
+            const marginBottom = params.marginBottom; //150; 
+            const marginLeft = params.marginLeft; //10; 
+            const offset = params.offset;
 
             return (
 
@@ -228,6 +238,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
                     ref = {index == 1 ? widgetRef : null}
 
+                    // eslint-disable-next-line @typescript-eslint/no-empty-function
                     onClick={collection.focused ? ()=>{} : ()=>focusCollection(index)}
                 >
 

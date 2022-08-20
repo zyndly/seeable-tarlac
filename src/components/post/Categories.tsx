@@ -1,20 +1,24 @@
-import React, {useState, useEffect, useContext} from 'react';
 import Link from 'next/link';
-import { getCategories } from '../services';
-import { StateContext } from '../pages/_app';
+import * as React from 'react';
+
+import { StateContext } from '@/pages/_app';
+// eslint-disable-next-line unused-imports/no-unused-imports
+import { getCategories } from '@/services';
 
 
 export type Category = {
     name?: string,
     slug?: string
 }
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface CategoriesProps {
     
 }
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 const Categories  = (props: CategoriesProps): JSX.Element => {
 
-    const { categories } = useContext(StateContext);
+    const { categories } = React.useContext(StateContext);
 
     return (
         <div className='p-8 mb-8 text-lime-500'>

@@ -1,6 +1,8 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 import moment from 'moment';
 import Link from 'next/link';
+import React from 'react';
 import { FiCalendar } from 'react-icons/fi'; 
 
 export interface Post {

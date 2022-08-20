@@ -1,21 +1,25 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import useEffectUpdate from '../hooks/useEffectUpdate';
-import FeaturedPosts from './FeaturedPosts';
+
+import useEffectUpdate from '@/hooks/useEffectUpdate';
+
 
 const FeaturedCollections = () : JSX.Element => {
 
-    const [collections, setCollections] = useState<[] | any>([]);
-    const [shadowCollections, setShadowCollections] = useState<[] | any>([]);
-    const [shadowPosition, setShadowPosition ] = useState({top: 0, left: 0});
-    const [parentBackgroundImage, setParentBackgroundImage] = useState('');
-    const [targetIndexState , setTargetIndex] = useState(0);
-    const backgroundRef = useRef(null); 
-    const firstCollectionsPopulate = useRef(true);
-    const isFirstRender = useRef(true)
+    const [collections, setCollections] = React.useState<[] | any>([]);
+    const [shadowCollections, setShadowCollections] = React.useState<[] | any>([]);
+    const [shadowPosition, setShadowPosition ] = React.useState({top: 0, left: 0});
+    const [parentBackgroundImage, setParentBackgroundImage] = React.useState('');
+    const [targetIndexState , setTargetIndex] = React.useState(0);
+    const backgroundRef = React.useRef(null); 
+    const firstCollectionsPopulate = React.useRef(true);
+    const isFirstRender = React.useRef(true)
 
 
-    let dummyCollections = [
+    const dummyCollections = [
 
         {
             backgroundImage: 'https://media.graphassets.com/PE2C3O7SLAs15PHcLvpA',
@@ -51,7 +55,7 @@ const FeaturedCollections = () : JSX.Element => {
         }
     ];
 
-    useEffect(()=>{
+    React.useEffect(()=>{
 
         setCollections(dummyCollections.map((collection: any, index:number)=>{
 
@@ -71,10 +75,12 @@ const FeaturedCollections = () : JSX.Element => {
 
         setTargetIndex(0);
         
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const firstCollectionsCB = useCallback(() => {
+    const firstCollectionsCB = React.useCallback(() => {
 
+        // eslint-disable-next-line no-console
         console.log("collections: ", collections);
 
         if (isFirstRender.current) {
@@ -93,18 +99,19 @@ const FeaturedCollections = () : JSX.Element => {
         firstCollectionsPopulate.current = false; 
 
 
-    }, [collections]);
+    }, [collections, targetIndexState]);
 
     useEffectUpdate(firstCollectionsCB);
 
-    useEffect(()=>{
+    React.useEffect(()=>{
 
         if(firstCollectionsPopulate.current == false ){
+            // eslint-disable-next-line no-console
             console.log('backgroundImage should be updating, target index: ', targetIndexState);
             setParentBackgroundImage(collections[targetIndexState].backgroundImage);
         }
         
-    }, [targetIndexState]);
+    }, [collections, targetIndexState]);
 
 
     const focusCollection = async (targetIndex:number, ref: React.RefObject<HTMLDivElement>) => {
@@ -120,16 +127,17 @@ const FeaturedCollections = () : JSX.Element => {
         await Promise.resolve("state updated");  //to stop react batch updating 
 
         //get element position
-        let top: number = ref!.current!.offsetTop;
-        let left:number = ref!.current!.offsetLeft;
+        const top: number = ref!.current!.offsetTop;
+        const left:number = ref!.current!.offsetLeft;
         let previousFocusIndex = 0;
 
         //remove duplicates
-        let collectionsCopy = collections.filter((collection:any)=> !collection.duplicate); 
+        const collectionsCopy = collections.filter((collection:any)=> !collection.duplicate); 
 
         //unfocus all other collections and set element position
         setCollections( collectionsCopy.map((collection:any, index: number)=>{
 
+            // eslint-disable-next-line no-console
             console.log("index: ", targetIndex);
 
             collection.focused = targetIndex === index; 
@@ -153,13 +161,13 @@ const FeaturedCollections = () : JSX.Element => {
         
 
         //animate to fullscreen while changing top position to 0
-        let timeout1 = setTimeout(()=>{
+        const timeout1 = setTimeout(()=>{
 
             ReactDOM.flushSync(()=>{
                 setCollections( 
                     collections.map((collection:any, index: number)=>{
 
-                        let newCollection:any = {
+                        const newCollection:any = {
                             ...collection
                         }
                         newCollection.focused = targetIndex === index; 
@@ -210,7 +218,7 @@ const FeaturedCollections = () : JSX.Element => {
                                     
         */
 
-        let timeout2 = setTimeout(()=>{
+        const timeout2 = setTimeout(()=>{
 
             ReactDOM.flushSync(()=>{
                 setTargetIndex(targetIndex);
@@ -221,7 +229,7 @@ const FeaturedCollections = () : JSX.Element => {
 
         }, 800);
 
-        let timeout3 = setTimeout(()=>{
+        const timeout3 = setTimeout(()=>{
             //now set the targetIndex to stage3, which removes it from UI until the next index change
             ReactDOM.flushSync(()=>{
                 setCollections(
@@ -273,6 +281,7 @@ const FeaturedCollections = () : JSX.Element => {
 
         //setShadowCollections(collections.map((collection:any, index:number)=> index !== targetIndex));
 
+        // eslint-disable-next-line no-console
         console.log("collections: ", collections);
     }
 
@@ -340,12 +349,12 @@ const FeaturedCollections = () : JSX.Element => {
 
     }
 
-    let focusedClass = 'absolute delay-100 w-full h-full min-h-[100vh] z-5';
-    let focusedClassStage1 = 'absolute w-[150px] h-[250px] min-h-[250px] z-5';
-    let focusedClassStage2 = 'duration-1000 absolute w-full h-full min-h-[100vh] z-5';
-    let focusedClassStage3 = 'duration-00 opacity-0 relative w-[0px] ';
+    const focusedClass = 'absolute delay-100 w-full h-full min-h-[100vh] z-5';
+    const focusedClassStage1 = 'absolute w-[150px] h-[250px] min-h-[250px] z-5';
+    const focusedClassStage2 = 'duration-1000 absolute w-full h-full min-h-[100vh] z-5';
+    const focusedClassStage3 = 'duration-00 opacity-0 relative w-[0px] ';
 
-    let unfocusedClass = 'w-[150px] h-[250px] min-w-[150px] min-h-[250px] rounded-lg z-6 m-5 drop-shadow-md hover:h-[250px]';
+    const unfocusedClass = 'w-[150px] h-[250px] min-w-[150px] min-h-[250px] rounded-lg z-6 m-5 drop-shadow-md hover:h-[250px]';
 
     return (
             <div 
@@ -360,6 +369,7 @@ const FeaturedCollections = () : JSX.Element => {
                     {collections.map((collection:any, index:number)=>{
 
                         if(index == 0){
+                            // eslint-disable-next-line no-console
                             console.log('parent background image: ', parentBackgroundImage);
                         }
                         
@@ -380,6 +390,7 @@ const FeaturedCollections = () : JSX.Element => {
                                     left: collection.focused ? `${computeLeft(collection)}` : 'null'
                                 }}
                                 ref = {collection.ref}
+                                // eslint-disable-next-line @typescript-eslint/no-empty-function
                                 onClick={collection.focused ? ()=>{} : ()=>{
                                     focusCollection(index, collection.ref)
                                 }}   

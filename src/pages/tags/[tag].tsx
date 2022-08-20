@@ -1,12 +1,15 @@
-import React, { useContext } from 'react';
-import { useRouter } from 'next/router';
-
-import { getCategories, getTagPosts } from '../../services';
-import { PostCard, Categories, Loader, MenuWidget, CollectionsWidget } from '../../components';
-import { StateContext } from '../_app';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-console */
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useContext } from 'react';
+
+import { Categories, CollectionsWidget,Loader, PostCard } from '@/components/post';
+
+import { StateContext } from '../_app';
 import useScrollDirection from '../../hooks/useScrollDirection';
 import { useWindowScrollPositions } from '../../hooks/useWindowScrollPositions';
+import { getCategories, getTagPosts } from '../../services';
 
 interface TagPostProps {
     posts: [],
@@ -94,6 +97,7 @@ export async function getStaticProps({ params }:any) {
 
 // Specify dynamic routes to pre-render pages based on data.
 // The HTML is generated at build time and will be reused on each request.
+// eslint-disable-next-line @typescript-eslint/ban-types
 export async function getStaticPaths(): Promise<{}>{
   const categories = await getCategories();
   return {

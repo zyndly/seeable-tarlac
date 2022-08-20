@@ -1,6 +1,9 @@
+/* eslint-disable no-console */
+/* eslint-disable unused-imports/no-unused-imports */
 import { graphql } from 'graphql';
-import { request, gql } from 'graphql-request'; 
-import { sanitizeString } from '../utils/utils';
+import { gql,request } from 'graphql-request'; 
+
+import { sanitizeString } from '../utils';
 
 const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT as string; //type assertion
 
@@ -105,7 +108,7 @@ export const getSimilarPosts = async (categories?: [string], slug?: string ): Pr
     return result.posts;
 }
 
-export const searchPosts = async (searchQuery: string, max: number = 6): Promise<[]> => {
+export const searchPosts = async (searchQuery: string, max = 6): Promise<[]> => {
 
     searchQuery = sanitizeString(searchQuery);
 
@@ -157,6 +160,7 @@ export const getCategories = async () : Promise<[]> => {
     return result.categories;
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const getPostDetails = async (slug: string): Promise<{}> => {
 
     const query = gql`
@@ -197,6 +201,7 @@ export const getPostDetails = async (slug: string): Promise<{}> => {
     return result.post;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const submitComment = async (obj: any) => {
 
     const result = await fetch('/api/comments', {
@@ -271,7 +276,7 @@ export const getTagPosts = async (slug:string) : Promise<[]> => {
     return result.postsConnection.edges;
   };
   
-  export const getCollections = async (max:number = 4): Promise<[]> => {
+  export const getCollections = async (max = 4): Promise<[]> => {
 
     const query = gql`
         query GetCollections ($max: Int!) {
@@ -295,6 +300,7 @@ export const getTagPosts = async (slug:string) : Promise<[]> => {
 
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const getCollection = async (slug:string): Promise<{}> => {
 
     const query = gql`

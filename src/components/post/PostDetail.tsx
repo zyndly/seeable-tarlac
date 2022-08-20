@@ -1,11 +1,13 @@
-import React, { ReactNode } from 'react';
-import moment from 'moment';
-import { FiCalendar } from 'react-icons/fi'; 
-import Link from 'next/link';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @next/next/no-img-element */
 import { RichText } from '@graphcms/rich-text-react-renderer';
-import { getPostDetails } from '../services/index';
+import moment from 'moment';
+import Link from 'next/link';
+import * as React from 'react';
+import { FiCalendar } from 'react-icons/fi'; 
 
 interface PostDetailProps {
+    // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any
     post: {}| any
 }
 
