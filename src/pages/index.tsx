@@ -19,7 +19,7 @@ export default function HomePage() {
       />
 
       <main>
-      <section
+        <section
           className={clsx(
             'min-h-main -mt-20 mb-20 flex flex-col justify-center',
             isLoaded && 'fade-in-start'

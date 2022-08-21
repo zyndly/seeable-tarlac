@@ -1,15 +1,18 @@
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import clsx from 'clsx';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import React, { useContext, useRef } from 'react';
+import * as React from 'react';
 
+import useLoaded from '@/hooks/useLoaded';
 import useScrollDirection from '@/hooks/useScrollDirection';
 import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
 
 import LandingHero from '@/components/layout/LandingHero'
+import Layout from '@/components/layout/Layout';
 import { Categories, CollectionsWidget, PostCard, PostWidget, SlidingCollections } from '@/components/post';
+import Seo from '@/components/Seo';
 
 import { StateContext } from '@/pages/_app';
 import { getCollections, getPosts } from '@/services'; 
@@ -33,93 +36,101 @@ console.blog = (userName: string) => {
 
 const Destinations: NextPage<DestinationProps> = ({ posts, collections }: DestinationProps): JSX.Element => {
 
-  const searchRef = useRef(null);
+  const searchRef = React.useRef(null);
   const featuredPosts = posts.filter((post:any)=> post.featuredPost); 
-  const {menu} = useContext(StateContext);
+  const {menu} = React.useContext(StateContext);
   const scrollDirection = useScrollDirection();
   const {scrollY} = useWindowScrollPositions();
-  
+  const isLoaded = useLoaded();
 
   return (
+      <Layout>
+      {/* <Seo templateTitle='Home' /> */}
+      <Seo
+        templateTitle='Destinations'
+        description='A web base compilation of tourist destinations in Tarlac, Province'
+      />
+      <main>
+        <section
+            className={clsx(
+              'min-h-main -mt-20 mb-20 flex flex-col justify-center',
+              isLoaded && 'fade-in-start'
+            )}
+          >
+          <div className="container mx-auto px-0 top-[0px]" style={{minWidth: '100vw'}}>
 
-      <div className="container mx-auto px-0 top-[0px]" style={{minWidth: '100vw'}}
-      
-      >
-        <Head>
-          <title>SEEABLE Tarlac</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
-        <div className=' block relative w-full min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] z-5 ' style={{minWidth: '100vw'}}>
-          <SlidingCollections collectionsProp={collections} scrollRef={searchRef} title='Featured Collections' featured={true} />
-        </div>
-
-        <div ref={searchRef} className='w-full  min-h-[1200px] md:min-h-[1500px] lg:min-h-[1700px] h-auto top-[150vh] lg:top-[100vh] z-0' style={{minWidth: '100vw'}}>
-          <LandingHero featuredPosts={featuredPosts as []}/>
-        </div>
-
-        <div style={{minWidth: '100vw'}} className={'relative bg-[#202124] z-5'+(menu? ' blur-filter ': ' trans-500')}>
-
-          <div
-              className='divider mb-[100px] w-full flex flex-row items-center justify-center  text-[30px] md:text-[40px] py-5 font-staatliches text-lime-600'
-            >
-                <div className='w-[10%] min-w-[100px] h-[1px] bg-white rounded-full'>
-
-                </div>
-
-                <span className='px-3'>
-                  Latest Update
-                </span>
-
-                <div className='w-[10%] min-w-[100px] h-[1px] bg-white rounded-full'>
-
-                </div>
-                  
+          <div className=' block relative w-full min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] z-5 ' style={{minWidth: '100vw'}}>
+            <SlidingCollections collectionsProp={collections} scrollRef={searchRef} title='Featured Collections' featured={true} />
           </div>
 
-          <div className='container mx-auto px-0 mb-8 bg-[#202124]'>
-            
-            <div className='grid grid-cols-1 lg:grid-cols-5 gap-1 pt-[10]'>
+          <div ref={searchRef} className='w-full  min-h-[1200px] md:min-h-[1500px] lg:min-h-[1700px] h-auto top-[150vh] lg:top-[100vh] z-0' style={{minWidth: '100vw'}}>
+            <LandingHero featuredPosts={featuredPosts as []}/>
+          </div>
 
-              <div className='hidden lg:block lg:col-span-1  col-span-1'>
+          <div style={{minWidth: '100vw'}} className={'relative bg-[#202124] z-5'+(menu? ' blur-filter ': ' trans-500')}>
 
-                <div className={"transition-all duration-300 lg:sticky relative"
-                    + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')
-                  }>
+            <div
+                className='divider mb-[100px] w-full flex flex-row items-center justify-center  text-[30px] md:text-[40px] py-5 font-staatliches text-lime-600'
+              >
+                  <div className='w-[10%] min-w-[100px] h-[1px] bg-white rounded-full'>
 
-                  <CollectionsWidget />
+                  </div>
+
+                  <span className='px-3'>
+                    Latest Update
+                  </span>
+
+                  <div className='w-[10%] min-w-[100px] h-[1px] bg-white rounded-full'>
+
+                  </div>
+                    
+            </div>
+
+            <div className='container mx-auto px-0 mb-8 bg-[#202124]'>
+              
+              <div className='grid grid-cols-1 lg:grid-cols-5 gap-1 pt-[10]'>
+
+                <div className='hidden lg:block lg:col-span-1  col-span-1'>
+
+                  <div className={"transition-all duration-300 lg:sticky relative"
+                      + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')
+                    }>
+
+                    <CollectionsWidget />
+
+                  </div>
 
                 </div>
 
-              </div>
-
-              <div className="lg:col-span-3  col-span-1 px-2 lg:px-0">
-                {posts.map((post:any, index) => <PostCard post={post} key={post.title}/>)}
-              </div>
-
-              <div className='lg:col-span-1 col-span-1 bg-[#202124]'>
-
-              
-
-                <div className={"transition-all duration-300 lg:sticky relative"
-                  + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')}>
-
-                  <PostWidget />
-                  <Categories />
-
+                <div className="lg:col-span-3  col-span-1 px-2 lg:px-0">
+                  {posts.map((post:any, index) => <PostCard post={post} key={post.title}/>)}
                 </div>
-              
+
+                <div className='lg:col-span-1 col-span-1 bg-[#202124]'>
+
+                
+
+                  <div className={"transition-all duration-300 lg:sticky relative"
+                    + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')}>
+
+                    <PostWidget />
+                    <Categories />
+
+                  </div>
+                
+                </div>
+                
               </div>
-              
             </div>
           </div>
-        </div>
 
 
 
-        
-        
-      </div>
+          
+          </div>
+        </section>
+      </main>
+    </Layout>
   )
 }
 

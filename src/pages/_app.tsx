@@ -65,13 +65,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [appState]);
 
   return (
+    
       <SWRConfig
         value={{
           fetcher: (url) => axios.get(url).then((res) => res.data),
         }}
       >
-        <Component {...pageProps} />
+        <StateContext.Provider value={appState}> 
+
+          <Component {...pageProps} />
+          
+          </StateContext.Provider>
       </SWRConfig>
+    
   );
 }
 
