@@ -141,7 +141,7 @@ const DesktopNav = ({ setOpen }: NavProps) => {
       className={clsx(
         'rounded-sm p-2 transition',
         'font-medium text-black dark:text-white',
-        'bg-white dark:bg-dark',
+        'bg-white dark:black',
         'group dark:hover:text-primary-300',
         'focus:outline-none focus:ring focus:ring-primary-300',
         'absolute top-4 left-4',
@@ -153,16 +153,16 @@ const DesktopNav = ({ setOpen }: NavProps) => {
     
     <div className='h-2 bg-gradient-to-tr from-primary-200 via-primary-300 to-primary-400' />
 
-    <div className='bg-white transition-colors dark:bg-dark dark:text-white'>
+    <div className='bg-black text-white'>
       <nav
         aria-label='Top'
         className={clsx(
-          'layout flex items py-4',
+          'layout flex lg:flex-col lg:items-center py-4',
           'lg:max-w-[68rem]',
         )}
       >
         
-        <div className='flex '>
+        <div className='flex'>
           
           <button
             type='button'

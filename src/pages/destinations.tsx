@@ -57,22 +57,22 @@ const Destinations: NextPage<DestinationProps> = ({ posts, collections }: Destin
               isLoaded && 'fade-in-start'
             )}
           >
-          <div className="container mx-auto px-0 top-[0px]" style={{minWidth: '100vw'}}>
+          <div className="container mx-auto top-[0px]" style={{minWidth: '100vw'}}>
 
-          <div className=' block relative w-full min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] z-5 ' style={{minWidth: '100vw'}}>
+          <div className=' block relative min-w-[90px] min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] ' style={{minWidth: '90vw'}}>
             <SlidingCollections collectionsProp={collections} scrollRef={searchRef} title='Featured Collections' featured={true} />
           </div>
 
-          <div ref={searchRef} className='w-full  min-h-[1200px] md:min-h-[1500px] lg:min-h-[1700px] h-auto top-[150vh] lg:top-[100vh] z-0' style={{minWidth: '100vw'}}>
+          <div ref={searchRef} className='w-auto  min-h-[1200px] md:min-h-[1500px] lg:min-h-[1700px] h-auto top-[150vh] lg:top-[100vh] z-0' style={{minWidth: '90vw'}}>
             <LandingHero featuredPosts={featuredPosts as []}/>
           </div>
 
-          <div style={{minWidth: '100vw'}} className={'relative bg-[#202124] z-5'+(menu? ' blur-filter ': ' trans-500')}>
+          <div style={{minWidth: '90vw'}} className={'relative bg-[#202124] z-5'+(menu? ' blur-filter ': ' trans-500')}>
 
             <div
-                className='divider mb-[100px] w-full flex flex-row items-center justify-center  text-[30px] md:text-[40px] py-5 font-staatliches text-lime-600'
+                className='divider mb-[100px] w-auto flex flex-row items-center justify-center  text-[30px] md:text-[40px] py-5 font-staatliches text-lime-600'
               >
-                  <div className='w-[10%] min-w-[100px] h-[1px] bg-white rounded-full'>
+                  <div className='w-[10%] min-w-[90px]h-[1px] bg-white rounded-full'>
 
                   </div>
 
@@ -80,7 +80,7 @@ const Destinations: NextPage<DestinationProps> = ({ posts, collections }: Destin
                     Latest Update
                   </span>
 
-                  <div className='w-[10%] min-w-[100px] h-[1px] bg-white rounded-full'>
+                  <div className='w-[10%] min-w-[90px] h-[1px] bg-white rounded-full'>
 
                   </div>
                     
@@ -107,8 +107,6 @@ const Destinations: NextPage<DestinationProps> = ({ posts, collections }: Destin
                 </div>
 
                 <div className='lg:col-span-1 col-span-1 bg-[#202124]'>
-
-                
 
                   <div className={"transition-all duration-300 lg:sticky relative"
                     + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')}>

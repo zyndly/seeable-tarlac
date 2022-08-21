@@ -20,10 +20,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </header>
       
 
-      <PreloadProvider>
-        <div id='skip-nav'>{children}</div>
-      </PreloadProvider>
-      <Footer />
+        <PreloadProvider>
+          <div id='skip-nav'>{children}</div>
+        </PreloadProvider>
+      <footer className='sticky z-10 bg-black'>
+        <Footer />
+      </footer>
+      
     </>
   );
 }

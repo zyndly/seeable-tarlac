@@ -410,7 +410,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                         } as React.CSSProperties}
                         > 
                         
-                        <div className='font-staatliches font-light text-white text-xl xl:text-2xl 2xl:text-4xl font-bold 2xl:pt-[180px] xl:pt-[160px] lg:pt-[80px] sm-short:pt-0'> 
+                        <div className='font-staatliches text-white text-xl xl:text-2xl 2xl:text-4xl font-bold 2xl:pt-[180px] xl:pt-[160px] lg:pt-[80px] sm-short:pt-0'> 
                             {collection.title}
                         </div> 
 
