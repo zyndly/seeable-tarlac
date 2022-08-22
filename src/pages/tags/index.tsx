@@ -34,8 +34,8 @@ const TagsIndex = ({ tags }: TagIndexProps) : JSX.Element => {
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo
-        templateTitle='Home'
-        description='A web base compilation of tourist destinations in Tarlac, Province'
+        templateTitle='Tags'
+        description='Popular Destination Tags'
       />
       <div className={"container flex flex-col items-center mx-auto px-8 mb-8 pt-[100px]"+(menu?' blur-filter': ' trans-500')}>
 
