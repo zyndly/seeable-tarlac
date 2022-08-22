@@ -8,10 +8,7 @@ export default function NotFoundPage() {
   return (
     <Layout>
 
-      <Seo 
-        templateTitle='FAQs'
-       
-       />
+      <Seo templateTitle='Contact Us' />
 
       <main>
         <section className='bg-dark'>

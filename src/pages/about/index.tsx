@@ -9,7 +9,8 @@ export default function NotFoundPage() {
     <Layout>
 
       <Seo 
-        templateTitle='FAQs'
+        templateTitle='About'
+        description='Know more about Seeable'
        
        />
 
