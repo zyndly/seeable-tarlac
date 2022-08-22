@@ -5,13 +5,15 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext,useEffect, useRef, useState } from 'react';
-import { BsCloudMoonFill } from "react-icons/bs";
 
+import Layout from '@/components/layout/Layout';
 import { Loader } from '@/components/post';
+import Seo from '@/components/Seo';
+
+import { searchPosts } from '@/services';
+import { truncate } from '@/utils';
 
 import { StateContext } from './_app';
-import { searchPosts } from '../services';
-import { truncate } from '../utils';
 
 interface SearchPostProps {
     posts: [],
@@ -104,65 +106,56 @@ const SearchPosts = () : JSX.Element => {
     }
 
     return (
+    <Layout>
+      {/* <Seo templateTitle='Home' /> */}
+      <Seo
+        templateTitle='Search'
+        description='Search a Tourist Destinations in Tarlac, Philippines'
+      />
+
         <div className={"container mx-auto px-10 mb-8 mt-[100px] trans-500 flex flex-col items-center"+(menu? ' blur-filter': '')}>
-
-
-
             {
             //New code
             }
 
             <div 
                 className={'w-full h-auto landing-hero  pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
-
                 >
 
                     <div className='container  mx-auto px-0 py-[70px] md:py-[100px] col-span-1 lg:col-span-4 lg:col-start-2'>
 
                         <div className='landing-title hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
-                            <div className='flex flex-col items-center justify-center text-white mb-5'>
-
+                            <div className='flex flex-col items-center justify-center text-lime-400 mb-5'>
                                 <div className=' text-[50px] md:text-[100px] lg:text-[150px]  mb-5'>
-                                    <BsCloudMoonFill/>
+                                    {/* INSERT SEEABLE ICON HERE /> */}
                                 </div>
 
-                                <span className='text-2xl md:text-4xl font-[900] text-white pt-[20px] text-center font-labelle'>
-                                    Console.blog();
+                                <span className='text-2xl md:text-4xl font-[900] text-lime-400 pt-[20px] text-center font-labelle'>
+                                    Seeable Tarlac
                                 </span>
                                 
                             </div>
-
                         </div>
 
                         <div className='landing-title col-span-1 lg:col-span-6 rounded-lg mx-3'>
                             <div className='flex flex-col w-full h-full items-center justify-center pt-[50px]'>
-
                                 <span className='text-white/[0.5] text-xl font-light'>
-                                    Search Articles
+                                    Search Destination
                                 </span>
                                 
-                                <input 
-                                    type='text'
-                                    className='transition-all duration-500 p-4 px-4 m-4 outline-none w-full md:w-[70%] bg-black/[0.3] rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-white/[0.6] text-center'
-                                    placeholder='Your query'
-                                    name='search'
-                                    ref={searchEl}
-                                    onKeyUp={()=>{submitSearch(false)}}
-                                />
-                                
-
-
-                                
-                                
-                                
+                                    <input 
+                                        type='text'
+                                        className='transition-all duration-500 p-4 px-4 m-4 outline-none w-full md:w-[70%] bg-black/[0.3] rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-white/[0.6] text-center'
+                                        placeholder=''
+                                        name='search'
+                                        ref={searchEl}
+                                        onKeyUp={()=>{submitSearch(false)}}
+                                    />
+                                    
                             </div>
                         </div>
                         
-                        
-                        
                     </div>
-
-
 
             </div>
 
@@ -236,6 +229,7 @@ const SearchPosts = () : JSX.Element => {
                 </div> */}
             </div>
         </div>
+    </Layout>
     );
 };
 export default SearchPosts;
