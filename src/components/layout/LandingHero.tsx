@@ -144,7 +144,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             
                                 <div className='flex flex-col items-center justify-start w-full pt-[50px]'>
 
-                                    <span className='text-white text-xl font-semibold pb-5'>
+                                    <span className='text-primary-300 text-xl font-semibold pb-5'>
                                         Destinations matching your search:  
                                     </span>
 
@@ -212,7 +212,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             {userSearched && posts.length == 0 ?
 
                                 <div className='flex flex-col items-center justify-start w-full pt-[20px]'> 
-                                    <span className='text-white text-xl'>
+                                    <span className='text-primary-300 text-xl'>
                                         No results
                                     </span>
                                 </div>
@@ -227,7 +227,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             {initialPosts.length > 0 && posts.length == 0 ?
                                 
                                 <div className='flex flex-col items-center justify-start w-full pt-[50px]'>
-                                    <span className='text-white text-xl font-semibold pb-5'>
+                                    <span className='text-primary-600 text-xl font-semibold pb-5'>
                                         Destinations you may like  
                                     </span>
 
