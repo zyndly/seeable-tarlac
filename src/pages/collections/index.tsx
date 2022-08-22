@@ -7,8 +7,10 @@ import React, { useContext, useRef } from 'react';
 import useScrollDirection from '@/hooks/useScrollDirection';
 import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
 
+import Layout from '@/components/layout/Layout';
 import { Loader, PostWidget, SlidingCollections } from '@/components/post';
 import CollectionsWidget from '@/components/post/CollectionsWidget';
+import Seo from '@/components/Seo';
 
 import { StateContext } from '@/pages/_app';
 import { getCollections } from '@/services';
@@ -29,6 +31,12 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
   }
 
   return (
+    <Layout>
+      {/* <Seo templateTitle='Home' /> */}
+      <Seo
+        templateTitle='Collections'
+        description='Collection of Destinations'
+      />
 
     <div className='w-full h-full'>
 
@@ -36,7 +44,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
           <SlidingCollections collectionsProp={collections} scrollRef={scrollRef} title='All Collections' featured={false}/>
         </div>
 
-        <div className={'relative container min-w-[100vw] bg-[#282e34] '+(menu?' blur-filter': ' trans-500')}>
+        <div className={'relative container min-w-[100vw] bg-[#202124] '+(menu?' blur-filter': ' trans-500')}>
 
             <div ref={scrollRef} className="rounded-3xl  relative container flex flex-col items-center mx-auto px-10 mb-8 pt-[100px]"
             >
@@ -73,7 +81,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
 
                             <Link href={`/collections/${collection.slug}`} key={collection.slug}>
 
-                                <div className='bg-cover w-[180px] h-[300px] bg-[#4A5A6A]/[0.3] rounded-lg m-5 overflow-hidden'
+                                <div className='bg-cover w-[180px] h-[300px] bg-[#202124]/[0.3] rounded-lg m-5 overflow-hidden'
                                     style={{
                                         backgroundImage: `url(${collection.image.url})`
                                     }}
@@ -106,7 +114,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
 
         
     </div>
-    
+    </Layout>
   );
 };
 export default CollectionsIndex;
