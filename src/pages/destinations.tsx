@@ -48,7 +48,7 @@ const Destinations: NextPage<DestinationProps> = ({ posts, collections }: Destin
       {/* <Seo templateTitle='Home' /> */}
       <Seo
         templateTitle='Destinations'
-        description='A web base compilation of tourist destinations in Tarlac, Province'
+        description='Tourist Destinations in Tarlac, Province'
       />
       <main>
         <section
