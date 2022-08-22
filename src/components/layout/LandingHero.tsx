@@ -3,7 +3,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Link from 'next/link';
 import * as React from 'react';
-import { BsCloudMoonFill } from "react-icons/bs";
 
 import { StateContext } from '@/pages/_app';
 import { searchPosts } from '@/services';
@@ -102,7 +101,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
 
         <>
         <div 
-            className={'skew-y-[20deg] absolute lg:top-[133vh] bg-gradient-to-br from-[#282e34]/[0.7] via-[#282e34] to-[#282e34] w-full min-h-[1800px] shadow-lg h-auto landing-hero pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+            className={'skew-y-[20deg] absolute lg:top-[133vh] bg-gradient-to-br from-[#202124]/[0.7] via-[#202124] to-[#202124]] w-full min-h-[1800px] shadow-lg h-auto landing-hero pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
         >
 
         </div>
@@ -116,17 +115,12 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
 
                     <div className='landing-title hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
                         <div className='flex flex-col items-center justify-center text-lime-700 mb-5'>
-
-                            <div className=' text-[90px] md:text-[150px] lg:text-[250px]  mb-5'>
-                                <BsCloudMoonFill/>
-                            </div>
-
-                            <span className='text-2xl md:text-4xl lg:text-[60px] font-[900] text-lime-700 pt-[20px] text-center font-labelle'>
+                            
+                            <span className='text-2xl md:text-4xl lg:text-[60px] font-[900] text-lime-700 pt-[100px] text-center font-labelle'>
                                 SEEABLE Tarlac
                             </span>
-                            
-                        </div>
 
+                        </div>
                     </div>
 
                     <div className='landing-title row-span-2 col-span-1 lg:col-span-6 lg:col-start-1  rounded-lg mx-3'>
@@ -139,7 +133,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             <input 
                                 type='text'
                                 className='transition-all duration-500 p-4 px-4 m-4 outline-none w-[90vw] md:w-[50%] bg-black/[0.3] rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-white/[0.6] text-center'
-                                placeholder='Your query'
+                                placeholder=''
                                 name='search'
                                 ref={searchEl}
                                 onKeyUp={()=>{submitSearch(false)}}
