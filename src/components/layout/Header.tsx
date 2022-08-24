@@ -96,6 +96,22 @@ const MobileNav = ({ open, setOpen }: NavProps) => {
                   </UnstyledLink>
                 </div>
               ))}
+
+              {searchIcon.map((button) => (
+                <Tooltip interactive={false} key={button.href} content={button.text}>
+                  <UnstyledLink
+                    className={clsx( 
+                      'rounded-sm py-2 transition-colors',
+                      'font-medium text-black dark:text-white',
+                      'group dark:hover:text-primary-300',
+                      'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+                    )}
+                    href={button.href}
+                  >
+                    <button.icon className='mt-6 h-6 w-6 text-gray-600 transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+                  </UnstyledLink>
+                </Tooltip>
+              ))}      
             </div>
 
           </div>
