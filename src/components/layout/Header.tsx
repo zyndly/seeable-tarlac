@@ -3,10 +3,11 @@ import { Dialog, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import * as React from 'react';
-import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
+import { HiOutlineMenu, HiOutlineX , HiSearch } from 'react-icons/hi';
 
 import Accent from '@/components/Accent';
 import UnstyledLink from '@/components/links/UnstyledLink';
+import Tooltip from '@/components/Tooltip';
 
 const navItems = [
   { name: 'Seeable', href: '/' },
@@ -200,9 +201,25 @@ const DesktopNav = ({ setOpen }: NavProps) => {
                     {item.name}
                   </span>
                 </UnstyledLink>
-                
               ))}
+
+              {searchIcon.map((button) => (
+              <Tooltip interactive={false} key={button.href} content={button.text}>
+                <UnstyledLink
+                  className={clsx( 
+                    'rounded-sm py-2 transition-colors',
+                    'font-medium text-black dark:text-white',
+                    'group dark:hover:text-primary-300',
+                    'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+                  )}
+                  href={button.href}
+                >
+                  <button.icon className='mt-2 h-6 w-6 text-gray-600 transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+                </UnstyledLink>
+            </Tooltip>
+           ))}      
             </div>
+            
           </div>
         </div>
       </nav>
@@ -211,9 +228,23 @@ const DesktopNav = ({ setOpen }: NavProps) => {
   );
 };
 
+const searchIcon = [
+  {
+    href: '/search',
+    icon: HiSearch,
+    id: 'HiSearch',
+    text: (
+      <>
+        Look for a destination
+      </>
+    ),
+  },
+]
+
 const Nav = {
   Desktop: DesktopNav,
   Mobile: MobileNav,
 };
 
 export default Nav;
+
