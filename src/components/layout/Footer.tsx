@@ -10,7 +10,7 @@ import Tooltip from '@/components/Tooltip';
 export default function Footer() {
   return (
     <footer className='mt-4 pb-2'>
-      <main className='layout flex flex-col items-center border-t pt-6 dark:border-gray-600'>
+      <div className='layout flex flex-col items-center border-t pt-6'>
         <FooterLinks />
 
         <p className='mt-12 font-medium text-gray-600 dark:text-gray-300'>
@@ -21,7 +21,7 @@ export default function Footer() {
         <p className='my-2 text-sm text-gray-600 dark:text-gray-300'>
           © SeeableTarlac {new Date().getFullYear()}
         </p>
-      </main>
+      </div>
     </footer>
   );
 }
@@ -155,3 +155,4 @@ const socials = [
     ),
   },
 ];
+

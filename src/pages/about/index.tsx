@@ -15,7 +15,7 @@ export default function NotFoundPage() {
        />
 
       <main>
-        <section className='bg-dark'>
+        <section className='bg-black'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-white'>
 
             <h1 className='mt-8'>Coming Soon!</h1>

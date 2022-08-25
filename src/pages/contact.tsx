@@ -1,7 +1,9 @@
 import * as React from 'react';
 
+import { Contact } from '@/components/contact/Contact';
+import { Container } from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
-import CustomLink from '@/components/links/CustomLink';
+import { PageHeading } from '@/components/layout/PageHeading';
 import Seo from '@/components/Seo';
 
 export default function NotFoundPage() {
@@ -11,14 +13,11 @@ export default function NotFoundPage() {
       <Seo templateTitle='Contact Us' />
 
       <main>
-        <section className='bg-dark'>
-          <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-white'>
-
-            <h1 className='mt-8'>Coming Soon!</h1>
-            <CustomLink className='mt-4' href='/'>
-              Back to Home
-            </CustomLink>
-          </div>
+        <section className='bg-black'>
+        <PageHeading>Contact Us | Email service still not available. Send us a direct email instead.</PageHeading>
+          <Container>
+            <Contact />
+          </Container>
         </section>
       </main>
     </Layout>
