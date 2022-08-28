@@ -6,7 +6,7 @@ import Layout from '@/components/layout/Layout';
 import { PageHeading } from '@/components/layout/PageHeading';
 import Seo from '@/components/Seo';
 
-export default function NotFoundPage() {
+export default function ContactPage() {
   return (
     <Layout>
 
@@ -14,7 +14,7 @@ export default function NotFoundPage() {
 
       <main>
         <section className='bg-black'>
-        <PageHeading>Contact Us | Email service still not available. Send us a direct email instead.</PageHeading>
+        <PageHeading>Contact Us</PageHeading>
           <Container>
             <Contact />
           </Container>

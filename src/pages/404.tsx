@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
 
-import ButtonLink from '@/components/links/ButtonLink';
+import ButtonLink from '@/components/buttons/ButtonLink';
 import CustomLink from '@/components/links/CustomLink';
 import Seo from '@/components/Seo';
 

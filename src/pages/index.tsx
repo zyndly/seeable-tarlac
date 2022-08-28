@@ -43,6 +43,7 @@ const Destinations: NextPage<DestinationProps> = ({ posts, collections }: Destin
   const {scrollY} = useWindowScrollPositions();
   const isLoaded = useLoaded();
 
+  
   return (
       <Layout>
       {/* <Seo templateTitle='Home' /> */}

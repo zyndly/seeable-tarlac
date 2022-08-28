@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 
-import { ContactForm } from '@/components/contactform/ContactForm'
+import ContactForm from '@/components/contact/ContactForm'
 
 import User from '@/constant/User';
 

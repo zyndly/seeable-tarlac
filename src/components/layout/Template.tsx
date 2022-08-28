@@ -5,7 +5,7 @@ import CustomLink from '@/components/links/CustomLink';
 export default function Template() {
   return (
       <main>
-        <section className='bg-black'>
+        <div className='bg-black'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-white'>
 
             <h1 className='mt-8'>Coming Soon!</h1>
@@ -13,7 +13,7 @@ export default function Template() {
               Back to Home
             </CustomLink>
           </div>
-        </section>
+        </div>
       </main>
   );
 }
