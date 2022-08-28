@@ -1,21 +1,11 @@
 import * as React from 'react';
 
-import Layout from '@/components/layout/Layout';
 import CustomLink from '@/components/links/CustomLink';
-import Seo from '@/components/Seo';
 
-export default function NotFoundPage() {
+export default function Template() {
   return (
-    <Layout>
-
-      <Seo 
-        templateTitle='TEMPLATE ONLY'
-        description='EDIT DESCRIPTION'
-       
-       />
-
       <main>
-        <section className='bg-dark'>
+        <section className='bg-black'>
           <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-white'>
 
             <h1 className='mt-8'>Coming Soon!</h1>
@@ -25,6 +15,5 @@ export default function NotFoundPage() {
           </div>
         </section>
       </main>
-    </Layout>
   );
 }
