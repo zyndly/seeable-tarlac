@@ -11,7 +11,7 @@ import { Author, Categories, CollectionsWidget,Comments, CommentsForm, Loader, P
 import Seo from '@/components/Seo';
 
 import { StateContext } from '@/pages/_app';
-import { getPostDetails,getPosts } from '@/services'; 
+import { getPostDetails, getPosts } from '@/services'; 
 
 export interface PostDetailsProps {
     post: {} | any

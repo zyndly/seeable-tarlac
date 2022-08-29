@@ -17,7 +17,7 @@ import Seo from '@/components/Seo';
 import { StateContext } from '@/pages/_app';
 import { getCollections, getPosts } from '@/services'; 
 
-interface DestinationProps {
+interface HomeProps {
   posts: [],
   collections: []
 }
@@ -34,7 +34,7 @@ console.blog = (userName: string) => {
   console.log("Console.blog for ", userName);
 }
 
-const Destinations: NextPage<DestinationProps> = ({ posts, collections }: DestinationProps): JSX.Element => {
+const Home: NextPage<HomeProps> = ({ posts, collections }: HomeProps): JSX.Element => {
 
   const searchRef = React.useRef(null);
   const featuredPosts = posts.filter((post:any)=> post.featuredPost); 
@@ -144,4 +144,4 @@ export const getStaticProps = async () : Promise<{}> => {
   }
 }
 
-export default Destinations
+export default Home
