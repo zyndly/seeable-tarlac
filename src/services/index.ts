@@ -346,30 +346,27 @@ export const getCollection = async (slug:string): Promise<{}> => {
 
 }
 
-// export const getCollectionPosts = async (slug:string) : Promise<[]> => {
-//     const query = gql`
-//       query GetCollectionPosts($slug: String!) {
-//             posts(
-//                 where: {
-//                     categories_some: {
-//                         slug: $slug
-//                     }
-//                 }
-                
-//                 orderBy: createdAt_DESC
-//                 last: 10
-//             ) {
-//                 title
-//                 featuredImage {
-//                     url
-//                 }
-//                 createdAt
-//                 slug 
-//             }
-//       }
-//     `;
-  
-//     const result = await request(graphqlAPI, query, { slug });
-  
-//     return result.posts;
-//   };
+export const getAbout = async () : Promise<[]> => {
+    
+    const query = gql`
+        query GetAbout {
+            about(where: {}) {
+            about {
+                raw
+            }
+            disclaimer {
+                raw
+            }
+            privacy {
+                raw
+            }
+            terms {
+                raw
+            }
+            }
+        }
+        `;
+
+    const result = await request(graphqlAPI, query);
+    return result.about;
+}
