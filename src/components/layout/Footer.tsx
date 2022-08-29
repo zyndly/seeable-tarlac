@@ -71,34 +71,34 @@ const footerLinks = [
     ),
   },
   {
-    href: '/terms',
+    href: '/about/terms',
     text: 'Terms',
-    tooltip: 'vacant',
+    tooltip: 'Terms & Condition',
   },
   {
-    href: '/privacy',
+    href: '/about/privacy',
     text: 'Privacy',
-    tooltip: 'vacant',
+    tooltip: 'Know your rights',
   },
   {
-    href: '/docs',
-    text: 'Docs',
-    tooltip: 'vacant',
+    href: '/about/disclaimer',
+    text: 'Disclaimer',
+    tooltip: 'Read our Disclaimer',
   },
   {
-    href: '/submit-post',
+    href: '/contribute',
     text: 'Submit Post',
     tooltip: 'Submit a post to feature',
   },
   {
-    href: '/FAQs',
+    href: '/about/faqs',
     text: 'FAQs',
-    tooltip: 'vacant',
+    tooltip: 'Frequently Asked Questions',
   },
   {
-    href: '/Contact',
-    text: 'Contact Seeable',
-    tooltip: 'vacant',
+    href: '/contact',
+    text: 'Contact',
+    tooltip: 'Contact Us',
   },
   {
     href: '/RSS',
@@ -134,7 +134,7 @@ const socials = [
     ),
   },
   {
-    href: 'https://facebook.com/seeabletarlac',
+    href: 'https://facebook.com/seeable-tarlac',
     icon: SiFacebook,
     id: 'Facebook',
     text: (
