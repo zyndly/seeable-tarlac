@@ -6,7 +6,7 @@ import * as React from 'react';
 
 import { StateContext } from '@/pages/_app';
 import { searchPosts } from '@/services';
-import { truncate } from '@/utils';
+import { truncate } from '@/utils/utils';
 
 interface LandingHeroInterface {
     featuredPosts: []

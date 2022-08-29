@@ -11,7 +11,7 @@ import { Loader } from '@/components/post';
 import Seo from '@/components/Seo';
 
 import { searchPosts } from '@/services';
-import { truncate } from '@/utils';
+import { truncate } from '@/utils/utils';
 
 import { StateContext } from './_app';
 

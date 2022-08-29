@@ -1,21 +1,21 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-// !STARTERCONF Change default meta
+
 const defaultMeta = {
   title: 'Seeable Tarlac',
   siteName: 'Seeable Tarlac',
   description:
     'A compilation of tourist destination in Tarlac Province, Philippines',
-  /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://tsnext-tw.thcl.dev',
+  
+  url: '',
   type: 'website',
   robots: 'follow, index',
   /**
    * No need to be filled, will be populated with openGraph function
    * If you wish to use a normal image, just specify the path below
    */
-  image: 'https://tsnext-tw.thcl.dev/images/large-og.png',
+  image: 'https://seeabletarlac.IDKYET/images/large-og.png',
 };
 
 type SeoProps = {

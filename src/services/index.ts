@@ -3,7 +3,7 @@
 import { graphql } from 'graphql';
 import { gql,request } from 'graphql-request'; 
 
-import { sanitizeString } from '../utils';
+import { sanitizeString } from '../utils/utils';
 
 const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT as string; //type assertion
 

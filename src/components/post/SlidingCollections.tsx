@@ -12,7 +12,7 @@ import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
 
 import { StateContext } from '@/pages/_app';
-import { truncate } from '@/utils';
+import { truncate } from '@/utils/utils';
 
 interface SlidingCollectionsInterface  {
     collectionsProp: [],
