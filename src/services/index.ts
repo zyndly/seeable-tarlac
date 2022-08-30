@@ -345,28 +345,3 @@ export const getCollection = async (slug:string): Promise<{}> => {
     return result.collection;
 
 }
-
-export const getAbout = async () : Promise<[]> => {
-    
-    const query = gql`
-        query GetAbout {
-            about(where: {}) {
-            about {
-                raw
-            }
-            disclaimer {
-                raw
-            }
-            privacy {
-                raw
-            }
-            terms {
-                raw
-            }
-            }
-        }
-        `;
-
-    const result = await request(graphqlAPI, query);
-    return result.about;
-}
