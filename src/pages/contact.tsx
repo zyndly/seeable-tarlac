@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Contact } from '@/components/contact/Contact';
 import { Container } from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
-import { PageHeading } from '@/components/layout/PageHeading';
 import Seo from '@/components/Seo';
+import { PageHeading } from '@/components/text/PageHeading';
 
 export default function ContactPage() {
   return (
