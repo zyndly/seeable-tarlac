@@ -373,7 +373,6 @@ const FeaturedCollections = () : JSX.Element => {
                             console.log('parent background image: ', parentBackgroundImage);
                         }
                         
-
                         //setTimeout to set y position
                         if(typeof collection == 'undefined'){
 
