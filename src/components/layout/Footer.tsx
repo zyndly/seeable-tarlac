@@ -73,17 +73,12 @@ const footerLinks = [
   {
     href: '/about/terms',
     text: 'Terms',
-    tooltip: 'Terms & Condition',
+    tooltip: 'View our Terms & Condition',
   },
   {
     href: '/about/privacy',
     text: 'Privacy',
-    tooltip: 'Know your rights',
-  },
-  {
-    href: '/about/disclaimer',
-    text: 'Disclaimer',
-    tooltip: 'Read our Disclaimer',
+    tooltip: 'View our Privacy Policy',
   },
   {
     href: '/contribute',
@@ -107,7 +102,7 @@ const footerLinks = [
   },
   {
     href: '/About',
-    text: 'About Seeable',
+    text: 'About',
     tooltip: 'Learn more about Seeable Tarlac',
   },
 ];
