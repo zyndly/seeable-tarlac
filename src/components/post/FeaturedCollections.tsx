@@ -377,6 +377,7 @@ const FeaturedCollections = () : JSX.Element => {
                         //setTimeout to set y position
                         if(typeof collection == 'undefined'){
 
+                            // eslint-disable-next-line react/jsx-key
                             return <div> Undefined </div>
                         }
 

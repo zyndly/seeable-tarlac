@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
@@ -188,6 +189,7 @@ const SearchPosts = () : JSX.Element => {
                                     <img
                                         className=" min-w-[100%] min-h-[100%] object-cover md:h-auto md:rounded-none mr-5" 
                                         src={post.featuredImage.url} 
+                                        alt={post.title}
                                     />
                                 </div>
                                 

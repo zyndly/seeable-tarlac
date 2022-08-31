@@ -122,6 +122,7 @@ export default CollectionsIndex;
 // Fetch data at build time
 export async function getStaticProps({ params }:any) {
 
+    // eslint-disable-next-line no-console
     console.log("params: ", params);
   const collections = await getCollections(10);
 
