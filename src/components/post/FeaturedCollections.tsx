@@ -119,9 +119,7 @@ const FeaturedCollections = () : JSX.Element => {
             2 steps
             First get position of element and set it to absolute in that position
             Then animate it to full screen while changing position to top
-
-
-        
+   
         */
 
         await Promise.resolve("state updated");  //to stop react batch updating 
@@ -208,14 +206,11 @@ const FeaturedCollections = () : JSX.Element => {
 
         //set the background div to be the same
         
-
         /* remove previously focused collection and re-populate in array 
             For this, you need to:
                                     Set the background image of the parent div to be the same image
                                     A useEffect call is used for this
-
-
-                                    
+                  
         */
 
         const timeout2 = setTimeout(()=>{
@@ -223,8 +218,7 @@ const FeaturedCollections = () : JSX.Element => {
             ReactDOM.flushSync(()=>{
                 setTargetIndex(targetIndex);
             });
-            
-            
+                       
             clearTimeout(timeout2);
 
         }, 800);
@@ -271,14 +265,6 @@ const FeaturedCollections = () : JSX.Element => {
         // }, 1000);
 
         
-        
-
-
-        
-
-        
-
-
         //setShadowCollections(collections.map((collection:any, index:number)=> index !== targetIndex));
 
         // eslint-disable-next-line no-console
@@ -290,17 +276,15 @@ const FeaturedCollections = () : JSX.Element => {
         let top = '0px';
 
         if(collection.focused && (collection.stage === 1)){
-
             //top should be ref size
             top = collection.top ? `${collection.top}px` : 'auto'; 
-        }else if(collection.focused && (collection.stage === 2)) {
 
+        }else if(collection.focused && (collection.stage === 2)) {
             //top be should 0
             top = '0px'; 
 
         } else {
             //case where collection is not focused
-
             top = 'auto'; 
         }
 
@@ -314,17 +298,15 @@ const FeaturedCollections = () : JSX.Element => {
         let top = 'auto';
 
         if(collection.focused && (collection.stage === 1)){
-
             //top should be ref size
             top = collection.left ? `${collection.left}px` : 'auto'; 
-        }else if(collection.focused && (collection.stage === 2)) {
 
+        }else if(collection.focused && (collection.stage === 2)) {
             //top should be 0
             top = '0px'; 
 
         }else {
             //case where collection is not focused
-
             top = 'auto'; 
         }
 

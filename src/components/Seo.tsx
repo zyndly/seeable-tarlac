@@ -17,7 +17,7 @@ const defaultMeta = {
    * No need to be filled, will be populated with openGraph function
    * change domain 
    */
-  image: 'https://seeabletarlac.vercel.app/images/large-og.png',
+  image: 'https://seeabletarlac.vercel.app/images/logo.png',
 };
 
 type SeoProps = {
