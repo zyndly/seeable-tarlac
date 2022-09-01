@@ -152,7 +152,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                         {posts.map((post:any, index:number)=>(
 
                                             <Link href={`/post/${post.slug}`} key={post.id}>
-                                                <div className='search-result-show h-[200px] max-h-[250px] bg-cover border-0 hover:border-2 hover:duration-300 hover:box-content transition flex flex-row md:flex-row justify-items-start items-center w-full mb-4 bg-[#4A5A6A]/[0.3] rounded-lg overflow-hidden cursor-pointer'
+                                                <div className='search-result-show h-[200px] max-h-[250px] bg-cover border-lime-600 border-0 hover:border-2 hover:duration-300 hover:box-content transition flex flex-row md:flex-row justify-items-start items-center w-full mb-4 bg-[#4A5A6A]/[0.3] rounded-lg overflow-hidden cursor-pointer'
                                                     style={{
                                                         opacity: 0,
                                                         '--custom-delay': index*50+'ms',
