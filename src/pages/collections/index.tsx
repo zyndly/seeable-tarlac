@@ -44,7 +44,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
           <SlidingCollections collectionsProp={collections} scrollRef={scrollRef} title='All Collections' featured={false}/>
         </div>
 
-        <div className={'relative container min-w-[100vw] bg-[#202124] '+(menu?' blur-filter': ' trans-500')}>
+        <div className={'relative container min-w-[100vw] bg-dark '+(menu?' blur-filter': ' trans-500')}>
 
             <div ref={scrollRef} className="rounded-3xl  relative container flex flex-col items-center mx-auto px-10 mb-8 pt-[100px]"
             >
@@ -81,14 +81,14 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
 
                             <Link href={`/collections/${collection.slug}`} key={collection.slug}>
 
-                                <div className='bg-cover w-[180px] h-[300px] bg-[#202124]/[0.3] rounded-lg m-5 overflow-hidden'
+                                <div className='bg-cover w-[180px] h-[300px] bg-dark rounded-lg m-5 overflow-hidden'
                                     style={{
                                         backgroundImage: `url(${collection.image.url})`
                                     }}
                                 >
 
                                     <div className='w-full h-full bg-gradient-to-b from-black/[0.6] to-black/[0.4] flex justify-center items-center '>
-                                        <span className="relative cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-2xl  rounded-full text-md border-white">
+                                        <span className=" cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-2xl  rounded-full text-md border-white">
                                             {`${collection.title}`}
                                         </span>
 

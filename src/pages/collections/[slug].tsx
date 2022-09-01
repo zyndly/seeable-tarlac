@@ -197,9 +197,9 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
 
       </div>
 
-      <div className={'relative top-[100vh] min-w-[100vw] bg-[#282e34] container flex flex-col items-center mx-auto px-3 '+(menu?' blur-filter': ' trans-100')}
+      <div className={'relative top-[100vh] min-w-[100vw] bg-dark container flex flex-col items-center mx-auto px-3 '+(menu?' blur-filter': ' trans-100')}
         style={{
-          boxShadow: 'rgba(0, 0, 0, 0.56) 0px 22px 70px 4px'
+          boxShadow: 'rgba(0, 0, 23, 260.56) 0px 22px 70px 4px'
         }}
       >
         <h1 ref={scrollRef} className='text-white font-bold text-4xl py-10 pt-[120px] font-staatliches'>
