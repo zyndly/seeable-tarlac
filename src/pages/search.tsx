@@ -185,7 +185,7 @@ const SearchPosts = () : JSX.Element => {
                         <Link href={`/post/${post.slug}`} key={post.id}>
                             <div className='flex flex-col md:flex-row justify-items-start items-center w-full md:h-[300px] mb-4 bg-[#4A5A6A]/[0.3] rounded-lg overflow-hidden cursor-pointer'>
 
-                                <div className='md:min-w-[200px] md:max-w-[200px] md:min-w-[270px] md:max-w-[270px] md:min-h-[100%] md:h-[100%] object-cover'>
+                                <div className='md:min-w-[200px] md:max-w-[270px] md:min-h-[100%] md:h-[100%] object-cover'>
                                     <img
                                         className=" min-w-[100%] min-h-[100%] object-cover md:h-auto md:rounded-none mr-5" 
                                         src={post.featuredImage.url} 
@@ -199,7 +199,7 @@ const SearchPosts = () : JSX.Element => {
                                         {post.title}
                                     </span>
 
-                                    <span className='flex-1 text-white/[0.5] py-4 flex-none md:max-h-[150px] overflow-hidden'>
+                                    <span className='flex-1 text-white/[0.5] py-4 md:max-h-[150px] overflow-hidden'>
                                         {
                                             //why use a framework when you can roll your own?
                                             truncate(post.excerpt, 250)
@@ -210,7 +210,7 @@ const SearchPosts = () : JSX.Element => {
                                         {post.categories.map((category:any)=>(
 
                                             <Link href={`/tags/${category.slug}`} key={category.slug}>
-                                                <span className="relative transition duration-150 cursor-pointer absolute px-3 py-1 text-bold mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
+                                                <span className="transition duration-150 cursor-pointer absolute px-3 py-1 text-bold mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
                                                     {`#${category.name}`}
                                                 </span>
                                             </Link>
