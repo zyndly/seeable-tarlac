@@ -71,8 +71,8 @@ const TagsIndex = ({ tags }: TagIndexProps) : JSX.Element => {
 
                   <Link href={`/tags/${category.slug}`} key={category.slug}>
                     <Tooltip interactive={false} key={`#${category.name}`} content={`View #${category.name}`}>
-                      <div className='w-[200px] h-[200px] cursor- bg-slate-700/[0.3] rounded-lg m-5 flex justify-center items-center'>
-                          <span className={`relative cursor-pointer absolute px-3 py-1 mx-2 text-lime-600 rounded-full text-md border-white`}>
+                      <div className='w-[200px] h-[200px] cursor- bg-slate-700/[0.3] rounded-lg m-5 flex justify-center  items-center'>
+                          <span className={`cursor-pointer absolute px-3 py-1 mx-2 text-lime-600 rounded-full text-md border-lime-400`}>
                               {`#${category.name}`}
                           </span>
                       </div>

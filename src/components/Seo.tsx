@@ -7,15 +7,17 @@ const defaultMeta = {
   siteName: 'Seeable Tarlac',
   description:
     'A compilation of tourist destination in Tarlac Province, Philippines',
-  
-  url: '',
+  /**
+   * Replace domains
+   */
+  url: 'https://seeabletarlac.vercel.app/',
   type: 'website',
   robots: 'follow, index',
   /**
    * No need to be filled, will be populated with openGraph function
-   * If you wish to use a normal image, just specify the path below
+   * change domain 
    */
-  image: 'https://seeabletarlac.IDKYET/images/large-og.png',
+  image: 'https://seeabletarlac.vercel.app/images/large-og.png',
 };
 
 type SeoProps = {
@@ -52,7 +54,7 @@ export default function Seo(props: SeoProps) {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@th_clarence' />
+      <meta name='twitter:site' content='@seeabletarlac' />
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
@@ -67,7 +69,7 @@ export default function Seo(props: SeoProps) {
           <meta
             name='author'
             property='article:author'
-            content='Theodorus Clarence'
+            content='Seeable Tarlac'
           />
         </>
       )}

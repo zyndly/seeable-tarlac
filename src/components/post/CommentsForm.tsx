@@ -51,7 +51,6 @@ const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
             window.localStorage.removeItem('name');
             window.localStorage.removeItem('email');
         }
-
         // eslint-disable-next-line unused-imports/no-unused-vars
         submitComment(commentObj).then((res) => {
             setShowSuccessMessage(true);
@@ -147,7 +146,6 @@ const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
                 }
 
             </div>
-
 
         </div>
     );

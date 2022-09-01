@@ -22,7 +22,7 @@ const FeaturedCollections = () : JSX.Element => {
     const dummyCollections = [
 
         {
-            backgroundImage: 'https://media.graphassets.com/PE2C3O7SLAs15PHcLvpA',
+            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
             title: 'test title',
             subtitle: 'test subtitle',
             description: 'This is a test description',
@@ -30,7 +30,7 @@ const FeaturedCollections = () : JSX.Element => {
             focused: true
         },
         {
-            backgroundImage: 'https://media.graphassets.com/dMhhYSlRxWqAwqcXuQGG',
+            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
             title: 'test title',
             subtitle: 'test subtitle',
             description: 'This is a test description',
@@ -38,7 +38,7 @@ const FeaturedCollections = () : JSX.Element => {
             focused: false
         },
         {
-            backgroundImage: 'https://media.graphassets.com/aKBvD1RGRUOQwXOARuv5',
+            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
             title: 'test title',
             subtitle: 'test subtitle',
             description: 'This is a test description',
@@ -46,7 +46,7 @@ const FeaturedCollections = () : JSX.Element => {
             focused: false
         },
         {
-            backgroundImage: 'https://media.graphassets.com/aKBvD1RGRUOQwXOARuv5',
+            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
             title: 'test title',
             subtitle: 'test subtitle',
             description: 'This is a test description',
@@ -295,7 +295,7 @@ const FeaturedCollections = () : JSX.Element => {
             top = collection.top ? `${collection.top}px` : 'auto'; 
         }else if(collection.focused && (collection.stage === 2)) {
 
-            //top should 0
+            //top be should 0
             top = '0px'; 
 
         } else {
@@ -319,7 +319,7 @@ const FeaturedCollections = () : JSX.Element => {
             top = collection.left ? `${collection.left}px` : 'auto'; 
         }else if(collection.focused && (collection.stage === 2)) {
 
-            //top should 0
+            //top should be 0
             top = '0px'; 
 
         }else {

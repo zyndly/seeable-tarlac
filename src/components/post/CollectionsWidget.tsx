@@ -27,15 +27,13 @@ const CollectionsWidget = (): JSX.Element=> {
 
             <div className='flex flex-grow flex-row cursor-pointer transition duration-300 hover:bg-lime-800 py-3 px-5  rounded-full' key={item.name}> 
                     
-
-                    <span className='text-white text-sm'>
-                        {item.title}
-                    </span>
+              <span className='text-white text-sm'>
+                  {item.title}
+              </span>
                 
             </div> 
         </Link>       
       ))}
-
       
     </div>
   )

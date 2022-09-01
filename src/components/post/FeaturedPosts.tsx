@@ -135,7 +135,7 @@ const FeaturedPosts = ({posts}: FeaturedPostsProps):JSX.Element => {
                                 {post.categories.map((category:any)=>(
 
                                     <Link href={`/tags/${category.slug}`} key={category.slug}>
-                                        <span className="relative transition duration-150 cursor-pointer absolute px-3 py-1 text-bold mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
+                                        <span className="transition duration-150 cursor-pointer absolute px-3 py-1 text-bold mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
                                             {`#${category.name}`}
                                         </span>
                                     </Link>

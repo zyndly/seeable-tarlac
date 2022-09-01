@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import * as React from 'react';
 import { FormEvent } from 'react';
 

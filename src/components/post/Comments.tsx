@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import parse from 'html-react-parser'; 
 import moment from 'moment';
 import * as React from 'react';
@@ -14,7 +14,7 @@ const Comments = ( {slug}: CommentsProps) : JSX.Element => {
     const [comments, setComments] = React.useState([]);
 
     React.useEffect(()=>{
-
+        /* eslint-disable @typescript-eslint/no-explicit-any */
         getComments(slug).then((result: any)=>{
             setComments(result);
 
