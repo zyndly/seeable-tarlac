@@ -116,7 +116,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                     <div className='landing-title hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
                         <div className='flex flex-col items-center justify-center text-lime-700 mb-5'>
                             
-                            <span className='text-2xl md:text-4xl lg:text-[60px] font-[900] text-lime-700 pt-[100px] text-center font-labelle'>
+                            <span className='text-2xl md:text-4xl lg:text-[60px] font-[900] text-lime-500 pt-[100px] text-center font-labelle'>
                                 SEEABLE Tarlac
                             </span>
 
