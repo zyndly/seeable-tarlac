@@ -24,7 +24,7 @@ interface SlidingCollectionsInterface  {
 const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: SlidingCollectionsInterface):JSX.Element => {
     const [collections, setCollections] = useState<[] | any>([]);
     // change parent background
-    const [parentBackgroundImage, setParentBackgroundImage] = useState('https://media.graphassets.com/XpiinIIuT0i52JKc1ijM');
+    const [parentBackgroundImage, setParentBackgroundImage] = useState('https://seeabletarlac.vercel.app/images/logo.png');
     const [featuredCollectionsPosition, setFeaturedCollectionsPosition] = useState({top:0, left: 0});
 
     const parentRef = useRef<HTMLDivElement>(null);
