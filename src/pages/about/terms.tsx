@@ -97,9 +97,9 @@ export default function TermsPage() {
                  
           <div id="contacting-us">
             <SubTitle>Contacting us</SubTitle>
-            <p>If you have any questions, concerns, or complaints regarding this Agreement, we encourage you to contact us using the details below:</p>
-            <p><a target="_blank" rel="noreferrer noopener external nofollow" href="http://www.seeabletarlac.com/contact">http://www.seeabletarlac.com/contact</a><br/><a href="&#109;&#097;&#105;&#108;&#116;&#111;&#058;se&#101;&#97;&#98;le&#116;&#97;rl&#97;&#99;&#64;gmai&#108;.&#99;&#111;m" target="_blank" rel="nofollow noreferrer">s&#101;ea&#98;&#108;&#101;&#116;a&#114;&#108;&#97;&#99;&#64;&#103;&#109;&#97;&#105;l.&#99;o&#109;</a></p>
-            <p>This document was last updated on August 29, 2022</p>
+            <p className='mb-2'>If you have any questions, concerns, or complaints regarding this Agreement, we encourage you to contact us using the details below:</p>
+            <p><a className='hover:text-lime-400' target="_blank" rel="noreferrer noopener external nofollow" href="seeabletarlac.vercel.app/contact">seeabletarlac.vercel.app/contact</a><br/><a href="&#109;&#097;&#105;&#108;&#116;&#111;&#058;se&#101;&#97;&#98;le&#116;&#97;rl&#97;&#99;&#64;gmai&#108;.&#99;&#111;m" target="_blank" rel="nofollow noreferrer">s&#101;ea&#98;&#108;&#101;&#116;a&#114;&#108;&#97;&#99;&#64;&#103;&#109;&#97;&#105;l.&#99;o&#109;</a></p>
+            <p className='mt-20'>This document was last updated on August 29, 2022</p>
           </div>
           
 
