@@ -34,7 +34,7 @@ const PostDetail = ({ post } : PostDetailProps) : JSX.Element => {
                     {post.categories.map((category:any)=>(
 
                         <Link href={`/tags/${category.slug}`} key={category.slug}>
-                            <span className="relative cursor-pointer absolute px-3 py-1 mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
+                            <span className="cursor-pointer absolute px-3 py-1 mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
                                 {`#${category.name}`}
                             </span>
                         </Link>

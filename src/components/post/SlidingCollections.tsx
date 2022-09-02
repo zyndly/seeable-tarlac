@@ -23,6 +23,7 @@ interface SlidingCollectionsInterface  {
 
 const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: SlidingCollectionsInterface):JSX.Element => {
     const [collections, setCollections] = useState<[] | any>([]);
+    // change parent background
     const [parentBackgroundImage, setParentBackgroundImage] = useState('https://media.graphassets.com/XpiinIIuT0i52JKc1ijM');
     const [featuredCollectionsPosition, setFeaturedCollectionsPosition] = useState({top:0, left: 0});
 
@@ -35,42 +36,6 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
     const {windowHeight, windowWidth } = useWindowDimensions(); 
 
     const {menu} = useContext(StateContext);
-
-    const dummyCollections = [
-
-        {
-            backgroundImage: 'https://media.graphassets.com/PE2C3O7SLAs15PHcLvpA',
-            title: 'Javascript',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'tsdsd1',
-            focused: true
-        },
-        {
-            backgroundImage: 'https://media.graphassets.com/dMhhYSlRxWqAwqcXuQGG',
-            title: 'Typescript',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'sdsdsd',
-            focused: false
-        },
-        {
-            backgroundImage: 'https://media.graphassets.com/aKBvD1RGRUOQwXOARuv5',
-            title: 'React',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'sdsdsdsdfdfd',
-            focused: false
-        },
-        {
-            backgroundImage: 'https://media.graphassets.com/aKBvD1RGRUOQwXOARuv5',
-            title: 'NodeJS',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'tesasasdst4',
-            focused: false
-        }
-    ];
 
     useEffect(()=>{
         // eslint-disable-next-line no-console
@@ -266,29 +231,13 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
                                 >
 
+                                
+
                                 <div
-                                    className={
-                                        'text-white/[0.4] mb-0 text-[16px] md:text-[20px] lg:text-[20px] xl:text-[30px] 2xl:text-[40px] font-bold font-labelle'+ (collection.focused ? ' collection-background-info-show ': '')
-                                    }
+                                    className={'text-lime-400 mb-0 text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] 2xl:text-[140px] font-bold font-staatliches'+ (collection.focused ? ' collection-background-info-show ': '')}
 
                                     style={{
                                         //for animating disappearing when focused
-    
-                                        '--custom-delay': 10+'ms ',
-                                        opacity: collection.focused ? 0 : 1,
-                                    } as React.CSSProperties}
-                                    >
-
-                                    {`${featured ? 'Featured ': ''}Collection`}
-
-                                </div>
-
-                                <div
-                                    className={'text-white mb-0 text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] 2xl:text-[140px] font-bold font-staatliches'+ (collection.focused ? ' collection-background-info-show ': '')}
-
-                                    style={{
-                                        //for animating disappearing when focused
-    
                                         '--custom-delay': 100+'ms ',
                                         opacity: collection.focused ? 0 : 1,
                                     } as React.CSSProperties}
@@ -299,7 +248,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                 </div>
 
                                 <div
-                                    className={'w-[100px] h-[1px] bg-white mb-[5px] md:mb-[30px]'+ (collection.focused ? ' collection-background-info-show ': '')}
+                                    className={'w-[100px] h-[1px] mb-[5px] md:mb-[30px]'+ (collection.focused ? ' collection-background-info-show ': '')}
                                     style={{
                                         //for animating disappearing when focused
     

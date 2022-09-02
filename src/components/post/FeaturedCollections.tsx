@@ -19,65 +19,6 @@ const FeaturedCollections = () : JSX.Element => {
     const isFirstRender = React.useRef(true)
 
 
-    const dummyCollections = [
-
-        {
-            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
-            title: 'test title',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'test',
-            focused: true
-        },
-        {
-            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
-            title: 'test title',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'test',
-            focused: false
-        },
-        {
-            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
-            title: 'test title',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'test',
-            focused: false
-        },
-        {
-            backgroundImage: 'https://media.graphassets.com/cl6ixwrpxf11o0e15462q3dxr',
-            title: 'test title',
-            subtitle: 'test subtitle',
-            description: 'This is a test description',
-            slug: 'test',
-            focused: false
-        }
-    ];
-
-    React.useEffect(()=>{
-
-        setCollections(dummyCollections.map((collection: any, index:number)=>{
-
-            collection.ref = React.createRef(); 
-            collection.stage = 2; //collections must start with stage2
-
-            //values for initial index
-            if(index==0){
-
-                collection.focused = true;
-                collection.top = 0;
-                collection.left = 0; 
-            }
-
-            return collection; 
-        }));
-
-        setTargetIndex(0);
-        
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
     const firstCollectionsCB = React.useCallback(() => {
 
         // eslint-disable-next-line no-console
@@ -89,15 +30,12 @@ const FeaturedCollections = () : JSX.Element => {
         }
         
         //for first collections population
-       
-
         if(firstCollectionsPopulate && collections.length > 0){
 
             setParentBackgroundImage(collections[targetIndexState].backgroundImage);
         }
 
         firstCollectionsPopulate.current = false; 
-
 
     }, [collections, targetIndexState]);
 
@@ -157,7 +95,6 @@ const FeaturedCollections = () : JSX.Element => {
 
         }));
         
-
         //animate to fullscreen while changing top position to 0
         const timeout1 = setTimeout(()=>{
 
@@ -170,7 +107,6 @@ const FeaturedCollections = () : JSX.Element => {
                         }
                         newCollection.focused = targetIndex === index; 
 
-                        
 
                         if(index === targetIndex){
 
@@ -186,7 +122,6 @@ const FeaturedCollections = () : JSX.Element => {
                 );
             });
             
-
             clearTimeout(timeout1);
 
         }, 20);        

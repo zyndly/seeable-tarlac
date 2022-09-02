@@ -97,7 +97,7 @@ const PostCard = ({ post }: Post): JSX.Element => {
           {post.categories.map((category:any)=>(
 
               <Link href={`/tags/${category.slug}`} key={category.slug}>
-                  <span className="relative cursor-pointer absolute px-3 py-1 mx-2 bg-black hover:bg-slate-700 text-lime-500 rounded-full text-sm">
+                  <span className="cursor-pointer absolute px-3 py-1 mx-2 bg-black hover:bg-slate-700 text-lime-500 rounded-full text-sm">
                       {`#${category.name}`}
                   </span>
               </Link>
