@@ -49,7 +49,7 @@ const Home: NextPage<HomeProps> = ({ posts, collections }: HomeProps): JSX.Eleme
       {/* <Seo templateTitle='Home' /> */}
       <Seo
         templateTitle='Home'
-        description='Tourist Destinations in Tarlac, Province'
+        description='A virtual tour compilation of tourist destination in Tarlac Province, Philippines'
       />
       <main>
         <section
@@ -58,7 +58,7 @@ const Home: NextPage<HomeProps> = ({ posts, collections }: HomeProps): JSX.Eleme
               isLoaded && 'fade-in-start'
             )}
           >
-          <div className="container mx-auto top-[0px]" style={{minWidth: '100vw'}}>
+          <div className="container mx-auto top-[0px]">
 
           <div className=' block relative min-w-[90px] min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] ' style={{minWidth: '90vw'}}>
             <SlidingCollections collectionsProp={collections} scrollRef={searchRef} title='Featured Collections' featured={true} />
