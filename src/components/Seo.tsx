@@ -6,7 +6,7 @@ const defaultMeta = {
   title: 'Seeable Tarlac',
   siteName: 'Seeable Tarlac',
   description:
-    'A compilation of tourist destination in Tarlac Province, Philippines',
+    'A web base virtual tour compilation of tourist destination in Tarlac Province, Philippines',
   /**
    * Replace domains
    */
@@ -38,7 +38,6 @@ export default function Seo(props: SeoProps) {
   // Use siteName if there is templateTitle
   // but show full title if there is none
  
-
   return (
     <Head>
       <title>{meta.title}</title>
