@@ -79,12 +79,6 @@ export const ContactForm  = ({
           return
       }
       const formInfo=form.current?form.current:''
-
-      /*
-      const ServiceID:string = process.env.EMAIL_JS_SERVICE as string;
-      const Template:string = process.env.EMAIL_JS_TEMPLATE as string;
-      const PublicKey:string = process.env.EMAIL_JS_USER as string;
-      */
       
        emailjs.sendForm('service_tdehq12', 'template_obrdfcj',  formInfo, 'CtLELSwFCiUmhlOhi')
         // eslint-disable-next-line unused-imports/no-unused-vars
