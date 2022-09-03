@@ -28,7 +28,7 @@ export default function Footer() {
 
 function FooterLinks() {
   return (
-    <div className='flex flex-wrap justify-center gap-y-4 gap-x-8'>
+    <div className='flex flex-wrap justify-center gap-y-4 gap-x-8 text-gray-300 dark:text-white'>
       {footerLinks.map(({ href, text, tooltip }) => (
         <Tooltip interactive={false} key={href} content={tooltip}>
           <UnstyledLink
