@@ -6,7 +6,7 @@ const defaultMeta = {
   title: 'Seeable Tarlac',
   siteName: 'Seeable Tarlac',
   description:
-    'A web base virtual tour compilation of tourist destination in Tarlac Province, Philippines',
+    'A virtual tour compilation of tourist destination in Tarlac Province, Philippines',
   /**
    * Replace domains
    */
@@ -14,7 +14,7 @@ const defaultMeta = {
   type: 'website',
   robots: 'follow, index',
   /**
-   * No need to be filled, will be populated with openGraph function
+   *
    * change domain 
    */
   image: 'https://seeabletarlac.vercel.app/images/logo.png',
