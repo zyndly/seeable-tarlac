@@ -14,7 +14,7 @@ export const getPosts = async () : Promise<[]> => {
 
             posts(
                 orderBy: createdAt_DESC
-                last: 10
+                last: 100
             ){
                 
                 author {
