@@ -298,7 +298,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                     } as React.CSSProperties}
                                 >
 
-                                    {truncate(collection.description, 200)}
+                                    {truncate(collection.description, 1000)}
 
                                 </div>
 
