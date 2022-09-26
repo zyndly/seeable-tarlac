@@ -115,28 +115,20 @@ const SearchPosts = () : JSX.Element => {
       />
 
         <div className={"container mx-auto px-10 mb-8 mt-[100px] trans-500 flex flex-col items-center"+(menu? ' blur-filter': '')}>
-            {
-            //New code
-            }
-
+  
             <div 
-                className={'w-full h-auto landing-hero  pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+                className={'w-full h-auto landing-hero bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
                 >
-
-                    <div className='container  mx-auto px-0 py-[70px] md:py-[100px] col-span-1 lg:col-span-4 lg:col-start-2'>
-
+                    <div className='container mx-auto px-0 col-span-1 lg:col-span-4 lg:col-start-2'>
+                        
                         <div className='landing-title hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
                             <div className='flex flex-col items-center justify-center text-lime-400 mb-5'>
-                                <div className=' text-[50px] md:text-[100px] lg:text-[150px]  mb-5'>
-                                    {/* INSERT SEEABLE ICON HERE /> */}
-                                </div>
-
-                                <span className='text-2xl md:text-4xl font-[900] text-lime-400 pt-[20px] text-center font-labelle'>
+                               <span className='flex justify-center text-2xl md:text-4xl font-[900] text-lime-400 pt-[20px] text-center font-poppins'>
                                     Seeable Tarlac
                                 </span>
-                                
                             </div>
                         </div>
+                        
 
                         <div className='landing-title col-span-1 lg:col-span-6 rounded-lg mx-3'>
                             <div className='flex flex-col w-full h-full items-center justify-center pt-[50px]'>
@@ -160,25 +152,11 @@ const SearchPosts = () : JSX.Element => {
 
             </div>
 
-            
-            {
-                //END OF NEW CODE
-            }
-            <h1 className='text-white font-bold text-2xl py-10'>
+            <h1 className='text-white font-bold text-2xl py-5'>
                 {posts.length > 0 ? 'Results for: '+ searchQuery : 'No results'}
             </h1>
 
             <div className="container grid grid-cols-1 lg:grid-cols-5 gap-1">
-
-                {/* <div className='hidden lg:block lg:col-span-1  col-span-1'>
-
-                    <div className="lg:sticky relative top-[100px]">
-
-                        <CollectionsWidget />
-
-                    </div>
-
-                </div> */}
 
                 <div className="col-span-1 lg:col-span-5">
                     {posts.map((post:any, index:number) => (
@@ -230,6 +208,12 @@ const SearchPosts = () : JSX.Element => {
                     </div>
                 </div> */}
             </div>
+
+            
+            {
+                //END OF NEW CODE
+            }
+            
         </div>
     </Layout>
     );
