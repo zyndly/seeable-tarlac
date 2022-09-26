@@ -202,18 +202,8 @@ const SearchPosts = () : JSX.Element => {
                         </Link>
                     ))}
                 </div>
-                {/* <div className="col-span-1 lg:col-span-1">
-                    <div className="relative lg:sticky top-[100px]">
-                        <Categories />
-                    </div>
-                </div> */}
-            </div>
 
-            
-            {
-                //END OF NEW CODE
-            }
-            
+            </div>            
         </div>
     </Layout>
     );
