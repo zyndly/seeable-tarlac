@@ -7,6 +7,8 @@ import { sanitizeString } from '../utils/utils';
 
 const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT as string; //type assertion
 
+
+/* Query to get all post */
 export const getPosts = async () : Promise<[]> => {
 
     const query:string = gql`
@@ -345,3 +347,28 @@ export const getCollection = async (slug:string): Promise<{}> => {
     return result.collection;
 
 }
+
+// query to get the featuredpost
+
+export const getFeaturedPosts = async () => {
+    const query = gql`
+      query GetCategoryPost() {
+        posts(where:{featuredPost:true}) {
+          author {
+            name
+            photo{
+              url
+            }  
+          }
+          featuredImage {
+            url
+          }
+          title
+          slug
+          createdAt
+        }
+      }
+    `
+    const result = await request(graphqlAPI, query)
+    return result.posts
+  }

@@ -517,7 +517,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
             </div>
 
             <div
-                className={'absolute cursor-pointer bottom-[20px] hover:text-white animate-bounce right-[46vw] text-white/[0.6] mb-0 text-[30px] xl:text-[50px] font-bold font-staatliches'}
+                className={'absolute cursor-pointer bottom-[20px] hover:text-white animate-bounce right-[46vw] text-lime-400 mb-0 text-[30px] xl:text-[50px] font-bold font-staatliches'}
                 onClick={()=>scrollRef!.current?.scrollIntoView({behavior: 'smooth'})}
                 >
 

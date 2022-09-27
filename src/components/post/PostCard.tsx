@@ -92,19 +92,6 @@ const PostCard = ({ post }: Post): JSX.Element => {
           </Link>
         </div>
 
-        <div className=' self-center flex flex-row flex-wrap w-[80%] h-auto pt-10 mt-10 items-center justify-center border-t-[1px] border-white/[0.3]'>
-
-          {post.categories.map((category:any)=>(
-
-              <Link href={`/tags/${category.slug}`} key={category.slug}>
-                  <span className="cursor-pointer absolute px-3 py-1 mx-2 bg-black hover:bg-slate-700 text-lime-500 rounded-full text-sm">
-                      {`#${category.name}`}
-                  </span>
-              </Link>
-          ))}
-
-        </div>
-
     </div>
   )
 }

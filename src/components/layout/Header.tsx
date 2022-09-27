@@ -11,7 +11,7 @@ import Tooltip from '@/components/Tooltip';
 
 const navItems = [
   { name: 'Seeable', href: '/' },
-  { name: 'Destinations', href: '/resources' },
+  { name: 'Destinations', href: '/destinations' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
   { name: 'Work with Us', href: '/contribute'},

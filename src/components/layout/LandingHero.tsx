@@ -196,7 +196,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                     {morePosts && 
 
                                         <Link href={{ pathname: '/search', query: { searchQuery: lastQuery } }}>
-                                            <div className='transition-all duration-500 cursor-pointer button bg-white text-gray p-3 hover:px-10 px-6 rounded-full'> 
+                                            <div className='transition-all duration-500 cursor-pointer button bg-black text-lime-400 p-3 hover:px-10 px-6 rounded-full'> 
                                                 View More
                                             </div>
                                         </Link>
@@ -275,11 +275,11 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                         
                                         ))}
                                     </div>
-
+{/** <Link href={{ pathname: '/search', query: { searchQuery: 'featured' } }}>  */}
                                     {moreInitialPosts ? 
 
-                                        <Link href={{ pathname: '/search', query: { searchQuery: 'featured' } }}>
-                                            <div className='transition-all duration-500 cursor-pointer button bg-white text-gray p-3 hover:px-10 px-6 rounded-full'> 
+                                        <Link href={{ pathname: '/destinations'}}>
+                                            <div className='transition-all duration-500 cursor-pointer button bg-black text-lime-400 p-3 hover:px-10 px-6 rounded-full'> 
                                                 View More
                                             </div>
                                         </Link>
