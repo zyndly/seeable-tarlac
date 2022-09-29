@@ -43,7 +43,7 @@ const TagPost = ({ posts, tag }: TagPostProps) : JSX.Element => {
 
                   <Link href={`/tags/${category.slug}`} key={category.slug}>
                       <span className={` cursor-pointer absolute px-3 py-1 mx-2 bg-slate-800 hover:bg-slate-700 text-white hover:text-lime-600 rounded-full text-sm border-white ${tag === category.slug? 'border-[2px] p-5 ': 'border-[0px]'}`}>
-                          {`#${category.name}`}
+                          {`${category.name}`}
                       </span>
                   </Link>
               ))}

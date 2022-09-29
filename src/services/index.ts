@@ -37,6 +37,10 @@ export const getPosts = async () : Promise<[]> => {
                 }
                 createdAt
                 featuredPost
+                featuredTown
+                featuredFestival
+                featuredFood
+                featuredResort
                 slug
                 title
                 id
