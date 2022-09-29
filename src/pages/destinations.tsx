@@ -15,7 +15,7 @@ import { CollectionsWidget, PostCard,PostWidget } from '@/components/post';
 import Seo from '@/components/Seo';
 
 import { StateContext } from '@/pages/_app';
-import { getCollections,getPosts } from '@/services'; 
+import { getCollections, getPosts } from '@/services'; 
 
 interface DestinationProps {
   posts: [],

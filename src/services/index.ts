@@ -36,11 +36,6 @@ export const getPosts = async () : Promise<[]> => {
                     url
                 }
                 createdAt
-                featuredPost
-                featuredTown
-                featuredFestival
-                featuredFood
-                featuredResort
                 slug
                 title
                 id
@@ -372,7 +367,7 @@ export const getFeaturedPosts = async () => {
           createdAt
         }
       }
-    `
+    `;
     const result = await request(graphqlAPI, query)
     return result.posts
   }
