@@ -17,7 +17,7 @@ import Seo from '@/components/Seo';
 import { StateContext } from '@/pages/_app';
 import { getCollections, getPosts } from '@/services'; 
 
-interface DestinationProps {
+interface TarlacProps {
   posts: [],
   collections: []
 }
@@ -34,7 +34,7 @@ console.blog = (userName: string) => {
   console.log("Console.blog for ", userName);
 }
 
-const Destinations: NextPage<DestinationProps> = ({ posts, collections }: DestinationProps): JSX.Element => {
+const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX.Element => {
 
   const searchRef = React.useRef(null);
   const featuredPosts = posts.filter((post:any)=> post.featuredPost); 
@@ -48,7 +48,7 @@ const Destinations: NextPage<DestinationProps> = ({ posts, collections }: Destin
       <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo
-        templateTitle='Destinations'
+        templateTitle='Tarlac'
         description='A virtual tour compilation of tourist destination in Tarlac Province, Philippines'
       />
       <main>
@@ -133,4 +133,4 @@ export const getStaticProps = async () : Promise<{}> => {
   }
 }
 
-export default Destinations
+export default Tarlac

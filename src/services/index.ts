@@ -36,6 +36,7 @@ export const getPosts = async () : Promise<[]> => {
                     url
                 }
                 createdAt
+                featuredPost
                 slug
                 title
                 id

@@ -13,7 +13,7 @@ import { SlidingCollections } from '@/components/post';
 import { FeaturedPosts } from '@/components/post/FeaturedPost';
 import Seo from '@/components/Seo';
 
-import { getCollections,getPosts } from '@/services'; 
+import { getCollections, getPosts } from '@/services'; 
 
 
 interface HomeProps {

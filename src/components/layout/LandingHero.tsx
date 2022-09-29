@@ -9,7 +9,7 @@ import { searchPosts } from '@/services';
 import { truncate } from '@/utils/utils';
 
 interface LandingHeroInterface {
-    featuredPosts: []
+    featuredPosts: [],
 }
 
 const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
@@ -107,7 +107,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
         </div>
 
         <div 
-            className={'absolute lg:top-[100vh] w-full min-h-[1800px] h-auto landing-hero  pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+            className={'absolute lg:top-[100vh] w-full min-h-[1800px] h-auto landing-hero bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
 
             >
 
@@ -275,14 +275,16 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                         
                                         ))}
                                     </div>
-{/** <Link href={{ pathname: '/search', query: { searchQuery: 'featured' } }}>  */}
+
                                     {moreInitialPosts ? 
 
-                                        <Link href={{ pathname: '/destinations'}}>
-                                            <div className='transition-all duration-500 cursor-pointer button bg-black text-lime-400 p-3 hover:px-10 px-6 rounded-full'> 
+                                        <Link href={{ pathname: '/tarlac'}}>
+                                            <div className='position-center ransition-all duration-500 cursor-pointer button bg-black text-lime-400 p-3 hover:px-10 px-6 rounded-full'> 
                                                 View More
                                             </div>
                                         </Link>
+
+                                        
 
                                         :
 
@@ -296,9 +298,14 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
 
                                 ''
                             }
+
+                            
                             
                             
                         </div>
+
+                        
+                        
                     </div>
                     
                     

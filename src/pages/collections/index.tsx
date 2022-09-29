@@ -40,11 +40,11 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
 
     <div className='w-full h-full'>
 
-        <div className='block relative w-full min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] z-5 ' style={{minWidth: '100vw'}}>
+        <div className='block relative w-full min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] z-5 '>
           <SlidingCollections collectionsProp={collections} scrollRef={scrollRef} title='All Collections' featured={false}/>
         </div>
 
-        <div className={'relative container min-w-[100vw] bg-dark '+(menu?' blur-filter': ' trans-500')}>
+        <div className={'relative container min-w-[98vw] bg-dark '+(menu?' blur-filter': ' trans-500')}>
 
             <div ref={scrollRef} className="rounded-3xl  relative container flex flex-col items-center mx-auto px-10 mb-8 pt-[100px]"
             >

@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import { FeaturedCollections } from "@/components/post";
+import Template from "@/components/layout/Template";
 import Seo from "@/components/Seo";
 
 export default function Featured() {
@@ -10,7 +10,7 @@ export default function Featured() {
         description=''
       />
 
-      <FeaturedCollections/>
+      <Template/>
 
       
     </Layout>
