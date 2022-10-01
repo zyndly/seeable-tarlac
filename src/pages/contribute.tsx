@@ -1,18 +1,25 @@
-import Layout from "@/components/layout/Layout";
-import Template from "@/components/layout/Template";
-import Seo from "@/components/Seo";
+import * as React from 'react';
 
-export default function ContributePage() {
+import { Contribute } from '@/components/contribute/Contribute';
+import { Container } from '@/components/layout/Container';
+import Layout from '@/components/layout/Layout';
+import Seo from '@/components/Seo';
+import { PageHeading } from '@/components/text/PageHeading';
+
+export default function ContactPage() {
   return (
     <Layout>
-      <Seo 
-        templateTitle='Contribute'
-        description=''
-      />
 
-      <Template/>
+      <Seo templateTitle='Work with Us' />
 
-      
+      <main>
+        <section className='bg-black'>
+        <PageHeading>Work with Us</PageHeading>
+          <Container>
+            <Contribute />
+          </Container>
+        </section>
+      </main>
     </Layout>
   );
 }
