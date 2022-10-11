@@ -533,3 +533,77 @@ export const getAnaoCollections = async (): Promise<[]> => {
     return result.anaoCollections;
 
 }
+
+// ========================================================= BAMBAN COLLECTIONS QUERY ============================================================
+
+
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getBambanCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetBambanCollection ($slug: String!) {
+            bambanCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getBambanCollection result: ", result);
+    return result.bambanCollection;
+
+}
+
+export const getBambanCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetBambanCollections ($max: Int!) {
+            bambanCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.bambanCollections;
+
+}
