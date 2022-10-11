@@ -1109,3 +1109,75 @@ export const getPaniquiCollections = async (): Promise<[]> => {
     return result.paniquiCollections;
 
 }
+
+// ========================================================= PURA COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getPuraCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetPuraCollection ($slug: String!) {
+            puraCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getPuraCollection result: ", result);
+    return result.puraCollection;
+
+}
+
+export const getPuraCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetPuraCollections ($max: Int!) {
+            puraCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.puraCollections;
+
+}
