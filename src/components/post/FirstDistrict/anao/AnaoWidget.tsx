@@ -4,7 +4,7 @@ import React, { useEffect,useState } from 'react';
 
 import { getCollections } from '@/services';
 
-const CollectionsWidget = (): JSX.Element=> {
+const AnaoWidget = (): JSX.Element=> {
 
     const [collections, setCollections] = useState([]);
 
@@ -18,7 +18,7 @@ const CollectionsWidget = (): JSX.Element=> {
     <div className='rounded-lg p-8 mb-8'>
 
       <h3 className='text-xl mb-8 border-b pb-4 text-lime-500'>
-        Destinations
+        Collections
       </h3>
       
       {collections.map((item: any)=>(
@@ -39,4 +39,4 @@ const CollectionsWidget = (): JSX.Element=> {
   )
 }
 
-export default CollectionsWidget;
+export default AnaoWidget;

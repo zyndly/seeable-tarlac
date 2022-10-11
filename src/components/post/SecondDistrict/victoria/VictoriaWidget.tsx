@@ -4,7 +4,7 @@ import React, { useEffect,useState } from 'react';
 
 import { getCollections } from '@/services';
 
-const CollectionsWidget = (): JSX.Element=> {
+const VictoriaWidget = (): JSX.Element=> {
 
     const [collections, setCollections] = useState([]);
 
@@ -39,4 +39,4 @@ const CollectionsWidget = (): JSX.Element=> {
   )
 }
 
-export default CollectionsWidget;
+export default VictoriaWidget;
