@@ -148,25 +148,6 @@ export const searchPosts = async (searchQuery: string, max = 6): Promise<[]> => 
     return result.posts;
 }
 
-// ========================================================= CATEGORIES QUERY ==============================================================
-
-export const getCategories = async () : Promise<[]> => {
-
-    const query = gql`
-        query GetCategories () {
-            categories(
-                orderBy: createdAt_ASC
-            ) {
-                name
-                slug 
-            }
-        }
-    `;
-
-    const result = await request(graphqlAPI, query);
-    return result.categories;
-}
-
 // ========================================================= POST DETAILS QUERY ==============================================================
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -287,6 +268,26 @@ export const getTagPosts = async (slug:string) : Promise<[]> => {
   
     return result.postsConnection.edges;
   };
+
+// ========================================================= CATEGORIES QUERY ==============================================================
+
+export const getCategories = async () : Promise<[]> => {
+
+    const query = gql`
+        query GetCategories () {
+            categories(
+                orderBy: createdAt_ASC
+            ) {
+                name
+                slug 
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query);
+    return result.categories;
+}
+
 
 // ========================================================= FEATURED POSTS QUERY ==============================================================
 
