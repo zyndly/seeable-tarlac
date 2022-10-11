@@ -1613,3 +1613,75 @@ export const getVictoriaCollections = async (): Promise<[]> => {
     return result.victoriaCollections;
 
 }
+
+// ========================================================= MONDACA COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getMoncadaCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetMoncadaCollection ($slug: String!) {
+            moncadaCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getMoncadaCollection result: ", result);
+    return result.moncadaCollection;
+
+}
+
+export const getMoncadaCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetMoncadaCollections ($max: Int!) {
+            moncadaCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.moncadaCollections;
+
+}
