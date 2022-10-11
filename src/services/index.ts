@@ -821,3 +821,75 @@ export const getConcepcionCollections = async (): Promise<[]> => {
     return result.concepcionCollections;
 
 }
+
+// ========================================================= GERONA COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getGeronaCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetGeronaCollection ($slug: String!) {
+            geronaCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getGeronaCollection result: ", result);
+    return result.geronaCollection;
+
+}
+
+export const getGeronaCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetGeronaCollections ($max: Int!) {
+            geronaCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.geronaCollections;
+
+}
