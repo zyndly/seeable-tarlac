@@ -893,3 +893,75 @@ export const getGeronaCollections = async (): Promise<[]> => {
     return result.geronaCollections;
 
 }
+
+// ========================================================= LAPAZ COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getLapazCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetLapazCollection ($slug: String!) {
+            lapazCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getLapazCollection result: ", result);
+    return result.lapazCollection;
+
+}
+
+export const getLapazCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetLapazCollections ($max: Int!) {
+            lapazCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.lapazCollections;
+
+}
