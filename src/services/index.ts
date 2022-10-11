@@ -1325,3 +1325,75 @@ export const getSanclementeCollections = async (): Promise<[]> => {
     return result.sanclementeCollections;
 
 }
+
+// ========================================================= SAN JOSE COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getSanjoseCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetSanjoseCollection ($slug: String!) {
+            sanjoseCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getSanjoseCollection result: ", result);
+    return result.sanjoseCollection;
+
+}
+
+export const getSanjoseCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetSanjoseCollections ($max: Int!) {
+            sanjoseCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.sanjoseCollections;
+
+}
