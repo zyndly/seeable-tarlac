@@ -11,6 +11,7 @@ import useScrollDirection from '@/hooks/useScrollDirection';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
 
+import Nav from '@/components/layout/Header';
 import { Categories, Loader,PostCard } from '@/components/post';
 import CollectionsWidget from '@/components/post/CollectionsWidget';
 
@@ -23,6 +24,8 @@ interface TagPostProps {
     collection: any
 }
 
+  
+
 const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
   const router = useRouter();
   // eslint-disable-next-line unused-imports/no-unused-vars
@@ -32,6 +35,8 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const {menu} = useContext(StateContext);
 
+  const [open, setOpen] = React.useState(false);
+
   if (router.isFallback) {
     return <Loader />;
   }
@@ -39,23 +44,28 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
   console.log("collection: ", collection , "posts: ", collection.posts, " slug: ", slug);
 
   return (
+    <>
+    <Nav.Mobile open={open} setOpen={setOpen} />
+
+      <header className='sticky top-0 z-10 bg-black'>
+        <Nav.Desktop open={open} setOpen={setOpen} />
+      </header>
+
     <div className="flex flex-col items-center  mb-8">
 
-      <div className={' fixed bg-cover min-w-[100vw] min-h-[100vh] flex flex-col items-center justify-center shadow-xl'+(menu?' blur-filter': ' trans-100')}
+      <div className={'fixed bg-cover min-w-[100vw] min-h-[100vh] flex flex-col items-center justify-center shadow-xl'+(menu?' blur-filter': ' trans-100')}
 
         style={{
           backgroundImage: `url(${collection.image.url})`
         }}
       >
 
+        <div className='bg-gradient-to-b from-black/[0.6] to-black/[0.3] w-auto min-h-[100vh] h-auto p-5 flex flex-col justify-center items-center px-10'>
 
-        <div className='bg-gradient-to-b from-black/[0.6] to-black/[0.3] w-full min-h-[100vh] h-auto p-5 flex flex-col justify-center items-center px-10'>
-
-        
           <div
 
           className={
-              'transition-all trans-100 flex flex-col h-full w-full duration-300 items-center md:justify-start sm-short:pt-[30px] pt-[15vh] md:pt-[15vh] lg:pt-0 lg:justify-center'
+              'transition-all trans-100 flex flex-col h-full w-auto duration-300 items-center md:justify-start sm-short:pt-[30px] pt-[15vh] md:pt-[15vh] lg:pt-0 lg:justify-center'
               + (scrollY < windowHeight*0.5 ? ' collection-background-info-show ': '')
               + (scrollY > windowHeight*0.5 ? ' collection-background-info-hide ': ' opacity-0')
           }
@@ -165,7 +175,7 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
                         
                         >
                         <span>
-                            View Collection Articles
+                            View Collection
                         </span>
                     </div>
 
@@ -243,6 +253,7 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
 
       
     </div>
+    </>
   );
 };
 export default TagPost;

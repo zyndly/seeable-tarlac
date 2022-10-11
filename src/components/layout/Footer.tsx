@@ -81,24 +81,9 @@ const footerLinks = [
     tooltip: 'View our Privacy Policy',
   },
   {
-    href: '/contribute',
-    text: 'Submit Post',
-    tooltip: 'Submit a post to feature',
-  },
-  {
-    href: '/about/faqs',
-    text: 'FAQs',
-    tooltip: 'Frequently Asked Questions',
-  },
-  {
     href: '/contact',
     text: 'Contact',
     tooltip: 'Contact Us',
-  },
-  {
-    href: '/RSS',
-    text: 'RSS',
-    tooltip: 'vacant',
   },
   {
     href: '/About',
