@@ -1037,3 +1037,75 @@ export const getMayantocCollections = async (): Promise<[]> => {
     return result.mayantocCollections;
 
 }
+
+// ========================================================= PANIQUI COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getPaniquiCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetPaniquiCollection ($slug: String!) {
+            paniquiCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getPaniquiCollection result: ", result);
+    return result.paniquiCollection;
+
+}
+
+export const getPaniquiCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetPaniquiCollections ($max: Int!) {
+            paniquiCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.paniquiCollections;
+
+}
