@@ -965,3 +965,75 @@ export const getLapazCollections = async (): Promise<[]> => {
     return result.lapazCollections;
 
 }
+
+// ========================================================= MAYANTOC COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getMayantocCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetMayantocCollection ($slug: String!) {
+            mayantocCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getMayantocCollection result: ", result);
+    return result.mayantocCollection;
+
+}
+
+export const getMayantocCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetMayantocCollections ($max: Int!) {
+            mayantocCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.mayantocCollections;
+
+}
