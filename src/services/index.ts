@@ -1253,3 +1253,75 @@ export const getRamosCollections = async (): Promise<[]> => {
     return result.ramosCollections;
 
 }
+
+// ========================================================= SAN CLEMENTE COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getSanclementeCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetSanclementeCollection ($slug: String!) {
+            sanclementeCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getSanclementeCollection result: ", result);
+    return result.sanclementeCollection;
+
+}
+
+export const getSanclementeCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetSanclementeCollections ($max: Int!) {
+            sanclementeCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.sanclementeCollections;
+
+}
