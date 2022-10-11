@@ -536,8 +536,6 @@ export const getAnaoCollections = async (): Promise<[]> => {
 
 // ========================================================= BAMBAN COLLECTIONS QUERY ============================================================
 
-
-
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const getBambanCollection = async (slug:string): Promise<{}> => {
 
@@ -605,5 +603,77 @@ export const getBambanCollections = async (): Promise<[]> => {
 
     const result = await request(graphqlAPI, query,);
     return result.bambanCollections;
+
+}
+
+// ========================================================= CAMILING COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getCamilingCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetCamilingCollection ($slug: String!) {
+            camilingCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getCamilingCollection result: ", result);
+    return result.camilingCollection;
+
+}
+
+export const getCamilingCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetCamilingCollections ($max: Int!) {
+            camilingCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.camilingCollections;
 
 }
