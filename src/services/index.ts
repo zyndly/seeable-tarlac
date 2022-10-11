@@ -387,38 +387,16 @@ export const getCollection = async (slug:string): Promise<{}> => {
 }
 
 
-  // ========================================================= TARLAC CITY COLLECTIONS QUERY ============================================================
+// ========================================================= TARLAC CITY COLLECTIONS QUERY ============================================================
 
-  export const getTarlacCollections = async (max = 4): Promise<[]> => {
 
-    const query = gql`
-        query GetTarlacCollections ($max: Int!) {
-            tarlaccollections(
-                orderBy: createdAt_ASC
-                last: $max
-            ) {
-                title,
-                description,
-                slug,
-                subtitle,
-                image {
-                    url
-                }
-            }
-        }
-    `;
-
-    const result = await request(graphqlAPI, query, {max});
-    return result.tarlaccollections;
-
-}
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const getTarlacCollection = async (slug:string): Promise<{}> => {
 
     const query = gql`
         query GetTarlacCollection ($slug: String!) {
-            tarlaccollection(
+            tarlacCollection(
                 where: {slug: $slug}
             ) {
                 title,
@@ -455,9 +433,103 @@ export const getTarlacCollection = async (slug:string): Promise<{}> => {
     const result = await request(graphqlAPI, query, {slug});
 
     console.log("getTarlacCollection result: ", result);
-    return result.tarlaccollection;
+    return result.tarlacCollection;
 
 }
 
- 
-  // ========================================================= TARLAC CITY COLLECTIONS QUERY ============================================================
+export const getTarlacCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetTarlacCollections ($max: Int!) {
+            tarlacCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.tarlacCollections;
+
+}
+// ========================================================= Anao COLLECTIONS QUERY ============================================================
+
+
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getAnaoCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetAnaoCollection ($slug: String!) {
+            anaoCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getAnaoCollection result: ", result);
+    return result.anaoCollection;
+
+}
+
+export const getAnaoCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetAnaoCollections ($max: Int!) {
+            anaoCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.anaoCollections;
+
+}
