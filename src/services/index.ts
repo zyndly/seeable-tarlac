@@ -1181,3 +1181,75 @@ export const getPuraCollections = async (): Promise<[]> => {
     return result.puraCollections;
 
 }
+
+// ========================================================= RAMOS COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getRamosCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetRamosCollection ($slug: String!) {
+            ramosCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getRamosCollection result: ", result);
+    return result.ramosCollection;
+
+}
+
+export const getRamosCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetRamosCollections ($max: Int!) {
+            ramosCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.ramosCollections;
+
+}
