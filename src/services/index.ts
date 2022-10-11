@@ -8,7 +8,7 @@ import { sanitizeString } from '../utils/utils';
 const graphqlAPI:string = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT as string; //type assertion
 
 
-/* Query to get all post */
+// ========================================================= QUERY TO GET ALL POST ==============================================================
 export const getPosts = async () : Promise<[]> => {
 
     const query:string = gql`
@@ -54,7 +54,7 @@ export const getPosts = async () : Promise<[]> => {
 
 }
 
-
+// ========================================================= RECENT POST QUERY ==============================================================
 
 export const getRecentPosts = async (): Promise<[]> => {
 
@@ -79,6 +79,7 @@ export const getRecentPosts = async (): Promise<[]> => {
     return result.posts;
 }
 
+// ========================================================= SIMILAR POST QUERY ==============================================================
 export const getSimilarPosts = async (categories?: [string], slug?: string ): Promise<[]> => {
 
     const query = gql`
@@ -109,6 +110,8 @@ export const getSimilarPosts = async (categories?: [string], slug?: string ): Pr
 
     return result.posts;
 }
+
+// ========================================================= SEARCH QUERY ==============================================================
 
 export const searchPosts = async (searchQuery: string, max = 6): Promise<[]> => {
 
@@ -145,6 +148,8 @@ export const searchPosts = async (searchQuery: string, max = 6): Promise<[]> => 
     return result.posts;
 }
 
+// ========================================================= CATEGORIES QUERY ==============================================================
+
 export const getCategories = async () : Promise<[]> => {
 
     const query = gql`
@@ -161,6 +166,8 @@ export const getCategories = async () : Promise<[]> => {
     const result = await request(graphqlAPI, query);
     return result.categories;
 }
+
+// ========================================================= POST DETAILS QUERY ==============================================================
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export const getPostDetails = async (slug: string): Promise<{}> => {
@@ -203,6 +210,8 @@ export const getPostDetails = async (slug: string): Promise<{}> => {
     return result.post;
 }
 
+// ========================================================= COMMENTS QUERIES ==============================================================
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const submitComment = async (obj: any) => {
 
@@ -240,6 +249,7 @@ export const getComments = async (slug: string): Promise<[]> => {
     return result.comments;
 
 }
+// ========================================================= CATEGORY // TAG QUERY ==============================================================
 
 export const getTagPosts = async (slug:string) : Promise<[]> => {
     const query = gql`
@@ -278,7 +288,7 @@ export const getTagPosts = async (slug:string) : Promise<[]> => {
     return result.postsConnection.edges;
   };
 
-  // query to get the featuredpost
+// ========================================================= FEATURED POSTS QUERY ==============================================================
 
 export const getFeaturedPosts = async () => {
     const query = gql`
