@@ -289,7 +289,7 @@ export const getCategories = async () : Promise<[]> => {
 }
 
 
-// ========================================================= FEATURED POSTS QUERY ==============================================================
+// ========================================================= FEATURED POSTS QUERY ============================================================
 
 export const getFeaturedPosts = async () => {
     const query = gql`
@@ -387,7 +387,7 @@ export const getCollection = async (slug:string): Promise<{}> => {
 }
 
 
-  // REGION query to get the tarlac city collections
+  // ========================================================= TARLAC CITY COLLECTIONS QUERY ============================================================
 
   export const getTarlacCollections = async (max = 4): Promise<[]> => {
 
@@ -459,4 +459,5 @@ export const getTarlacCollection = async (slug:string): Promise<{}> => {
 
 }
 
-  // END REGION query to get the tarlac city collections
+ 
+  // ========================================================= TARLAC CITY COLLECTIONS QUERY ============================================================
