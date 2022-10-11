@@ -372,3 +372,79 @@ export const getFeaturedPosts = async () => {
     const result = await request(graphqlAPI, query)
     return result.posts
   }
+
+
+  // REGION query to get the tarlac city collections
+
+  export const getTarlacCollections = async (max = 4): Promise<[]> => {
+
+    const query = gql`
+        query GetTarlacCollections ($max: Int!) {
+            tarlaccollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {max});
+    return result.tarlaccollections;
+
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getTarlacCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetTarlacCollection ($slug: String!) {
+            tarlaccollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getTarlacCollection result: ", result);
+    return result.tarlaccollection;
+
+}
+
+
+  // END REGION query to get the tarlac city collections
