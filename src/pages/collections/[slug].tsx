@@ -14,6 +14,7 @@ import { useWindowScrollPositions } from '@/hooks/useWindowScrollPositions';
 import Nav from '@/components/layout/Header';
 import { Categories, Loader,PostCard } from '@/components/post';
 import CollectionsWidget from '@/components/post/CollectionsWidget';
+import Seo from '@/components/Seo';
 
 import { StateContext } from '@/pages/_app';
 import { getCollection, getCollections } from '@/services/';
@@ -45,7 +46,12 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
 
   return (
     <>
-    <Nav.Mobile open={open} setOpen={setOpen} />
+    <Seo
+        templateTitle={collection.title}
+        description='A virtual tour compilation of tourist destination in Tarlac Province, Philippines'
+      />
+
+    <Nav.Mobile open={open} setOpen={setOpen} /> 
 
       <header className='sticky top-0 z-10 bg-black'>
         <Nav.Desktop open={open} setOpen={setOpen} />
@@ -72,22 +78,6 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
 
           >
 
-            <div
-                className={
-                    'text-white/[0.4] mb-0 text-[16px] md:text-[20px] lg:text-[20px] xl:text-[30px] 2xl:text-[40px] font-bold font-labelle'+ (collection.focused ? ' collection-background-info-show ': '')
-                }
-
-                style={{
-                    //for animating disappearing when focused
-
-                    '--custom-delay': 10+'ms ',
-                    opacity: collection.focused ? 0 : 1,
-                } as React.CSSProperties}
-                >
-
-                Collection
-
-            </div>
 
             <div
                 className={'text-white mb-0 text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] 2xl:text-[140px] font-bold font-staatliches'+ (collection.focused ? ' collection-background-info-show ': '')}
@@ -101,19 +91,6 @@ const TagPost = ({ slug, collection }: TagPostProps) : JSX.Element => {
                 >
 
                 {collection.title}
-
-            </div>
-
-            <div
-                className={'w-[100px] h-[1px] bg-white mb-[5px] md:mb-[30px]'+ (collection.focused ? ' collection-background-info-show ': '')}
-                style={{
-                    //for animating disappearing when focused
-
-                    '--custom-delay': 150+'ms ',
-                    opacity: collection.focused ? 0 : 1,
-                } as React.CSSProperties}
-                
-            >
 
             </div>
 
