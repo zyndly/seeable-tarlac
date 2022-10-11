@@ -1397,3 +1397,75 @@ export const getSanjoseCollections = async (): Promise<[]> => {
     return result.sanjoseCollections;
 
 }
+
+// ========================================================= SAN MANUEL COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getSanmanuelCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetSanmanuelCollection ($slug: String!) {
+            sanmanuelCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getSanmanuelCollection result: ", result);
+    return result.sanmanuelCollection;
+
+}
+
+export const getSanmanuelCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetTarlacCollections ($max: Int!) {
+            tarlacCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.sanmanuelCollections;
+
+}
