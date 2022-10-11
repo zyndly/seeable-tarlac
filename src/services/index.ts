@@ -1469,3 +1469,75 @@ export const getSanmanuelCollections = async (): Promise<[]> => {
     return result.sanmanuelCollections;
 
 }
+
+// ========================================================= STA. IGNACIA COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getStaignaciaCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetStaignaciaCollection ($slug: String!) {
+            staignaciaCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getStaignaciaCollection result: ", result);
+    return result.staignaciaCollection;
+
+}
+
+export const getStaignaciaCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetStaignaciaCollections ($max: Int!) {
+            staignaciaCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.staignaciaCollections;
+
+}
