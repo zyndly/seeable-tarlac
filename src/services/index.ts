@@ -1541,3 +1541,75 @@ export const getStaignaciaCollections = async (): Promise<[]> => {
     return result.staignaciaCollections;
 
 }
+
+// ========================================================= VICTORIA COLLECTIONS QUERY ============================================================
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const getVictoriaCollection = async (slug:string): Promise<{}> => {
+
+    const query = gql`
+        query GetVictoriaCollection ($slug: String!) {
+            victoriaCollection(
+                where: {slug: $slug}
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                },
+                posts {
+                    title
+                    featuredImage {
+                        url
+                    }
+                    createdAt
+                    excerpt
+                    author {
+                        name
+                        photo {
+                            url
+                        }
+                    }
+                    slug 
+                    categories {
+                        name
+                        slug
+                    }
+                    
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query, {slug});
+
+    console.log("getVictoriaCollection result: ", result);
+    return result.victoriaCollection;
+
+}
+
+export const getVictoriaCollections = async (): Promise<[]> => {
+
+    const query = gql`
+        query GetVictoriaCollections ($max: Int!) {
+            victoriaCollections(
+                orderBy: createdAt_ASC
+                last: $max
+            ) {
+                title,
+                description,
+                slug,
+                subtitle,
+                image {
+                    url
+                }
+            }
+        }
+    `;
+
+    const result = await request(graphqlAPI, query,);
+    return result.victoriaCollections;
+
+}
