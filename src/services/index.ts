@@ -277,6 +277,33 @@ export const getTagPosts = async (slug:string) : Promise<[]> => {
   
     return result.postsConnection.edges;
   };
+
+  // query to get the featuredpost
+
+export const getFeaturedPosts = async () => {
+    const query = gql`
+      query GetCategoryPost() {
+        posts(where:{featuredPost:true}) {
+          author {
+            name
+            photo{
+              url
+            }  
+          }
+          featuredImage {
+            url
+          }
+          title
+          slug
+          createdAt
+        }
+      }
+    `;
+    const result = await request(graphqlAPI, query)
+    return result.posts
+  }
+
+// ========================================================= COLLECTION QUERIES ==============================================================
   
   export const getCollections = async (max = 4): Promise<[]> => {
 
@@ -347,31 +374,6 @@ export const getCollection = async (slug:string): Promise<{}> => {
     return result.collection;
 
 }
-
-// query to get the featuredpost
-
-export const getFeaturedPosts = async () => {
-    const query = gql`
-      query GetCategoryPost() {
-        posts(where:{featuredPost:true}) {
-          author {
-            name
-            photo{
-              url
-            }  
-          }
-          featuredImage {
-            url
-          }
-          title
-          slug
-          createdAt
-        }
-      }
-    `;
-    const result = await request(graphqlAPI, query)
-    return result.posts
-  }
 
 
   // REGION query to get the tarlac city collections
@@ -445,6 +447,5 @@ export const getTarlacCollection = async (slug:string): Promise<{}> => {
     return result.tarlaccollection;
 
 }
-
 
   // END REGION query to get the tarlac city collections
