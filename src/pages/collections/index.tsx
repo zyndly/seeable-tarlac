@@ -44,7 +44,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
           <SlidingCollections collectionsProp={collections} scrollRef={scrollRef} title='All Collections' featured={false}/>
         </div>
 
-        <div className={'relative container min-w-[98vw] bg-dark '+(menu?' blur-filter': ' trans-500')}>
+        <div className={'relative container min-w-[98vw] bg-black '+(menu?' blur-filter': ' trans-500')}>
 
             <div ref={scrollRef} className="rounded-3xl  relative container flex flex-col items-center mx-auto px-10 mb-8 pt-[100px]"
             >
