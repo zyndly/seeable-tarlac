@@ -12,7 +12,7 @@ import Tooltip from '@/components/Tooltip';
 const navItems = [
   { name: 'Seeable', href: '/' },
   { name: 'Tarlac', href: '/tarlac' },
-  { name: 'Feeds', href: '/feed'},
+  { name: 'Feeds', href: '/feeds'},
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
   
