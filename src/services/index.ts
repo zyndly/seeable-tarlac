@@ -408,9 +408,9 @@ export const getAnaoPosts = async () => {
     const result = await request(graphqlAPI, query)
     return result.posts
   }
-// ================================== End Anao Post =================================
+// ================================== End of Anao Post =================================
 
-// ================================== Anao Post =====================================
+// ================================== Bamban Post =====================================
 export const getBambanPosts = async () => {
     const query = gql`
       query GetCategoryPost() {
@@ -433,4 +433,29 @@ export const getBambanPosts = async () => {
     const result = await request(graphqlAPI, query)
     return result.posts
   }
-// ================================== End Anao Post =================================
+// ================================== End of Bamban Post =================================
+
+// ================================== Capas of Post =====================================
+export const getCapasPosts = async () => {
+    const query = gql`
+      query GetCategoryPost() {
+        posts(where:{capasPost:true}) {
+          author {
+            name
+            photo{
+              url
+            }  
+          }
+          featuredImage {
+            url
+          }
+          title
+          slug
+          createdAt
+        }
+      }
+    `;
+    const result = await request(graphqlAPI, query)
+    return result.posts
+  }
+// ================================== End Capas of Post =================================
