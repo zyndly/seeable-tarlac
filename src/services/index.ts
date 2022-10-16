@@ -410,3 +410,27 @@ export const getAnaoPosts = async () => {
   }
 // ================================== End Anao Post =================================
 
+// ================================== Anao Post =====================================
+export const getBambanPosts = async () => {
+    const query = gql`
+      query GetCategoryPost() {
+        posts(where:{bambanPost:true}) {
+          author {
+            name
+            photo{
+              url
+            }  
+          }
+          featuredImage {
+            url
+          }
+          title
+          slug
+          createdAt
+        }
+      }
+    `;
+    const result = await request(graphqlAPI, query)
+    return result.posts
+  }
+// ================================== End Anao Post =================================
