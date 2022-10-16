@@ -214,7 +214,6 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                         style={{
                             //for animating disappearing when focused
                             
-
                             opacity: collection.focused ? 1 : 0,
                         } as React.CSSProperties}
                     >
@@ -230,8 +229,6 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                 }
 
                                 >
-
-                                
 
                                 <div
                                     className={'text-lime-400 mb-0 text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] 2xl:text-[140px] font-bold font-staatliches'+ (collection.focused ? ' collection-background-info-show ': '')}
