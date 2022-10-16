@@ -386,5 +386,27 @@ export const getCollection = async (slug:string): Promise<{}> => {
 
 }
 // ================================== Anao Post =====================================
-
+export const getAnaoPosts = async () => {
+    const query = gql`
+      query GetCategoryPost() {
+        posts(where:{anaoPost:true}) {
+          author {
+            name
+            photo{
+              url
+            }  
+          }
+          featuredImage {
+            url
+          }
+          title
+          slug
+          createdAt
+        }
+      }
+    `;
+    const result = await request(graphqlAPI, query)
+    return result.posts
+  }
 // ================================== End Anao Post =================================
+
