@@ -258,7 +258,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                 </div>
 
                                 <div
-                                    className={'text-white text-xs md:text-md font-light delay-400 mb-5 max-w-[300px] '+ (collection.focused ? ' collection-background-info-show ': '')}
+                                    className={'hidden text-white text-xs md:text-md font-light delay-400 mb-5 max-w-[300px] '+ (collection.focused ? ' collection-background-info-show ': '')}
 
                                     style={{
                                         //for animating disappearing when focused
