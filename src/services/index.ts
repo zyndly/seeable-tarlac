@@ -385,6 +385,10 @@ export const getCollection = async (slug:string): Promise<{}> => {
     return result.collection;
 
 }
+
+// ======================== QUERIES FOR FEATURED POST FOR EACH TOWN IN THE PROVINCE OF TARLAC ============================= //
+// ========================================= DISTRICT 1 ====================================================== //
+
 // ================================== Anao Post =====================================
 export const getAnaoPosts = async () => {
     const query = gql`
@@ -409,6 +413,335 @@ export const getAnaoPosts = async () => {
     return result.posts
   }
 // ================================== End of Anao Post =================================
+
+// ================================== Camiling Post =====================================
+export const getCamilingPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{camilingPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Camiling Post =================================
+
+// ================================== Mayantoc Post =====================================
+export const getMayantocPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{mayantocPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Mayantoc Post =================================
+
+// ================================== Moncada Post =====================================
+export const getMoncadaPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{moncadaPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Moncada Post =================================
+
+// ================================== Paniqui Post =====================================
+export const getPaniquiPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{paniquiPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Paniqui Post =================================
+
+// ================================== Pura Post =====================================
+export const getPuraPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{puraPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Pura Post =================================
+
+// ================================== Ramos Post =====================================
+export const getRamosPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{ramosPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Ramos Post =================================
+
+// ================================== San Clemente Post =====================================
+export const getSanclementePosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{sanclementePost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of San Clemente Post =================================
+
+// ================================== San Manuel Post =====================================
+export const getSanmanuelPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{sanmanuelPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of San Manuel Post =================================
+
+// ================================== Sta. Ignacia Post =====================================
+export const getStaignaciaPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{staignaciaPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Sta. Ignacia Post =================================
+
+// ========================================= DISTRICT 2 ====================================================== //
+
+// ================================== Gerona Post =====================================
+export const getGeronaPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{geronaPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Gerona Post =================================
+
+// ================================== San Jose Post =====================================
+export const getSanjosePosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{sanjosePost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of San Jose Post =================================
+
+// ================================== Tarlac City Post =====================================
+export const getTarlacPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{tarlacPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Tarlac City Post =================================
+
+// ================================== Victoria Post =====================================
+export const getVictoriaPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{victoriaPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Victoria Post =================================
+
+// ========================================= DISTRICT 3 ====================================================== //
 
 // ================================== Bamban Post =====================================
 export const getBambanPosts = async () => {
@@ -459,3 +792,53 @@ export const getCapasPosts = async () => {
     return result.posts
   }
 // ================================== End Capas of Post =================================
+
+// ================================== Concepcion of Post =====================================
+export const getConcepcionPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{concepcionPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End Concepcion of Post =================================
+
+// ================================== La Paz of Post =====================================
+export const getLapazPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{lapazPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End La Paz of Post =================================
