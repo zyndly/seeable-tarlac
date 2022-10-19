@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState  } from 'react';
 
 import { Loader } from '@/components/post';
 
-import { getFeaturedPosts } from '@/services';
+import { getAnaoPosts } from '@/services';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const AnaoPostCard = ({ post, position }: any) => {
@@ -17,7 +17,7 @@ const AnaoPostCard = ({ post, position }: any) => {
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getFeaturedPosts().then((result) => {
+    getAnaoPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
@@ -43,7 +43,7 @@ const AnaoPostCard = ({ post, position }: any) => {
                 >
 
                     <div className='w-full h-full bg-gradient-to-b from-black/[0.6] to-black/[0.4] flex justify-center items-center '>
-                        <span className=" cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-2xl  rounded-full text-md border-white">
+                        <span className=" cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-sm  rounded-full text-md border-white">
                             {`${post.title}`}
                         </span>
 
