@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState  } from 'react';
 
 import { Loader } from '@/components/post';
 
-import { getAnaoPosts } from '@/services';
+import { getCamilingPosts } from '@/services';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const AnaoPostCard = ({ post, position }: any) => {
@@ -17,7 +17,7 @@ const AnaoPostCard = ({ post, position }: any) => {
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getAnaoPosts().then((result) => {
+    getCamilingPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
