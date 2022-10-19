@@ -6,10 +6,10 @@ import React, { useEffect, useRef, useState  } from 'react';
 
 import { Loader } from '@/components/post';
 
-import { getCamilingPosts } from '@/services';
+import { getPuraPosts } from '@/services';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CamilingPostCard = ({ post, position }: any) => {
+const PuraPostCard = ({ post, position }: any) => {
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -17,7 +17,7 @@ const CamilingPostCard = ({ post, position }: any) => {
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getCamilingPosts().then((result) => {
+    getPuraPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
@@ -58,4 +58,4 @@ const CamilingPostCard = ({ post, position }: any) => {
   )
 }
 
-export default CamilingPostCard
+export default PuraPostCard

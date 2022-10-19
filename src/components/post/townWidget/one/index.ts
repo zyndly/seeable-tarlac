@@ -1,2 +1,10 @@
 export { default as AnaoPostCard } from './AnaoPostCard';
 export { default as CamilingPostCard } from './CamilingPostCard';
+export { default as MayantocPostCard } from './MayantocPostCard';
+export { default as MoncadaPostCard } from './MoncadaPostCard';
+export { default as PaniquiPostCard } from './PaniquiPostCard';
+export { default as PuraPostCard } from './PuraPostCard';
+export { default as RamosPostCard } from './RamosPostCard';
+export { default as SanClementePostCard } from './SanClementePostCard';
+export { default as SanManuelPostCard } from './SanManuelPostCard';
+export { default as StaIgnaciaPostCard } from './StaIgnaciaPostCard';
