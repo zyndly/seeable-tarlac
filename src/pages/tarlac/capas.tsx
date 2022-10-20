@@ -5,16 +5,16 @@ import Seo from "@/components/Seo";
 import { PageHeading } from '@/components/text/PageHeading';
 
 
-export default function Camiling() {
+export default function Capas() {
   return (
     <Layout>
       <Seo 
-        templateTitle='Camiling'
+        templateTitle='Capas'
         description=''
       />
 
       <main>
-      <PageHeading>Camiling Tarlac</PageHeading>
+      <PageHeading>Capas Tarlac</PageHeading>
 
       <Container>
         <CapasPostCard />
