@@ -1,23 +1,23 @@
 import { Container } from '@/components/layout/Container';
 import Layout from "@/components/layout/Layout";
-import { AnaoPostCard } from "@/components/post/townWidget/one"
+import { BambanPostCard } from "@/components/post/townWidget/three"
 import Seo from "@/components/Seo";
 import { PageHeading } from '@/components/text/PageHeading';
 
 
-export default function Anao() {
+export default function Bamban() {
   return (
     <Layout>
       <Seo 
-        templateTitle='Anao'
+        templateTitle='Bamban'
         description=''
       />
 
       <main>
-      <PageHeading>Anao Tarlac</PageHeading>
+      <PageHeading>Bamban Tarlac</PageHeading>
 
       <Container>
-        <AnaoPostCard />
+        <BambanPostCard />
       </Container>
       </main>
 

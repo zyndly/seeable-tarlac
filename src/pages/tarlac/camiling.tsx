@@ -5,11 +5,11 @@ import Seo from "@/components/Seo";
 import { PageHeading } from '@/components/text/PageHeading';
 
 
-export default function Tarlac() {
+export default function Camiling() {
   return (
     <Layout>
       <Seo 
-        templateTitle='Anao'
+        templateTitle='Camiling'
         description=''
       />
 
