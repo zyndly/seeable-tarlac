@@ -92,7 +92,7 @@ const MobileNav = ({ open, setOpen }: NavProps) => {
                 <div key={item.name} className='flow-root'>
                   <UnstyledLink
                     href={item.href}
-                    className='block p-2 -m-2 font-medium text-white hover:text-primary-300'
+                    className='block p-2 -m-2 font-medium text-lg text-white hover:text-primary-300'
                   >
                     {item.name}
                   </UnstyledLink>
@@ -104,7 +104,7 @@ const MobileNav = ({ open, setOpen }: NavProps) => {
                   <UnstyledLink
                     className={clsx( 
                       'rounded-sm py-2 transition-colors',
-                      'font-medium text-black dark:text-white',
+                      'font-medium text-lg text-black dark:text-white',
                       'group dark:hover:text-primary-300',
                       'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
                     )}
@@ -190,7 +190,10 @@ const DesktopNav = ({ setOpen }: NavProps) => {
           >
             <span className='sr-only'>Open menu</span>
             <HiOutlineMenu className='w-6 h-6' aria-hidden='true' />
-            <span className='text-primary-300 decoration-8'> Seeable </span>
+            <span className='font-medium text-lg text-primary-300 decoration-8 hover:cursor-pointer hover:animate-pulse'> 
+              <span className='text-blue-500'>Seeable</span> 
+              <span className='text-red-500'>Tarlac</span>
+            </span>
                      
           </button>
 
@@ -203,8 +206,8 @@ const DesktopNav = ({ setOpen }: NavProps) => {
                   href={item.href}
                   className={clsx(
                     'rounded-sm py-2 transition-colors',
-                    'font-medium text-black dark:text-white',
-                    'group dark:hover:text-primary-300',
+                    'font-semibold text-xl text-black dark:text-white',
+                    'group dark:hover:text-primary-300 hover:animate-pulse',
                     'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
                   )}
                 >
@@ -226,7 +229,7 @@ const DesktopNav = ({ setOpen }: NavProps) => {
                 <UnstyledLink
                   className={clsx( 
                     'rounded-sm py-2 transition-colors',
-                    'font-medium text-black dark:text-white',
+                    'font-medium text-xl text-black dark:text-white',
                     'group dark:hover:text-primary-300',
                     'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
                   )}
