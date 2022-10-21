@@ -43,12 +43,11 @@ const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX
   const {scrollY} = useWindowScrollPositions();
   const isLoaded = useLoaded();
 
-  
   return (
       <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo
-        templateTitle='Tarlac'
+        templateTitle='Feeds'
         description='A virtual tour compilation of tourist destination in Tarlac Province, Philippines'
       />
       <main>
@@ -98,7 +97,7 @@ const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX
                  
                 </div>
 
-                <div className='lg:col-span-1 col-span-1'>
+                <div className='lg:col-span-1 col-span-1s'>
 
                   <div className={"transition-all duration-300 lg:sticky relative"
                     + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')}>
