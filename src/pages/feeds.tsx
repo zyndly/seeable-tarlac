@@ -78,7 +78,7 @@ const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX
                         
                 </div>
               
-              <div className='grid grid-cols-1 lg:grid-cols-5 gap-1 pt-[10] bg-[#202124]'>
+              <div className='grid grid-cols-1 lg:grid-cols-5 gap-1 pt-[10]'>
 
                 <div className='hidden lg:block lg:col-span-1  col-span-1'>
 
@@ -98,7 +98,7 @@ const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX
                  
                 </div>
 
-                <div className='lg:col-span-1 col-span-1 bg-[#202124]'>
+                <div className='lg:col-span-1 col-span-1'>
 
                   <div className={"transition-all duration-300 lg:sticky relative"
                     + (scrollDirection === 'up' || scrollY < 30 ?  ' lg:top-[100px]' : ' lg:top-[20px]')}>
