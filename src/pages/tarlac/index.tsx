@@ -1,17 +1,19 @@
+import { Container } from "@/components/layout/Container";
 import Layout from "@/components/layout/Layout";
-import Template from "@/components/layout/Template";
+import TownsWidget from "@/components/post/townWidget/TownsWidget";
 import Seo from "@/components/Seo";
 
-export default function Tarlac() {
+export default function TarlacProvince() {
   return (
     <Layout>
       <Seo 
-        templateTitle='Featured'
+        templateTitle='Tarlac Province'
         description=''
       />
 
-      <Template/>
-
+    <Container>
+      <TownsWidget/>
+    </Container>
       
     </Layout>
   );
