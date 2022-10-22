@@ -97,7 +97,7 @@ export const ContactForm  = ({
         </label>
         
         <input
-          name='name'
+          name='Name'
           type='text'
           value={name}
           onBlur={checkInput}

@@ -35,7 +35,7 @@ const CollectionsIndex = ({ collections }: TagIndexProps) : JSX.Element => {
       {/* <Seo templateTitle='Home' /> */}
       <Seo
         templateTitle='Collections'
-        description='Collection of Destinations'
+        description='Collection of Destinations in Tarlac Province'
       />
 
     <div className='w-full h-full'>

@@ -184,12 +184,12 @@ const SearchPosts = () : JSX.Element => {
                                         }
                                     </span>
 
-                                    <div className='flex-none flex flex-row flex-wrap w-full h-20 items-center justify-center'>
+                                    <div className='flex flex-row w-full h-20 items-center justify-center'>
                                         {post.categories.map((category:any)=>(
 
                                             <Link href={`/tags/${category.slug}`} key={category.slug}>
                                                 <span className="transition duration-150 cursor-pointer absolute px-3 py-1 text-bold mx-2 bg-slate-800 hover:bg-slate-700 text-white rounded-full text-sm">
-                                                    {`#${category.name}`}
+                                                    {`${category.name}`}
                                                 </span>
                                             </Link>
                                         ))}
