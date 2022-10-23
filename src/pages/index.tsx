@@ -7,7 +7,6 @@ import * as React from 'react';
 
 import useLoaded from '@/hooks/useLoaded';
 
-import LandingHero from '@/components/layout/LandingHero';
 import Layout from '@/components/layout/Layout';
 import { SlidingCollections } from '@/components/post';
 import { FeaturedPosts } from '@/components/post/FeaturedPost';
@@ -54,17 +53,7 @@ const Home: NextPage<HomeProps> = ({ posts, collections }: HomeProps): JSX.Eleme
               isLoaded && 'fade-in-start'
             )}
           >
-
-            <div className=' block relative min-w-[90px] min-h-[120vh] lg:min-h-[100vh] lg:h-auto top-[0px] ' style={{minWidth: '90vw'}}>
-              <SlidingCollections collectionsProp={collections} scrollRef={searchRef} title='Featured Collections' featured={true} />
-            </div>
-
-        
-            <div ref={searchRef} className='w-auto  min-h-[1200px] md:min-h-[1500px] lg:min-h-[1700px] h-auto top-[150vh] lg:top-[100vh] z-0' style={{minWidth: '90vw'}}>
-              
-              <LandingHero featuredPosts={featuredPosts as []}/>
-              
-            </div>
+          <SlidingCollections collectionsProp={collections} scrollRef={searchRef} title='' featured={true} />
 
         </section>
         <section className='container mx-auto mb-8 px-10'>

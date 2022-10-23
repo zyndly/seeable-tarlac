@@ -56,7 +56,7 @@ const towns = [
     background:'https://seeabletarlac.vercel.app/images/logo.png',
     tooltip: (
       <>
-        <Accent className='font-medium'>See visti Anao, Tarlac</Accent>
+        <Accent className='font-medium'>See visit Anao, Tarlac</Accent>
       </>
     ),
   },
