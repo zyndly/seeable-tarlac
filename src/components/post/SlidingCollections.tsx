@@ -231,7 +231,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                 >
 
                                 <div
-                                    className={'text-lime-400 mb-0 text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] 2xl:text-[140px] font-bold font-staatliches'+ (collection.focused ? ' collection-background-info-show ': '')}
+                                    className={'text-white mb-0 text-[40px] md:text-[60px] lg:text-[80px] xl:text-[100px] 2xl:text-[140px] font-bold font-staatliches'+ (collection.focused ? ' collection-background-info-show ': '')}
 
                                     style={{
                                         //for animating disappearing when focused
@@ -300,18 +300,18 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                 </div>
 
 
-                                <div className='flex flex-row items-center flex-wrap'>
+                                <div className='flex flex-row items-center flex-wrap '>
 
                                     <Link href={`/collections/${collection.slug}`}>
                                         <div 
-                                            className={'button border-2 rounded-full cursor-pointer px-5 py-3 m-1 bg-transparent text-white text-xs xl:text-xs 2xl:text-sm' + (collection.focused ? ' collection-background-info-show ': '')}
+                                            className={'button border-2 rounded-full cursor-pointer px-5 py-3 m-1 bg-transparent text-white  text-xs xl:text-xs 2xl:text-sm' + (collection.focused ? ' collection-background-info-show ': '')}
                                             style={{
                                                 //for animating disappearing when focused
                                                 '--custom-delay': 300+'ms ',
                                                 opacity: collection.focused ? 1 : 0,
                                             } as React.CSSProperties}
                                             >
-                                            <span className='hover:text-lime-300'>
+                                            <span className='hover:text-primary-300'>
                                                 Discover
                                             </span>
                                         </div>
@@ -327,7 +327,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                                                     opacity: collection.focused ? 1 : 0,
                                                 } as React.CSSProperties}
                                                 >
-                                                <span className='hover:text-lime-300'>
+                                                <span className='hover:text-primary-300'>
                                                     View All
                                                 </span>
                                             </div>
@@ -514,7 +514,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
             </div>
 
             <div
-                className={'absolute cursor-pointer bottom-[20px] hover:text-white animate-bounce right-[46vw] text-lime-400 mb-0 text-[30px] xl:text-[50px] font-bold font-staatliches'}
+                className={'absolute cursor-pointer bottom-[20px] hover:text-white animate-bounce right-[46vw] text-white mb-0 text-[30px] xl:text-[50px] font-bold font-staatliches'}
                 onClick={()=>scrollRef!.current?.scrollIntoView({behavior: 'smooth'})}
                 >
 
