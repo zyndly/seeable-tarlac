@@ -110,7 +110,7 @@ const MobileNav = ({ open, setOpen }: NavProps) => {
                     )}
                     href={button.href}
                   >
-                    <button.icon className='mt-6 h-6 w-6 text-gray-600 transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+                    <button.icon className='mt-6 h-6 w-6 text-black transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
                   </UnstyledLink>
                 </Tooltip>
               ))}      
@@ -160,7 +160,7 @@ const DesktopNav = ({ setOpen }: NavProps) => {
       className={clsx(
         'rounded-sm p-2 transition',
         'font-medium text-black dark:text-white',
-        'bg-white dark:black',
+        'bg-black dark:black',
         'group dark:hover:text-primary-300',
         'focus:outline-none focus:ring focus:ring-primary-300',
         'absolute top-4 left-4',
@@ -185,7 +185,7 @@ const DesktopNav = ({ setOpen }: NavProps) => {
           
           <button
             type='button'
-            className='flex space-x-4 p-2 text-white bg-black rounded-md lg:hidden'
+            className='flex space-x-4 p-2 text-black bg-white rounded-md lg:hidden'
             onClick={() => setOpen(true)}
           >
             <span className='sr-only'>Open menu</span>
@@ -235,7 +235,7 @@ const DesktopNav = ({ setOpen }: NavProps) => {
                   )}
                   href={button.href}
                 >
-                  <button.icon className='mt-2 h-6 w-6 text-gray-600 transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+                  <button.icon className='mt-2 h-6 w-6 text-black transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
                 </UnstyledLink>
             </Tooltip>
            ))}      

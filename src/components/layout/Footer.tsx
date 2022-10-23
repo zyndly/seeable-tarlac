@@ -13,12 +13,12 @@ export default function Footer() {
       <div className='layout flex flex-col items-center border-t pt-6'>
         <FooterLinks />
 
-        <p className='mt-12 font-medium text-gray-600 dark:text-gray-300'>
+        <p className='mt-12 font-medium text-black dark:text-gray-300'>
           Reach us out
         </p>
         <SocialLinks />
 
-        <p className='my-2 text-sm text-gray-600 dark:text-gray-300'>
+        <p className='my-2 text-sm text-black dark:text-gray-300'>
           © SeeableTarlac {new Date().getFullYear()}
         </p>
       </div>
@@ -28,7 +28,7 @@ export default function Footer() {
 
 function FooterLinks() {
   return (
-    <div className='flex flex-wrap justify-center gap-y-4 gap-x-8 text-gray-300 dark:text-white'>
+    <div className='flex flex-wrap justify-center gap-y-4 gap-x-8 text-black dark:text-white'>
       {footerLinks.map(({ href, text, tooltip }) => (
         <Tooltip interactive={false} key={href} content={tooltip}>
           <UnstyledLink
@@ -52,7 +52,7 @@ function SocialLinks() {
             className='inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
             href={social.href}
           >
-            <social.icon className='my-auto h-6 w-6 align-middle text-gray-600 transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+            <social.icon className='my-auto h-6 w-6 align-middle text-black transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
           </UnstyledLink>
         </Tooltip>
       ))}
