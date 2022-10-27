@@ -9,7 +9,7 @@ import useLoaded from '@/hooks/useLoaded';
 
 import Layout from '@/components/layout/Layout';
 import { SlidingCollections } from '@/components/post';
-import SearchBar from '@/components/search';
+import SearchBar from '@/components/Search';
 import Seo from '@/components/Seo';
 
 import { getCollections, getPosts } from '@/services'; 
