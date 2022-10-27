@@ -35,7 +35,7 @@ const PostWidget = ({categories, slug}: PostWidgetProps): JSX.Element=> {
   }, [categories, slug]);
 
   return (
-    <div className='rounded-lg p-8 mb-8'>
+    <div className='rounded-lg p-8 mb-8hover:text-white'>
 
       <h3 className='text-xl mb-8 border-b pb-4 text-lime-600'>
         {slug ? 'Related Posts' : 'Recent Posts'}
@@ -44,11 +44,11 @@ const PostWidget = ({categories, slug}: PostWidgetProps): JSX.Element=> {
       {relatedPosts.map((post:any) => (
 
         <Link key={post.slug} href={`/post/${post.slug}`}>
-          <div key={post.slug} className='cursor-pointer flex flex-row items-center w-full lg:py-2 py-1 hover:bg-lime-800' > 
+          <div key={post.slug} className='cursor-pointer flex flex-row items-center w-full my-2 py-1 text-primary-900 hover:animate-flicker bg-primary-900 rounded-full' > 
 
             <div className='flex-none'> 
               <img 
-                className='align-middle rounded-full max-h-[50px] min-h-[50px] max-w-[50px] inline-block'
+                className='text-primary-900 align-middle rounded-full max-h-[50px] min-h-[50px] max-w-[50px] inline-block'
                 alt={post.title}
                 height='50px'
                 width='50px'
@@ -56,11 +56,11 @@ const PostWidget = ({categories, slug}: PostWidgetProps): JSX.Element=> {
               />
             </div>
 
-            <div className='flex-grow ml-4'> 
-              <p className='text-gray-300 text-xs'>
+            <div className='flex-grow ml-4 '> 
+              <p className=' text-sm text-gray-300'>
                 {moment(post.createdAt).format('MMM DD, YYYY')}
               </p>
-                <span className='text-white text-sm'>
+                <span className=' text-white'>
                   {post.title}
                 </span>
             </div>

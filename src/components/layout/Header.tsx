@@ -92,7 +92,7 @@ const MobileNav = ({ open, setOpen }: NavProps) => {
                 <div key={item.name} className='flow-root'>
                   <UnstyledLink
                     href={item.href}
-                    className='block p-2 -m-2 font-medium text-lg text-white hover:text-primary-300'
+                    className='block p-2 -m-2 font-medium text-lg text-white hover:text-primary-700'
                   >
                     {item.name}
                   </UnstyledLink>
@@ -159,8 +159,8 @@ const DesktopNav = ({ setOpen }: NavProps) => {
       href='#skip-nav'
       className={clsx(
         'rounded-sm p-2 transition',
-        'font-medium text-black dark:text-white',
-        'bg-black dark:black',
+        'font-medium text-primary-900 dark:text-white',
+        'bg-white dark:white',
         'group dark:hover:text-primary-300',
         'focus:outline-none focus:ring focus:ring-primary-300',
         'absolute top-4 left-4',
@@ -172,7 +172,7 @@ const DesktopNav = ({ setOpen }: NavProps) => {
     
     <div className='h-2 bg-gradient-to-tr from-primary-200 via-primary-300 to-primary-400' />
 
-    <div className='bg-black text-white'>
+    <div className='bg-primary-900 text-white'>
       <nav
         aria-label='Top'
         className={clsx(
@@ -190,9 +190,21 @@ const DesktopNav = ({ setOpen }: NavProps) => {
           >
             <span className='sr-only'>Open menu</span>
             <HiOutlineMenu className='w-6 h-6' aria-hidden='true' />
-            <span className='font-medium text-lg text-primary-300 decoration-8 hover:cursor-pointer hover:animate-pulse'> 
-              <span className='text-blue-500'>Seeable</span> 
-              <span className='text-red-500'>Tarlac</span>
+            <span className='font-bold text-lg decoration-8 hover:cursor-pointer hover:animate-pulse'> 
+              <span className='text-blue-800'>S</span>
+              <span className='text-blue-600'>E</span>
+              <span className='text-sky-600'>E</span>
+              <span className='text-emerald-400'>A</span>
+              <span className='text-blue-500'>B</span>
+              <span className='text-blue-500'>L</span>
+              <span className='text-blue-500'>E</span>
+              
+              <span className='text-red-500'>T</span>
+              <span className='text-red-500'>A</span>
+              <span className='text-red-500'>R</span>
+              <span className='text-red-500'>L</span>
+              <span className='text-red-500'>A</span>
+              <span className='text-red-500'>C</span>
             </span>
                      
           </button>
@@ -206,15 +218,15 @@ const DesktopNav = ({ setOpen }: NavProps) => {
                   href={item.href}
                   className={clsx(
                     'rounded-sm py-2 transition-colors',
-                    'font-semibold text-xl text-black dark:text-white',
-                    'group dark:hover:text-primary-300 hover:animate-pulse',
-                    'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+                    'font-semibold text-xl text-white',
+                    'group hover:text-primary-300 hover:animate-pulse',
+                    'focus:outline-none focus-visible:ring focus-visible:ring-primary-900'
                   )}
                 >
                   <span
                     className={clsx(
                       'transition-colors',
-                      'bg-primary-300/0 group-hover:bg-primary-300/20 dark:group-hover:bg-primary-300/0',
+                      'bg-primary-800/0 group-hover:bg-primary-800/20 dark:group-hover:bg-primary-800/0',
                       item.href === baseRoute &&
                         '!bg-primary-300/50 dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
                     )}
@@ -229,13 +241,13 @@ const DesktopNav = ({ setOpen }: NavProps) => {
                 <UnstyledLink
                   className={clsx( 
                     'rounded-sm py-2 transition-colors',
-                    'font-medium text-xl text-black dark:text-white',
-                    'group dark:hover:text-primary-300',
+                    'font-medium text-xl text-white',
+                    'group hover:text-primary-300',
                     'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
                   )}
                   href={button.href}
                 >
-                  <button.icon className='mt-2 h-6 w-6 text-black transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+                  <button.icon className='mt-2 h-6 w-6 text-black transition-colors hover:text-red-600 dark:text-gray-300 dark:hover:text-red-600' />
                 </UnstyledLink>
             </Tooltip>
            ))}      

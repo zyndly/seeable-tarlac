@@ -32,7 +32,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+    <section className='grid grid-cols-1 md:grid-cols-2 gap-4 text-black'>
       <div className='space-y-14'>
         <header className=''>
           <h2 className='font-semibold text-2xl'>

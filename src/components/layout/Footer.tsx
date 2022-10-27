@@ -9,7 +9,7 @@ import Tooltip from '@/components/Tooltip';
 
 export default function Footer() {
   return (
-    <footer className='mt-4 pb-2'>
+    <footer className='relative inset-x-0 bottom-0 h-[260px] mt-4 bg-primary-900'>
       <div className='layout flex flex-col items-center border-t pt-6'>
         <FooterLinks />
 

@@ -59,22 +59,9 @@ const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX
           >
           <div className="container mx-auto top-[0px]">
 
-            <div className='container mx-auto px-0 mb-8 bg-black'>
-              <div
-                    className='divider mb-[100px] w-auto flex flex-row items-center justify-center  text-[30px] md:text-[40px] py-5 font-staatliches text-lime-600'
-                  >
-                      <div className='w-[10%] min-w-[90px]h-[1px] bg-white rounded-full'>
-
-                      </div>
-
-                      <span className='px-3'>
-                        Latest Update
-                      </span>
-
-                      <div className='w-[10%] min-w-[90px] h-[1px] bg-white rounded-full'>
-
-                      </div>
-                        
+            <div className='container mx-auto px-0 mb-8 bg-[#F2F5EB]'>
+              <div className='divider mb-[100px] w-auto flex flex-row items-center justify-center  text-[30px] md:text-[40px] py-5 font-staatliches text-primary-800'
+                  >                       
                 </div>
               
               <div className='grid grid-cols-1 lg:grid-cols-5 gap-1 pt-[10]'>
@@ -91,7 +78,7 @@ const Tarlac: NextPage<TarlacProps> = ({ posts, collections }: TarlacProps): JSX
 
                 </div>
 
-                <div className="lg:col-span-3  col-span-1 px-2 lg:px-0 bg-black">
+                <div className="lg:col-span-3  col-span-1 px-2 lg:px-0">
                 
                   {posts.map((post:any, index) => <PostCard post={post} key={post.title}/>)}
                  

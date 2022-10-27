@@ -27,7 +27,7 @@ const Comments = ( {slug}: CommentsProps) : JSX.Element => {
     return (
         <>
             {comments.length > 0 && (
-                <div className='bg-[#161719] text-lime-600 md:rounded-lg p-8 pb-12 mb-8'>
+                <div className='bg-primary-800 text-primary-300 md:rounded-lg p-8 pb-12 mb-8'>
                     <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
                         {comments.length}
                         {' '}
@@ -46,7 +46,7 @@ const Comments = ( {slug}: CommentsProps) : JSX.Element => {
                                 { moment(comment.createdAt).format('MMM DD, YYYY')}
                             </p>
                             
-                            <p className='whitespace-pre-line text-white/[0.6] w-full'>
+                            <p className='whitespace-pre-line text-white w-full'>
                                 {parse(comment.comment)}
                             </p>
                         </div>

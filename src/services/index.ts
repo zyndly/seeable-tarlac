@@ -842,3 +842,53 @@ export const getLapazPosts = async () => {
   return result.posts
 }
 // ================================== End La Paz of Post =================================
+
+// ================================== Festival Post =====================================
+export const getFestivalPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{festivalPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Festival Post =================================
+
+// ================================== Festival Post =====================================
+export const getChurchPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{churchPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Church Post =================================

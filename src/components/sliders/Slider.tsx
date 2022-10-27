@@ -4,6 +4,9 @@
 import Link from 'next/link';
 import * as React from 'react';
 
+import { FeaturedPosts } from '@/components/post/FeaturedPost';
+import SectionTitle from '@/components/text/SectionTitle';
+
 import { StateContext } from '@/pages/_app';
 import { searchPosts } from '@/services';
 import { truncate } from '@/utils/utils';
@@ -12,7 +15,7 @@ interface LandingHeroInterface {
     featuredPosts: [],
 }
 
-const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
+const Slider = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
 
     const [posts, setPosts] = React.useState([]);
     const [initialPosts, setInitialPosts] = React.useState([]);
@@ -100,40 +103,26 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
     return (
 
         <>
-        <div 
-            className={'skew-y-[20deg] absolute lg:top-[133vh] bg-gradient-to-br from-[#202124]/[0.7] via-[#202124] to-[#202124]] w-full min-h-[1800px] shadow-lg h-auto pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+        <div className={
+                'absolute lg:top-[133vh] bg-gradient-to-br from-[#ffffff]/[0.7] via-[#ffffff]/[0.7] to-[#ffffff]/[0.7]] w-full min-h-[1800px] shadow-lg h-auto pb-15 mb-15 bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
         >
 
         </div>
 
         <div 
-            className={'absolute lg:top-[100vh] w-full min-h-[1800px] h-auto bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+            className={'absolute lg:top-[100vh] w-full min-h-[1800px] h-[auto] bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
 
             >
 
-                <div className='container  mx-auto px-0 pt-[120px] md:pt-[200px] col-span-1 lg:col-span-4 lg:col-start-2'>
+                <div className='container mx-auto px-0 pt-[120px] md:pt-[200px] col-span-1 lg:col-span-4 lg:col-start-2 '>
 
-                    <div className='landing-title hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
-                        <div className='flex flex-col items-center justify-center text-lime-700 mb-5'>
-                            
-                            <span className='text-2xl md:text-4xl lg:text-[60px] font-[900] text-lime-500 pt-[100px] text-center font-labelle'>
-                                SEEABLE Tarlac
-                            </span>
-
-                        </div>
-                    </div>
-
-                    <div className='landing-title row-span-2 col-span-1 lg:col-span-6 lg:col-start-1  rounded-lg mx-3'>
-                        <div className='flex flex-col h-full items-center justify-center pt-[100px]'>
-
-                            <span className='text-white/[0.5] text-xl font-light'>
-                                Search Destinations
-                            </span>
+                    <div className='row-span-2 col-span-1 lg:col-span-6 lg:col-start-1  rounded-lg mx-3'>
+                        <div className='flex flex-col h-full items-center justify-center pt-[100px] '>
                             
                             <input 
                                 type='text'
-                                className='transition-all duration-500 p-4 px-4 m-4 outline-none w-[90vw] md:w-[50%] bg-black/[0.3] rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-white/[0.6] text-center'
-                                placeholder=''
+                                className='transition-all duration-500 p-4 px-4 m-4 outline-none w-[90vw] md:w-[50%] bg-black/[0.3] rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-white text-center'
+                                placeholder='Search'
                                 name='search'
                                 ref={searchEl}
                                 onKeyUp={()=>{submitSearch(false)}}
@@ -144,15 +133,15 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             
                                 <div className='flex flex-col items-center justify-start w-full pt-[50px]'>
 
-                                    <span className='text-primary-300 text-xl font-semibold pb-5'>
-                                        Destinations matching your search:  
+                                    <span className='text-primary-800 text-3xl font-semibold pb-5'>
+                                        Results matching your search:  
                                     </span>
 
                                     <div className='w-full text-md'>
                                         {posts.map((post:any, index:number)=>(
 
                                             <Link href={`/post/${post.slug}`} key={post.id}>
-                                                <div className='search-result-show h-[200px] max-h-[250px] bg-cover border-lime-600 border-0 hover:border-2 hover:duration-300 hover:box-content transition flex flex-row md:flex-row justify-items-start items-center w-full mb-4 bg-[#4A5A6A]/[0.3] rounded-lg overflow-hidden cursor-pointer'
+                                                <div className='search-result-show h-[200px] max-h-[250px] bg-cover border-lime-600 border-0 hover:border-2 hover:duration-400 hover:box-content transition flex flex-row md:flex-row justify-items-start items-center w-full mb-4 bg-primary-900/[0.3] rounded-lg overflow-hidden cursor-pointer'
                                                     style={{
                                                         opacity: 0,
                                                         '--custom-delay': index*50+'ms',
@@ -169,7 +158,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                                     </div>
                                                     
                                                     <div className='text-white h-[200px] flex flex-col p-4 md:p-6 bg-black/[0.4] md:bg-black/[0.4]'>
-                                                        <span className='font-semibold pb-2'>
+                                                        <span className='text-primary-300 font-semibold pb-2'>
                                                             {post.title}
                                                         </span>
 
@@ -196,7 +185,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                     {morePosts && 
 
                                         <Link href={{ pathname: '/search', query: { searchQuery: lastQuery } }}>
-                                            <div className='transition-all duration-500 cursor-pointer button bg-black text-lime-400 p-3 hover:px-10 px-6 rounded-full'> 
+                                            <div className='transition-all duration-500 cursor-pointer button bg-primary-900 text-white hover:text-primary-300 p-3 hover:px-10 px-6 rounded-full'> 
                                                 View More
                                             </div>
                                         </Link>
@@ -212,7 +201,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             {userSearched && posts.length == 0 ?
 
                                 <div className='flex flex-col items-center justify-start w-full pt-[20px]'> 
-                                    <span className='text-primary-300 text-xl'>
+                                    <span className='text-primary-800 text-xl'>
                                         No results
                                     </span>
                                 </div>
@@ -227,15 +216,13 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             {initialPosts.length > 0 && posts.length == 0 ?
                                 
                                 <div className='flex flex-col items-center justify-start w-full pt-[50px]'>
-                                    <span className='text-primary-600 text-xl font-semibold pb-5'>
-                                        Destinations you may like  
-                                    </span>
+                                    <SectionTitle title="Featured Destinations" subtitle=''/>
 
                                     <div className='w-full text-md'>
                                         {initialPosts.map((post:any, index:number)=>(
 
                                             <Link href={`/post/${post.slug}`} key={post.id}>
-                                                <div className='search-result-show h-[200px] max-h-[250px] bg-cover border-0 hover:border-2 hover:duration-300 hover:box-content transition flex flex-row md:flex-row justify-items-start items-center w-full mb-4 bg-[#4A5A6A]/[0.3] rounded-lg overflow-hidden cursor-pointer'
+                                                <div className='search-result-show h-[200px] max-h-[250px] bg-cover border-0 hover:border-2 hover:duration-300 hover:box-content transition flex flex-row md:flex-row justify-items-start items-center w-full mb-4 bg-primary-900/[0.3] rounded-lg overflow-hidden cursor-pointer'
                                                     style={{
                                                         opacity: 0,
                                                         '--custom-delay': index*50+'ms',
@@ -251,7 +238,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                                     > 
                                                     </div>
                                                     
-                                                    <div className='text-white h-[200px] flex flex-col p-4 md:p-6 bg-black/[0.4] md:bg-black/[0.4]'>
+                                                    <div className='text-primary-300 h-[200px] flex flex-col p-4 md:p-6 bg-black/[0.4] md:bg-black/[0.4]'>
                                                         <span className='font-semibold pb-2'>
                                                             {post.title}
                                                         </span>
@@ -279,7 +266,7 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                                     {moreInitialPosts ? 
 
                                         <Link href={{ pathname: '/tarlac'}}>
-                                            <div className='position-center ransition-all duration-500 cursor-pointer button bg-black text-lime-400 p-3 hover:px-10 px-6 rounded-full'> 
+                                            <div className='position-center ransition-all duration-500 cursor-pointer button bg-primary-900 text-primary-300 p-3 hover:px-10 px-6 rounded-full'> 
                                                 View More
                                             </div>
                                         </Link>
@@ -300,23 +287,42 @@ const LandingHero = ({featuredPosts}:LandingHeroInterface): JSX.Element => {
                             }
 
                             
-                            
-                            
+                                                      
+                        </div>
+                        
+                        <div>
+
+                            <SectionTitle title="Attractions" subtitle='Discover captivating destinations' />
+                            <FeaturedPosts/>
+
+                        </div>
+
+                        <div>
+
+                            <SectionTitle title="Festivals" subtitle='Discover captivating destinations' />
+                            <FeaturedPosts/>
+
+                        </div>
+
+                        <div>
+
+                            <SectionTitle title="Churches" subtitle='Discover captivating destinations' />
+                            <FeaturedPosts/>
+
                         </div>
 
                         
                         
-                    </div>
+                        </div>
+
                     
-                    
-                    
+
+                
                 </div>
-
-
-
-        </div>
+                
+        </div>     
         </>
     );
 }
 
-export default LandingHero;
+export default Slider;

@@ -117,29 +117,28 @@ const SearchPosts = () : JSX.Element => {
         <div className={"container mx-auto px-10 mb-8 mt-[100px] trans-500 flex flex-col items-center"+(menu? ' blur-filter': '')}>
   
             <div 
-                className={'w-full h-auto landing-hero bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+                className={'w-full h-auto bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
                 >
                     <div className='container mx-auto px-0 col-span-1 lg:col-span-4 lg:col-start-2'>
                         
-                        <div className='landing-title hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
+                        <div className=' hidden md:flex flex-col items-center justify-center col-span-1 lg:col-span-6 mb-0 md:mb-15'>
                             <div className='flex flex-col items-center justify-center text-lime-400 mb-5'>
-                               <span className='flex justify-center text-2xl md:text-4xl font-[900] text-lime-400 pt-[20px] text-center font-poppins'>
-                                    Seeable Tarlac
+                               <span className='flex justify-center text-2xl md:text-4xl font-[900] text-primary-900 text-center font-poppins'>
+                                 SEARCH RESULT
                                 </span>
+                                <span className='text-primary-700'>Find your home away from home</span>
+
                             </div>
                         </div>
                         
 
                         <div className='landing-title col-span-1 lg:col-span-6 rounded-lg mx-3'>
                             <div className='flex flex-col w-full h-full items-center justify-center pt-[50px]'>
-                                <span className='text-white/[0.5] text-xl font-light'>
-                                    Search Destination
-                                </span>
-                                
+                                                 
                                     <input 
                                         type='text'
-                                        className='transition-all duration-500 p-4 px-4 m-4 outline-none w-full md:w-[70%] bg-black/[0.3] rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-white/[0.6] text-center'
-                                        placeholder=''
+                                        className='transition-all duration-500 p-4 px-4 m-4 outline-none w-full md:w-[70%] bg-white rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-black text-center'
+                                        placeholder='What are you waiting for...'
                                         name='search'
                                         ref={searchEl}
                                         onKeyUp={()=>{submitSearch(false)}}
@@ -152,7 +151,7 @@ const SearchPosts = () : JSX.Element => {
 
             </div>
 
-            <h1 className='text-white font-bold text-2xl py-5'>
+            <h1 className='text-primary-900 font-bold text-2xl py-5'>
                 {posts.length > 0 ? 'Results for: '+ searchQuery : 'No results'}
             </h1>
 
@@ -161,7 +160,7 @@ const SearchPosts = () : JSX.Element => {
                 <div className="col-span-1 lg:col-span-5">
                     {posts.map((post:any, index:number) => (
                         <Link href={`/post/${post.slug}`} key={post.id}>
-                            <div className='flex flex-col md:flex-row justify-items-start items-center w-full md:h-[300px] mb-4 bg-[#4A5A6A]/[0.3] rounded-lg overflow-hidden cursor-pointer'>
+                            <div className='flex flex-col md:flex-row justify-items-start items-center w-full md:h-[300px] mb-4 bg-primary-800/[30] rounded-lg overflow-hidden cursor-pointer'>
 
                                 <div className='md:min-w-[200px] md:max-w-[270px] md:min-h-[100%] md:h-[100%] object-cover'>
                                     <img

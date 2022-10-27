@@ -21,7 +21,7 @@ const Categories  = (props: CategoriesProps): JSX.Element => {
     const { categories } = React.useContext(StateContext);
 
     return (
-        <div className='p-8 mb-8 text-lime-500'>
+        <div className='p-8 mb-8 text-primary-800'>
 
             <h3 className='text-xl mb-8 border-b pb-4'>
                 Popular Tags
@@ -31,9 +31,9 @@ const Categories  = (props: CategoriesProps): JSX.Element => {
                 <div key={category.name} className='flex flex-row items-center w-full lg:py-2 py-1' > 
 
 
-                    <Link className='txt-md' href={`/tags/${category.slug}`}>
+                    <Link className='txt-md hover:animate-shimmer' href={`/tags/${category.slug}`}>
 
-                        <span className='cursor-pointer px-3 py-1 mx-2 bg-black hover:bg-lime-800 text-white rounded-full text-sm'>
+                        <span className='cursor-pointer px-3 py-1 mx-2 bg-primary-900 hover:animate-shimmer text-white rounded-full text-sm'>
                             {`${category.name}`}
                         </span>
                         

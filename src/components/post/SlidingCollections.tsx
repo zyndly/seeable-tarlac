@@ -155,11 +155,6 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
             });
             
         }, 1500);
-
-
-
-        
-
         
     }
 
@@ -209,7 +204,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
                     <div
                         
-                        className={(collection.focused ? ' no-blur overflow-hidden max-h-full max-w-full h-full w-full p-[60px] xl:p-[80px] 2xl:p-[150px] ': 'max-h-[0px] max-w-full') + ' focused-info bg-gradient-to-b from-black/[0.6] to-transparent'}
+                        className={(collection.focused ? ' no-blur overflow-hidden max-h-full max-w-full h-full w-full p-[60px] xl:p-[80px] 2xl:p-[150px] ': 'max-h-[0px] max-w-full') + ' focused-info bg-gradient-to-b from-white/[0.3] to-transparent'}
                             
                         style={{
                             //for animating disappearing when focused
@@ -346,7 +341,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
                     <div 
                         className={
-                            'cursor-pointer flex flex-col h-full w-full items-start justify-start bg-gradient-to-b from-transparent to-black/[0.6] p-5 2xl:p-10'
+                            'cursor-pointer flex flex-col h-full w-full items-start justify-start bg-gradient-to-b from-transparent to-white/[0.3] p-5 2xl:p-10'
                             + (collection.focused ? ' collection-card-info-hide ': '')
                         }
                         style={{
@@ -356,7 +351,7 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
                         } as React.CSSProperties}
                         > 
                         
-                        <div className='font-staatliches text-white text-xl xl:text-2xl 2xl:text-4xl font-bold 2xl:pt-[180px] xl:pt-[160px] lg:pt-[80px] sm-short:pt-0'> 
+                        <div className=' text-white text-xl xl:text-2xl 2xl:text-4xl font-bold 2xl:pt-[180px] xl:pt-[160px] lg:pt-[80px] sm-short:pt-0'> 
                             {collection.title}
                         </div> 
 
@@ -377,12 +372,12 @@ const SlidingCollections = ({collectionsProp, scrollRef, title, featured}: Slidi
 
     return (
         <div 
-            className={'fixed overflow-x-hidden overflow-y-visible bg-cover mobile-min-100vh min-w-[100vw] bg-white flex flex-row items-end justify-end after:bg-gradient-to-b from-black/[0.4] to-transparent after:w-full after:block after:min-h-full after:content-[""] '
-                + (scrollY > windowHeight*0.5 || menu ? ' blur-filter ': ' trans-500')
+            className={'fixed overflow-x-hidden overflow-y-hidden bg-cover mobile-min-100vh min-w-[100vw] bg-white flex flex-row items-end justify-end after:bg-gradient-to-b from-white/[0.4] to-transparent after:w-full after:block after:min-h-full after:content-[""] '
+                + (scrollY > windowHeight*0.5 || menu ? ' blur-filter ': ' trans-800')
                 }
-            style={{
-                backgroundImage: `url('${parentBackgroundImage}')`,
-            }}
+                style={{
+                    backgroundImage: `url('${parentBackgroundImage}')`,
+                }}
             ref={parentRef}
             >
 

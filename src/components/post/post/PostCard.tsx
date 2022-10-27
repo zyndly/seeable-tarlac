@@ -27,7 +27,7 @@ export interface Post {
 const PostCard = ({ post }: Post): JSX.Element => {
 
   return (
-    <div className='border border-lime-400 flex flex-col items-center text-white rounded-lg p-0 lg:pb-20 pb-12 mb-8 '>
+    <div className='bg-[#E2EBCC] border-4 border-lime-300 flex flex-col items-center text-black rounded-lg p-0 lg:pb-20 pb-12 mb-8 '>
         
         {/*Image div */}
         <div className='relative overflow-hidden h-80 w-full lg:h-[400px] pb-80 px-0 mb-6 rounded-tl-lg rounded-tr-lg'>
@@ -43,7 +43,7 @@ const PostCard = ({ post }: Post): JSX.Element => {
 
         {/* title*/}
         <h1 className='transition duration-300 text-center mb-8 cursor-pointer
-           text-2xl font-bold text-lime-500
+           text-2xl font-bold text-black
         '>
 
           <Link href={`/post/${post.slug}`}>
@@ -64,13 +64,13 @@ const PostCard = ({ post }: Post): JSX.Element => {
               src={post.author.photo.url}
             />
 
-            <p className='inline align-middle text-white/[0.5] ml-3 text-sm'>
+            <p className='inline align-middle text-black ml-3 text-normal'>
               {post.author.name}
             </p>
 
           </div>
 
-          <div className='font-medium text-sm text-white/[0.5] flex flex-row align-center justify-center m-5'>
+          <div className='font-medium text-normal text-black flex flex-row align-center justify-center m-5'>
             <FiCalendar className='mt-[3px] mr-3' />
             <span className=''>
               {moment(post.createdAt).format('MMM DD, YYYY')}
@@ -80,13 +80,13 @@ const PostCard = ({ post }: Post): JSX.Element => {
 
         </div>
 
-        <p className='text-center text-md text-white/[0.8] font-light px-4 lg:px-20 mb-8'>
+        <p className='text-center text-md text-black font-light px-4 lg:px-20 mb-8'>
           {post.excerpt}
         </p>
 
         <div className='text-center'>
           <Link href={`/post/${post.slug}`}>
-            <span className='transition duration-300 transform inline-block bg-black hover:bg-lime-400 hover:text-black hover:font-normal text-md font-light rounded-full text-lime-500 px-8 py-2 cursor-pointer'>
+            <span className='transition duration-300 transform inline-block bg-black hover:bg-lime-400 hover:text-black hover:font-bold text-md rounded-full text-lime-500 px-8 py-2 cursor-pointer'>
               Read more
             </span>
           </Link>

@@ -3,9 +3,9 @@ import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
 
-import { getFeaturedPosts } from '@/services';
+import { getFestivalPosts } from '@/services';
 
-import { FeaturedPostCard } from './index';
+import { FestivalPostCard } from './index';
 
 const responsive = {
   superLargeDesktop: {
@@ -31,7 +31,7 @@ const FeaturedPosts = () => {
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getFeaturedPosts().then((result) => {
+    getFestivalPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
@@ -87,7 +87,7 @@ const FeaturedPosts = () => {
         {dataLoaded &&
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           featuredPost.map((post: any) => (
-            <FeaturedPostCard key={post.slug} post={post} />
+            <FestivalPostCard key={post.slug} post={post} />
           ))}
       </Carousel>
     </div>

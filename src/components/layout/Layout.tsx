@@ -24,7 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div id='skip-nav'>{children}</div>
         </PreloadProvider>
 
-      <footer className='sticky z-10 bg-black'>
+      <footer className=''>
         <Footer />
       </footer>
       

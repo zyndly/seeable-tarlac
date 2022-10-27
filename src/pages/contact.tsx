@@ -13,7 +13,7 @@ export default function ContactPage() {
       <Seo templateTitle='Contact Us' />
 
       <main>
-        <section className='bg-black'>
+        <section className='bg-[#F2F5EB]'>
         <PageHeading>Contact Us</PageHeading>
           <Container>
             <Contact />

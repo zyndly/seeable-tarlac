@@ -63,9 +63,9 @@ const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
     }
 
     return (
-        <div className='bg-[#161719] text-lime-600 md:rounded-lg p-8 pb-12 mb-8'>
+        <div className='bg-primary-900  md:rounded-lg p-8 pb-12 mb-8'>
 
-            <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
+            <h3 className='text-xl mb-8 font-semibold text-primary-300 border-b pb-4'>
                 Comment
             </h3>
 
@@ -117,7 +117,7 @@ const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
                         value='true'
                     />
 
-                    <label className='text-gray-500 cursor-pointer ml-2' htmlFor='storeData'>
+                    <label className='text-gray-300 cursor-pointer ml-2' htmlFor='storeData'>
                         Save my e-mail and name for the next time I comment
                     </label>
                 </div>
@@ -134,7 +134,7 @@ const CommentsForm = ( {slug} : CommentsFormProps ) : JSX.Element => {
                 <button 
                     type='button' 
                     onClick={handleSubmit}
-                    className='transition duration-500 ease hover:bg-lime-800/[0.4] inline-block bg-black text-lg rounded-full text-white hover:text-lime-500 px-8 py-3 cursor-pointer'
+                    className='transition duration-500 ease hover:bg-lime-300 inline-block bg-black text-lg rounded-full text-white hover:text-black px-8 py-3 cursor-pointer'
                 >
                     Post Comment
                 </button>

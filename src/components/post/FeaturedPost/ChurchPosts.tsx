@@ -3,9 +3,9 @@ import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
 
-import { getFeaturedPosts } from '@/services';
+import { getChurchPosts } from '@/services';
 
-import { FeaturedPostCard } from './index';
+import { ChurchPostCard } from './index';
 
 const responsive = {
   superLargeDesktop: {
@@ -26,12 +26,12 @@ const responsive = {
   },
 }
 
-const FeaturedPosts = () => {
+const ChurchPosts = () => {
   const [featuredPost, setFeaturedPosts] = useState([])
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getFeaturedPosts().then((result) => {
+    getChurchPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
@@ -87,11 +87,11 @@ const FeaturedPosts = () => {
         {dataLoaded &&
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           featuredPost.map((post: any) => (
-            <FeaturedPostCard key={post.slug} post={post} />
+            <ChurchPostCard key={post.slug} post={post} />
           ))}
       </Carousel>
     </div>
   )
 }
 
-export default FeaturedPosts
+export default ChurchPosts
