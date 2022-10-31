@@ -77,6 +77,22 @@ const PostDetail = ({ post } : PostDetailProps) : JSX.Element => {
                     h1: ({ children }) => <h1 className="text-black">{children}</h1>,
                     h2: ({ children }) => <h2 className='text-black'>{children}</h2>,
                     h3: ({ children }) => <h3 className='text-black'>{children}</h3>,
+                    h4: ({ children }) => <h4 className='text-black'>{children}</h4>,
+
+                    bold: ({ children }) => <strong>{children}</strong>,
+
+                    blockquote: ({ children }) => (
+                        <blockquote
+                          style={{
+                            paddingLeft: '16px',
+                            borderLeft: '4px solid blue',
+                            fontSize: '26px',
+                          }}
+                        >
+                          {children}
+                        </blockquote>
+                      ),
+
                     a: ({ children, href, openInNewTab }) => (
                         <a
                           href={href}
@@ -90,11 +106,18 @@ const PostDetail = ({ post } : PostDetailProps) : JSX.Element => {
                     Asset: {
                         text: () => (
                             <div>
-                            <p>text plain</p>
+                            <p className='font-poppins'>text plain</p>
                             </div>
                         ),
                     },
-                    bold: ({ children }) => <strong>{children}</strong>,
+                    code_block: ({ children }) => {
+                        return (
+                          <pre className="line-numbers language-none">
+                            <code>{children}</code>
+                          </pre>
+                        );
+                      },
+                    
                     }}
                 />
 
