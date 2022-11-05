@@ -6,10 +6,10 @@ import React, { useEffect, useRef, useState  } from 'react';
 
 import { Loader } from '@/components/post';
 
-import { getTarlacPosts } from '@/services';
+import { getChurchPosts } from '@/services';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const TarlacPostCard = ({ post, position }: any) => {
+const ReligiousPostCard = ({ post, position }: any) => {
   const router = useRouter();
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -17,7 +17,7 @@ const TarlacPostCard = ({ post, position }: any) => {
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getTarlacPosts().then((result) => {
+    getChurchPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
@@ -58,4 +58,4 @@ const TarlacPostCard = ({ post, position }: any) => {
   )
 }
 
-export default TarlacPostCard
+export default ReligiousPostCard

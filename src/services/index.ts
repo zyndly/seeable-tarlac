@@ -843,11 +843,12 @@ export const getLapazPosts = async () => {
 }
 // ================================== End La Paz of Post =================================
 
+
 // ================================== Festival Post =====================================
-export const getFestivalPosts = async () => {
+export const getChurchPosts = async () => {
   const query = gql`
     query GetCategoryPost() {
-      posts(where:{festivalPost:true}) {
+      posts(where:{churchPost:true}) {
         author {
           name
           photo{
@@ -866,13 +867,11 @@ export const getFestivalPosts = async () => {
   const result = await request(graphqlAPI, query)
   return result.posts
 }
-// ================================== End of Festival Post =================================
 
-// ================================== Festival Post =====================================
-export const getChurchPosts = async () => {
+export const getDestinationPosts = async () => {
   const query = gql`
     query GetCategoryPost() {
-      posts(where:{churchPost:true}) {
+      posts(where:{destinationPost:true}) {
         author {
           name
           photo{

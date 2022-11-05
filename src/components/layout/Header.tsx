@@ -10,10 +10,9 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import Tooltip from '@/components/Tooltip';
 
 const navItems = [
-  { name: 'Seeable', href: '/' },
-  { name: 'Tarlac', href: '/tarlac' },
+  { name: 'Home', href: '/' },
+  { name: 'Towns', href: '/tarlac' },
   { name: 'Feeds', href: '/feeds'},
-  { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
   
 ];
@@ -21,6 +20,7 @@ const navItems = [
 type NavProps = {
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  large?: boolean;
 };
 
 
@@ -125,7 +125,7 @@ const MobileNav = ({ open, setOpen }: NavProps) => {
   );
 };
 
-const DesktopNav = ({ setOpen }: NavProps) => {
+const DesktopNav = ({ setOpen, large = false }: NavProps) => {
 
    //#region  //*=========== Route Functionality ===========
    const router = useRouter();
@@ -176,84 +176,93 @@ const DesktopNav = ({ setOpen }: NavProps) => {
       <nav
         aria-label='Top'
         className={clsx(
-          'layout flex lg:flex-col lg:items-center py-4',
-          'lg:max-w-[68rem]',
-        )}
+          'layout flex items-center justify-between py-4',
+            large && 'lg:max-w-[68rem]'
+          )}
       >
         
-        <div className='flex'>
+        <div className='flex items-center'>
           
           <button
             type='button'
-            className='flex space-x-4 p-2 text-black bg-white rounded-md lg:hidden'
+            className='flex p-2 text-primary-800 bg-[#F2F5EB] rounded-md lg:hidden'
             onClick={() => setOpen(true)}
           >
             <span className='sr-only'>Open menu</span>
             <HiOutlineMenu className='w-6 h-6' aria-hidden='true' />
-            <span className='font-bold text-lg decoration-8 hover:cursor-pointer hover:animate-pulse'> 
-              <span className='text-blue-800'>S</span>
-              <span className='text-blue-600'>E</span>
-              <span className='text-sky-600'>E</span>
-              <span className='text-emerald-400'>A</span>
-              <span className='text-blue-500'>B</span>
-              <span className='text-blue-500'>L</span>
-              <span className='text-blue-500'>E</span>
-              
-              <span className='text-red-500'>T</span>
-              <span className='text-red-500'>A</span>
-              <span className='text-red-500'>R</span>
-              <span className='text-red-500'>L</span>
-              <span className='text-red-500'>A</span>
-              <span className='text-red-500'>C</span>
-            </span>
                      
           </button>
 
-          {/* Flyout menus */}
-          <div className='hidden lg:ml-8 lg:block lg:self-stretch lg:'>
-            <div className='flex h-full space-x-8'>
-              {navItems.map((item) => (
-                <UnstyledLink
-                  key={item.name}
-                  href={item.href}
-                  className={clsx(
-                    'rounded-sm py-2 transition-colors',
-                    'font-semibold text-xl text-white',
-                    'group hover:text-primary-300 hover:animate-pulse',
-                    'focus:outline-none focus-visible:ring focus-visible:ring-primary-900'
-                  )}
-                >
-                  <span
+          {/* Logo */}
+          <div className='flex ml-4 lg:ml-0 items-center justify-between h-full space-x-2 animate-flicker'>
+            
+            <UnstyledLink href='/'>     
+              <img
+                className='w-auto h-12 border border-primary-300 rounded-full'
+                src='/images/Seeable-logo.png'
+                alt=''
+              />          
+            </UnstyledLink>
+
+            <UnstyledLink href='/'>
+              <span className={clsx(
+                'not-sr-only flex items-center pl-2 pt-3',
+                'font-semibold text-lg',
+                'animate-bounce',
+              )} >SEEABLETarlac</span>
+            </UnstyledLink>
+
+          </div>
+
+            {/* Flyout menus */}
+            <div className='hidden lg:ml-20 lg:pl-60 lg:block lg:self-stretch'>
+              <div className='flex items-center justify-between h-full space-x-8'>
+                {navItems.map((item) => (
+                  <UnstyledLink
+                    key={item.name}
+                    href={item.href}
                     className={clsx(
-                      'transition-colors',
-                      'bg-primary-800/0 group-hover:bg-primary-800/20 dark:group-hover:bg-primary-800/0',
-                      item.href === baseRoute &&
-                        '!bg-primary-300/50 dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
+                      'flex items-center',
+                      'rounded-sm py-2 transition-colors',
+                      'font-semibold text-xl text-white',
+                      'group hover:text-primary-300',
+                      'focus:outline-none focus-visible:ring focus-visible:ring-primary-900'
                     )}
                   >
-                    {item.name}
-                  </span>
-                </UnstyledLink>
-              ))}
+                    <span
+                      className={clsx(
+                        'transition-colors',
+                        'bg-primary-800/0 group-hover:bg-primary-800/20 dark:group-hover:bg-primary-800/0',
+                        item.href === baseRoute &&
+                          '!bg-primary-300/50 dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
+                      )}
+                    >
+                      {item.name}
+                    </span>
+                  </UnstyledLink>
+                ))}
 
-              {searchIcon.map((button) => (
-              <Tooltip interactive={false} key={button.href} content={button.text}>
-                <UnstyledLink
-                  className={clsx( 
-                    'rounded-sm py-2 transition-colors',
-                    'font-medium text-xl text-white',
-                    'group hover:text-primary-300',
-                    'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
-                  )}
-                  href={button.href}
-                >
-                  <button.icon className='mt-2 h-6 w-6 text-black transition-colors hover:text-red-600 dark:text-gray-300 dark:hover:text-red-600' />
-                </UnstyledLink>
-            </Tooltip>
-           ))}      
-            </div>
-            
+                {searchIcon.map((button) => (
+                <Tooltip interactive={false} key={button.href} content={button.text}>
+                  <UnstyledLink
+                    className={clsx( 
+                      'rounded-sm py-2 transition-colors',
+                      'font-medium text-xl text-white',
+                      'group hover:text-primary-300',
+                      'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+                    )}
+                    href={button.href}
+                  >
+                    <button.icon className='mt-2 h-6 w-6 text-black transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300' />
+                  </UnstyledLink>
+              </Tooltip>
+            ))}      
+            </div> {/**  End of flyout menu*/}
+              
+
           </div>
+
+          
         </div>
       </nav>
     </div>

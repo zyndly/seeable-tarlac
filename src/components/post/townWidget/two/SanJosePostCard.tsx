@@ -43,7 +43,7 @@ const SanJosePostCard = ({ post, position }: any) => {
                 >
 
                     <div className='w-full h-full bg-gradient-to-b from-black/[0.6] to-black/[0.4] flex justify-center items-center '>
-                        <span className=" cursor-pointer absolute px-3 py-1 mx-2 text-white font-bold font-staatliches text-sm  rounded-full text-md border-white">
+                        <span className="text-shadow mb-4 text-center text-2xl font-semibold text-primary-200">
                             {`${post.title}`}
                         </span>
 

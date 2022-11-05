@@ -35,9 +35,9 @@ const PostWidget = ({categories, slug}: PostWidgetProps): JSX.Element=> {
   }, [categories, slug]);
 
   return (
-    <div className='rounded-lg p-8 mb-8hover:text-white'>
+    <div className='rounded-lg p-8 mb-8 hover:text-white'>
 
-      <h3 className='text-xl mb-8 border-b pb-4 text-lime-600'>
+      <h3 className='text-xl mb-8 border-b pb-4 text-primary-900'>
         {slug ? 'Related Posts' : 'Recent Posts'}
       </h3>
 

@@ -3,9 +3,11 @@ import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
 
-import { getFestivalPosts } from '@/services';
+import ArrowLink from '@/components/links/ArrowLink';
 
-import { FestivalPostCard } from './index';
+import { getDestinationPosts } from '@/services';
+
+import { DestinationPostCard } from './index';
 
 const responsive = {
   superLargeDesktop: {
@@ -26,12 +28,12 @@ const responsive = {
   },
 }
 
-const FeaturedPosts = () => {
+const DestinationPosts = () => {
   const [featuredPost, setFeaturedPosts] = useState([])
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
-    getFestivalPosts().then((result) => {
+    getDestinationPosts().then((result) => {
       setFeaturedPosts(result)
       setDataLoaded(true)
     })
@@ -87,11 +89,15 @@ const FeaturedPosts = () => {
         {dataLoaded &&
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           featuredPost.map((post: any) => (
-            <FestivalPostCard key={post.slug} post={post} />
+            <DestinationPostCard key={post.slug} post={post} />
           ))}
       </Carousel>
+
+      <div className='text-black font-bold text-lg md:text-xl pt-5 flex justify-end'>
+        <ArrowLink href='/collections#main-collection'>View more...</ArrowLink>
+      </div>
     </div>
   )
 }
 
-export default FeaturedPosts
+export default DestinationPosts

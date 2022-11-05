@@ -39,7 +39,7 @@ const TagsIndex = ({ tags }: TagIndexProps) : JSX.Element => {
       />
       <div className={"container flex flex-col items-center mx-auto px-8 mb-8 pt-[100px]"+(menu?' blur-filter': ' trans-500')}>
 
-        <h1 className='text-lime-600 font-bold text-4xl py-10 font-staatliches'>
+        <h1 className='text-primary-900 font-bold text-4xl py-10 font-staatliches'>
           {`All Tags`}
         </h1>
 
@@ -71,8 +71,8 @@ const TagsIndex = ({ tags }: TagIndexProps) : JSX.Element => {
 
                   <Link href={`/tags/${category.slug}`} key={category.slug}>
                     <Tooltip interactive={false} key={`#${category.name}`} content={`View #${category.name}`}>
-                      <div className='w-[200px] h-[200px] cursor- bg-slate-700/[0.3] rounded-lg m-5 flex justify-center  items-center'>
-                          <span className={`cursor-pointer absolute px-3 py-1 mx-2 text-lime-600 rounded-full text-md border-lime-400`}>
+                      <div className='w-[200px] h-[200px] cursor- bg-primary-900 rounded-lg m-5 flex justify-center  items-center'>
+                          <span className={`cursor-pointer absolute px-3 py-1 mx-2 primary-300 rounded-full text-md border-primary-300`}>
                               {`#${category.name}`}
                           </span>
                       </div>

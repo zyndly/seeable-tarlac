@@ -17,7 +17,7 @@ const CollectionsWidget = (): JSX.Element=> {
   return (
     <div className='rounded-lg p-8 mb-8'>
 
-      <h3 className='text-xl mb-8 border-b pb-4 text-lime-800'>
+      <h3 className='text-xl mb-8 border-b pb-4 text-primary-900'>
         Destinations
       </h3>
       

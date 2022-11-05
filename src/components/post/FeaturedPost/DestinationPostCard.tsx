@@ -1,10 +1,9 @@
 /* eslint-disable unused-imports/no-unused-vars */
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const FestivalPostCard = ({ post, position }: any) => {
+const DestinationPostCard = ({ post, position }: any) => {
   return (
     <>
       <div className="relative h-72">
@@ -18,16 +17,6 @@ const FestivalPostCard = ({ post, position }: any) => {
           <p className="text-shadow mb-4 text-center text-2xl font-semibold text-primary-200">
             {post.title}
           </p>
-          <div className="absolute bottom-5 flex w-full items-center justify-center">
-            <Image
-              unoptimized
-              alt={post.author.name}
-              height="30px"
-              width="30px"
-              className="rounded-full align-middle drop-shadow-lg"
-              src={post.author.photo.url}
-            />
-          </div>
         </div>
         <Link href={`/post/${post.slug}`}>
           <span className="absolute h-full w-full cursor-pointer" />
@@ -37,4 +26,4 @@ const FestivalPostCard = ({ post, position }: any) => {
   )
 }
 
-export default FestivalPostCard
+export default DestinationPostCard

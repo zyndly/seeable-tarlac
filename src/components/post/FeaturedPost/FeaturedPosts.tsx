@@ -3,6 +3,8 @@ import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
 
+import ArrowLink from '@/components/links/ArrowLink';
+
 import { getFeaturedPosts } from '@/services';
 
 import { FeaturedPostCard } from './index';
@@ -90,6 +92,11 @@ const FeaturedPosts = () => {
             <FeaturedPostCard key={post.slug} post={post} />
           ))}
       </Carousel>
+
+      <div className='text-black font-bold text-lg md:text-xl pt-5 flex justify-end'>
+        <ArrowLink href='/collections/festivals'>View more...</ArrowLink>
+      </div>
+      
     </div>
   )
 }

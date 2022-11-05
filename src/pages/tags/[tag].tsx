@@ -31,7 +31,7 @@ const TagPost = ({ posts, tag }: TagPostProps) : JSX.Element => {
   return (
     <div className={"container flex flex-col items-center mx-auto px-10 mb-8 pt-[100px]"+(menu?' blur-filter': ' trans-500')}>
 
-      <h1 className='text-lime-600 font-bold text-4xl py-10'>
+      <h1 className='font-bold text-4xl py-10'>
        {`#${tag}   `}
       </h1>
 

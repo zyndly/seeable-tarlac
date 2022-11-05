@@ -4,8 +4,7 @@
 import Link from 'next/link';
 import * as React from 'react';
 
-import { FeaturedPosts } from '@/components/post/FeaturedPost';
-import { FestivalPost } from '@/components/post/FeaturedPost';
+import { DestinationPosts } from '@/components/post/FeaturedPost';
 import { ChurchPosts } from '@/components/post/FeaturedPost/';
 import SectionTitle from '@/components/text/SectionTitle';
 
@@ -256,7 +255,7 @@ const SearchBar = ({featuredPosts}:SearchInterface): JSX.Element => {
 
                         {moreInitialPosts ? 
 
-                            <Link href={{ pathname: '/tarlac'}}>
+                            <Link href={{ pathname: '/collections/festivals'}}>
                                 <div className='position-center ransition-all duration-500 cursor-pointer button bg-primary-900 text-primary-300 p-3 hover:px-10 px-6 rounded-full'> 
                                     View More
                                 </div>
@@ -282,15 +281,12 @@ const SearchBar = ({featuredPosts}:SearchInterface): JSX.Element => {
           
 
         </div>
-
+{/* Destinations */}     
           <SectionTitle title="Attractions" subtitle='Discover captivating destinations' />
-          <FeaturedPosts />
+          <DestinationPosts />
 
           <SectionTitle title="Churches" subtitle="Catch a glimpse of Tarlac's Beautiful Churches "/>
           <ChurchPosts />
-
-          <SectionTitle title="Festivals" subtitle="Catch a glimpse of Tarlac's colorful culture" />
-          <FestivalPost />
       
       </div>
     </div>
