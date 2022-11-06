@@ -240,7 +240,7 @@ const DesktopNav = ({ setOpen, large = false }: NavProps) => {
                 <UnstyledLink
                   className={clsx( 
                     'rounded-sm py-2 transition-colors',
-                    'font-medium text-xl text-white',
+                    'font-bold text-xl text-primary-900 lg:text-white',
                     'group hover:text-primary-300',
                     'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
                   )}
