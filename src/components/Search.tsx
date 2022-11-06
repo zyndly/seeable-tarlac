@@ -87,7 +87,6 @@ const SearchBar = ({featuredPosts}:SearchInterface): JSX.Element => {
   React.useEffect(()=>{
       //initial search on component load
        
-
       if(featuredPosts.length > 3){
           setMoreInitialPosts(true);
       }else{
