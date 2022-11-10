@@ -6,7 +6,7 @@ import { PageHeading } from "@/components/text/PageHeading";
 
 
 
-export default function AttractionsPage() {
+export default function ChurchPage() {
   return (
     <Layout>
       <Seo 
