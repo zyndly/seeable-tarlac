@@ -28,7 +28,7 @@ export default function NotFoundPage() {
               <h3 className='mt-20 text-lime-800 animate-pulse'>Breathe in, and on the out breath, go back and try again.</h3>
               <p className='text-gray-400'>There are a lot of unknown in the world right now. But one thing is certain — Seeable is here for you.</p>
             
-              <CustomLink className='mt-8 items' href='/contribute'>
+              <CustomLink className='mt-8 items' href='/contact'>
                 Help us make our product better
               </CustomLink>
 
