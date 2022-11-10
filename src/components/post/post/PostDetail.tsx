@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 import { RichText } from '@graphcms/rich-text-react-renderer';
-import moment from 'moment';
 import Link from 'next/link';
 import * as React from 'react';
-import { FiCalendar } from 'react-icons/fi'; 
 
 interface PostDetailProps {
     // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any
@@ -60,16 +58,9 @@ const PostDetail = ({ post } : PostDetailProps) : JSX.Element => {
 
                     </div>
 
-                    <div className='font-medium text-black flex flex-row align-center justify-center m-5'>
-                        <FiCalendar className='mt-[3px] mr-3' />
-                        <span className=''>
-                            {moment(post.createdAt).format('MMM DD, YYYY')}
-                        </span>
-                    </div>
-
                 </div>
 
-                <h1 className='mb-8 text-3xl font-bold text-lime-600'> {post.title}</h1>
+                <h1 className='mb-4 text-3xl font-bold text-lime-600'> {post.title}</h1>
 
                 <RichText
                     content={post.content.raw}
