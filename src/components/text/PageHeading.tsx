@@ -1,13 +1,13 @@
 import { PropsWithChildren } from 'react';
 
-import { Container } from '@/components/layout/Container';
+import { HeadingContainer  }  from '@/components/layout/HeadingContainer';
 
 export const PageHeading = ({ children }: PropsWithChildren) => {
   return (
-    <Container>
-      <h1 className='text-3xl md:text-6xl font-bold text-center md:text-left text-primary-600'>
+    <HeadingContainer>
+      <h1 className='text-3xl md:text-6xl mt-4 pt-4 font-bold flex text-center md:text-left'>
         {children}
       </h1>
-    </Container>
+    </HeadingContainer>
   );
 };
