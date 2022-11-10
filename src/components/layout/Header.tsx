@@ -14,6 +14,7 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Towns', href: '/tarlac' },
   { name: 'Feeds', href: '/feeds'},
+  { name: 'Tourism Offices', href: '/tourism-offices'},
   { name: 'Contact', href: '/contact' },
   
 ];
@@ -195,7 +196,7 @@ const DesktopNav = ({ setOpen, large = false }: NavProps) => {
           </button>
 
           {/* Logo */}
-          <div className='flex ml-4 lg:ml-0 lg:mr-60 items-center justify-between h-full space-x-3'>
+          <div className='flex ml-4 lg:ml-15 lg:mr-30 items-center justify-between h-full space-x-3'>
             
             <UnstyledLink href='/'>     
               <img

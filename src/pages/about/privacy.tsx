@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           description=''
           
           />
-        <PageHeading>Privacy Policy</PageHeading>
+        <PageHeading>PRIVACY POLICY </PageHeading>
         <Container>
           <div className='text-black'>
             <div>

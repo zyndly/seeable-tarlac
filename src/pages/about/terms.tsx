@@ -18,7 +18,7 @@ export default function TermsPage() {
           description=''
           
           />
-        <PageHeading>Terms and Conditions</PageHeading>
+        <PageHeading>TERMS & CONDITIONS </PageHeading>
 
         <Container>
           <div className='text-black'>

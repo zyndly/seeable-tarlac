@@ -14,7 +14,7 @@ export default function ContactPage() {
 
       <main>
         <section className='bg-[#F2F5EB]'>
-        <PageHeading>Contact Us</PageHeading>
+        <PageHeading>We&apos;d love to hear from you </PageHeading>
           <Container>
             <Contact />
           </Container>
