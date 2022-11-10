@@ -54,7 +54,7 @@ const towns = [
   {
     title: 'Anao',
     href: '/tarlac/anao',
-    background:'http://tarlacfirst.com/wp-content/uploads/anao.jpg',
+    background:'https://i0.wp.com/peoplaid.com/wp-content/uploads/2021/06/Anao-Municipal-Hall.jpg?fit=619%2C462&ssl=1',
     tooltip: (
       <>
         <Accent className='font-medium'>See visit Anao, Tarlac</Accent>
