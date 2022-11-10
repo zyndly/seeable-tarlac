@@ -11,3 +11,8 @@ export { default as DestinationPosts } from './DestinationPosts';
 export { default as FeaturedPostCard } from './FeaturedPostCard';
 export { default as FeaturedPosts} from './FeaturedPosts';
 
+// Delicacies
+
+export { default as DelicaciesPostCard } from './DelicaciesPostCard';
+export { default as DelicaciesPosts } from './DelicaciesPosts';
+

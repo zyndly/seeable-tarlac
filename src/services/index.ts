@@ -844,7 +844,7 @@ export const getLapazPosts = async () => {
 // ================================== End La Paz of Post =================================
 
 
-// ================================== Festival Post =====================================
+// ================================== Church Post =====================================
 export const getChurchPosts = async () => {
   const query = gql`
     query GetCategoryPost() {
@@ -868,6 +868,10 @@ export const getChurchPosts = async () => {
   return result.posts
 }
 
+// ================================== End of Church Post =================================
+
+// ================================== Destination Post =================================
+
 export const getDestinationPosts = async () => {
   const query = gql`
     query GetCategoryPost() {
@@ -890,4 +894,30 @@ export const getDestinationPosts = async () => {
   const result = await request(graphqlAPI, query)
   return result.posts
 }
-// ================================== End of Church Post =================================
+// ================================== End of Destination Post =================================
+
+// ================================== Delicacies Posts =================================
+
+export const getDelicaciesPosts = async () => {
+  const query = gql`
+    query GetCategoryPost() {
+      posts(where:{delicaciesPost:true}) {
+        author {
+          name
+          photo{
+            url
+          }  
+        }
+        featuredImage {
+          url
+        }
+        title
+        slug
+        createdAt
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query)
+  return result.posts
+}
+// ================================== End of Delicacies Posts =================================
