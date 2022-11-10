@@ -62,7 +62,7 @@ export default function PrivacyPage() {
             <SubTitle>Contact information:</SubTitle>
             <p>If you would like to contact us to understand more about this policy or wish to contact us concerning any matter relating to individual rights and your Personal Information, you may send an email to 
               <span className='text-lime-600'> seeabletarlac@gmail.com</span>  or visit our contact page at  
-              <a className='hover:text-lime-600' target="_blank" rel="noreferrer noopener external nofollow" href="http://www.seeabletarlac.live/contact"> http://www.seeabletarlac.live/contact</a></p>
+              <a className='hover:text-lime-600' target="_blank" rel="noreferrer noopener external nofollow" href="http://seeabletarlac.vercel.app/contact">http://seeabletarlac.vercel.app/contact</a></p>
 
 
           </div>
