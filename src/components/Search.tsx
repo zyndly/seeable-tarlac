@@ -205,7 +205,7 @@ const SearchBar = ({featuredPosts}:SearchInterface): JSX.Element => {
                 {initialPosts.length > 0 && posts.length == 0 ?
                     
                     <div className='flex flex-col items-center justify-start w-full pt-[20px]'>
-                        <SectionTitle title="Featured Destinations" subtitle=''/>
+                        <SectionTitle title="Festivals" subtitle="Catch a glimpse of Tarlac's colorful culture"/>
 
                         <div className='w-full text-md'>
                             {initialPosts.map((post:any, index:number)=>(
@@ -281,11 +281,15 @@ const SearchBar = ({featuredPosts}:SearchInterface): JSX.Element => {
 
         </div>
 {/* Destinations */}     
-          <SectionTitle title="Attractions" subtitle='Discover captivating destinations' />
+          <SectionTitle title="Attractions" subtitle="Discover captivating destinations"/>
           <DestinationPosts />
 
-          <SectionTitle title="Churches" subtitle="Catch a glimpse of Tarlac's Beautiful Churches "/>
+          <SectionTitle title="Delicacies" subtitle="Experience gastronomic delights"/>
+
+          <SectionTitle title="Churches" subtitle="Catch a glimpse of Tarlac's Beautiful Churches"/>
           <ChurchPosts />
+
+          
       
       </div>
     </div>
