@@ -138,7 +138,7 @@ const SearchPosts = () : JSX.Element => {
                                     <input 
                                         type='text'
                                         className='transition-all duration-500 p-4 px-4 m-4 outline-none w-full md:w-[70%] bg-white rounded-full focus:ring-2 focus:ring-white/[0.3] text-lg text-black text-center'
-                                        placeholder='What are you waiting for...'
+                                        placeholder='What are you looking for...'
                                         name='search'
                                         ref={searchEl}
                                         onKeyUp={()=>{submitSearch(false)}}
