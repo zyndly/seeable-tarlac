@@ -1,6 +1,10 @@
+import { Container } from "@/components/layout/Container";
 import Layout from "@/components/layout/Layout";
-import Template from "@/components/layout/Template";
+import { DelicaciesPostCard } from "@/components/post/FeaturedPost";
 import Seo from "@/components/Seo";
+import { PageHeading } from "@/components/text/PageHeading";
+
+
 
 export default function DelicaciesPage() {
   return (
@@ -10,7 +14,13 @@ export default function DelicaciesPage() {
         description=''
       />
 
-      <Template/>
+      <main>
+        <PageHeading>Tarlac Delicacies</PageHeading>
+
+        <Container>
+          <DelicaciesPostCard />
+        </Container>
+      </main>
 
       
     </Layout>
