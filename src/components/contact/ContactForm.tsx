@@ -97,7 +97,7 @@ export const ContactForm  = ({
         </label>
         
         <input
-          name='Name'
+          name='name'
           type='text'
           value={name}
           onBlur={checkInput}
@@ -105,7 +105,7 @@ export const ContactForm  = ({
                     onClick={()=>setErrorMessage('')}
 
           required
-          placeholder='name'
+          placeholder='Name'
 
           className='input input-bordered w-full text-black'
         />

@@ -29,7 +29,7 @@ export default function TourismOfficesPage() {
         { tourismOffices.map((offices) => (
           <Tooltip interactive={false} key={offices.href} content={offices.tooltip}>
             
-            <div className="max-w-xs min-w-xs rounded-lg overflow-hidden shadow-lg">
+            <div className="max-w-xs min-w-xs rounded-lg overflow-hidden shadow-lg py-2 px-2">
               <div className="py-4 ">
                 <div className="py-2 bg-primary-800">
                   <div className="font-bold text-xl px-4">
@@ -76,17 +76,56 @@ export default function TourismOfficesPage() {
 
 const tourismOffices = [ 
   {
-    place: 'Province of Tarlac',
-    contactPerson: 'Contact Person',
-    address: 'Address Address Address Address Address Address Address Address Address Address',
-    contactNumber1: 'Contact Number 1',
-    contactNumber2: 'Contact Number 2',
-    email: 'Email',
-    website: 'Website',
+    place: 'Tarlac City Tourism Office',
+    contactPerson: 'Wilfredo Toldanes',
+    address: 'Ninoy Aquino Plazuela, San Rafael, Tarlac Citys',
+    contactNumber1: '(63 45) 982-4051/1923',
+    contactNumber2: '0927-830-9494',
+    email: 'wtoldanes@yahoo.com',
+    website: 'www.tarlaccity.gov.ph',
+
+    href: 'www.tarlaccity.gov.ph',
+    tooltip: 'Contact Tarlac City Tourism Office',
+  },
+
+  {
+    place: 'Tarlac Provincial Investment Tourism and Information Office',
+    contactPerson: 'Ma. Asuncion Y. Fronda ',
+    address: 'Provincial Information Office, 2/F Provincial Capitol Bldg., Capitol Hills, San Vicente,Tarlac City',
+    contactNumber1: '(63 45) 800-1607/1499',
+    contactNumber2: '(63 45) 982-1363',
+    email: 'pio_tarlac@yahoo.com',
+    website: 'N/A',
 
     href: 'link',
-    tooltip: 'tooltip',
-      
-    
+    tooltip: 'Contact Tarlac Provincial Investment Tourism and Information Office',
   },
+
+  {
+    place: 'Gerona Tourism Council',
+    contactPerson: 'Marita Abellar',
+    address: 'Poblacion 3, Gerona, Tarlac',
+    contactNumber1: '(63 45) 608-8028',
+    contactNumber2: ' 0920-439-6575',
+    email: 'N/A',
+    website: 'N/A',
+
+    href: 'link',
+    tooltip: 'Contact Gerona Tourism Council',
+  },
+
+  {
+    place: 'Gerona Tourism Council',
+    contactPerson: 'Marita Abellar',
+    address: 'Poblacion 3, Gerona, Tarlac',
+    contactNumber1: '(63 45) 608-8028',
+    contactNumber2: ' 0920-439-6575',
+    email: 'N/A',
+    website: 'N/A',
+
+    href: 'link',
+    tooltip: 'Contact Gerona Tourism Council',
+  },
+
+
 ]

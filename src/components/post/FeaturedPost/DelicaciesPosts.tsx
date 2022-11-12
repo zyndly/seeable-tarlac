@@ -3,8 +3,6 @@ import Carousel from 'react-multi-carousel';
 
 import 'react-multi-carousel/lib/styles.css';
 
-import ArrowLink from '@/components/links/ArrowLink';
-
 import { getDelicaciesPosts } from '@/services';
 
 import { DelicaciesPostCard } from './index';
@@ -92,10 +90,6 @@ const DelicaciesPosts = () => {
             <DelicaciesPostCard key={post.slug} post={post} />
           ))}
       </Carousel>
-
-      <div className='text-black font-bold text-lg md:text-xl pt-5 flex justify-end'>
-        <ArrowLink href='/collections#main-collection'>View more...</ArrowLink>
-      </div>
     </div>
   )
 }

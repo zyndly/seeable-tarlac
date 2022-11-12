@@ -6,6 +6,7 @@ import * as React from 'react';
 
 import { DestinationPosts } from '@/components/post/FeaturedPost';
 import { ChurchPosts } from '@/components/post/FeaturedPost/';
+import { DelicaciesPosts } from '@/components/post/FeaturedPost/';
 import SectionTitle from '@/components/text/SectionTitle';
 
 import { StateContext } from '@/pages/_app';
@@ -285,7 +286,8 @@ const SearchBar = ({featuredPosts}:SearchInterface): JSX.Element => {
           <DestinationPosts />
 
           <SectionTitle title="Delicacies" subtitle="Experience gastronomic delights"/>
-
+          <DelicaciesPosts />
+          
           <SectionTitle title="Churches" subtitle="Catch a glimpse of Tarlac's Beautiful Churches"/>
           <ChurchPosts />
 
