@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import { SiFacebook, SiGithub, SiInstagram, SiTwitter } from 'react-icons/si';
+import { SiFacebook, SiInstagram, SiTwitter } from 'react-icons/si';
 
 import Accent from '@/components/Accent';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -62,15 +62,6 @@ function SocialLinks() {
 
 const footerLinks = [
   {
-    href: 'https://github.com/zyndly/seeable-tarlac',
-    text: 'Source Code',
-    tooltip: (
-      <>
-        This website is <strong>open source</strong>!
-      </>
-    ),
-  },
-  {
     href: '/about/terms',
     text: 'Terms',
     tooltip: 'View our Terms & Condition',
@@ -93,16 +84,6 @@ const footerLinks = [
 ];
 
 const socials = [
-  {
-    href: 'https://github.com/zyndly/seeable-tarlac/',
-    icon: SiGithub,
-    id: 'Github',
-    text: (
-      <>
-        See our projects on <Accent className='font-medium'>Github</Accent>
-      </>
-    ),
-  },
   {
     href: 'https://instagram.com/seeabletarlac',
     icon: SiInstagram,
