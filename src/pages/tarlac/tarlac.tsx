@@ -16,9 +16,9 @@ export default function Tarlac() {
       <main>
       <PageHeading>Tarlac City</PageHeading>
 
-      <Container>
-        <TarlacPostCard />
-      </Container>
+        <Container>
+          <TarlacPostCard />
+        </Container>
       </main>
 
     </Layout>

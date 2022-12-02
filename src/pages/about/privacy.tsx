@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Container } from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
+import { TextContainer } from '@/components/layout/TextContainer';
 import Seo from '@/components/Seo';
 import { PageHeading } from '@/components/text/PageHeading';
 import { SubTitle } from '@/components/text/SubTitle';
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           
           />
         <PageHeading>PRIVACY POLICY </PageHeading>
-        <Container>
+        <TextContainer>
           <div className='text-black'>
             <div>
               <p className='mb-2'>Seeable Tarlac website is owned by Seeable Tarlac, which is the data controller of your personal data.</p>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
 
 
           </div>
-        </Container>
+        </TextContainer>
         
       </Layout>
     </>

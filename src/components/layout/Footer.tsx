@@ -77,7 +77,7 @@ const footerLinks = [
     tooltip: 'Contact Us',
   },
   {
-    href: '/About',
+    href: '/about',
     text: 'About',
     tooltip: 'Learn more about Seeable Tarlac',
   },

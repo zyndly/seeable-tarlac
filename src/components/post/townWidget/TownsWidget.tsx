@@ -21,7 +21,7 @@ export default function TarlacTownsCard() {
 
   return (
     <>
-      <div ref={scrollRef} className="col-span-1 lg:col-span-3 flex flex-wrap flex-row justify-center items-start ">
+      <div ref={scrollRef} className="col-span-1 lg:col-span-3 flex flex-wrap flex-row justify-center items-start  ">
         {towns.map((towns) => (
           <Tooltip interactive={false} key={towns.href} content={towns.tooltip}>
             <Link href={towns.href} key={towns.href}>

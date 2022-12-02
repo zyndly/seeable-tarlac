@@ -114,10 +114,10 @@ const SearchPosts = () : JSX.Element => {
         description='Search a Tourist Destinations in Tarlac, Philippines'
       />
 
-        <div className={"container mx-auto px-10 mb-8 mt-[100px] trans-500 flex flex-col items-center"+(menu? ' blur-filter': '')}>
+        <div className={"container mx-auto px-10 mb-8 mt-[100px] trans-500 flex flex-col items-center "+(menu? ' blur-filter': '')}>
   
             <div 
-                className={'w-full h-auto bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1'+(menu? ' blur-filter ': ' trans-500')}
+                className={'w-full h-auto bg-cover grid grid-cols-1 lg:grid-cols-6 gap-1 '+(menu? ' blur-filter ': ' trans-500')}
                 >
                     <div className='container mx-auto px-0 col-span-1 lg:col-span-4 lg:col-start-2'>
                         
