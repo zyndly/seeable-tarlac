@@ -95,7 +95,7 @@ const socials = [
     ),
   },
   {
-    href: 'https://facebook.com/seeable-tarlac',
+    href: 'https://www.facebook.com/profile.php?id=100088146230818',
     icon: SiFacebook,
     id: 'Facebook',
     text: (
